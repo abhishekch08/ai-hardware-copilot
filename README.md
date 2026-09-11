@@ -45,6 +45,7 @@ The product is successful only when this loop is **measurably faster, safer, mor
 ```text
 /
 ├── README.md
+├── AGENTS.md
 ├── governance/
 │   ├── OPERATING_CONSTITUTION.md
 │   └── DECISION_RIGHTS_AND_CONFLICTS.md
@@ -62,6 +63,16 @@ The product is successful only when this loop is **measurably faster, safer, mor
 │   ├── 09_SECURITY_INFRA_ENTERPRISE.md
 │   ├── 10_BUSINESS_FINANCE_HR_LEGAL_IP.md
 │   └── 11_MARKET_GTM_APPLICATIONS_DOCUMENTATION.md
+├── docs/
+│   ├── 01_AI_NATIVE_COMPANY_ARCHITECTURE.md
+│   ├── 02_AGENT_DEPLOYMENT_SPECIFICATION.md
+│   ├── 03_MODEL_ROUTING_AND_COMPUTE_POLICY.md
+│   └── 04_MULTI_AGENT_WORKFLOWS.md
+├── runtime/
+│   ├── AGENT_PROMPT_TEMPLATE.md
+│   ├── TASK_ROUTER_AND_REVIEW_MESH.md
+│   ├── MEMORY_EVIDENCE_AND_CONFIGURATION.md
+│   └── DEPLOYMENT_MANIFEST.md
 ├── schemas/
 │   ├── UNIVERSAL_REASONING_SCHEMA.md
 │   ├── ENGINEERING_EXPERIMENT_LOOP.md
@@ -70,12 +81,34 @@ The product is successful only when this loop is **measurably faster, safer, mor
 │   └── DECISION_RECORD_TEMPLATE.md
 └── roadmap/
     ├── AGENT_DEPLOYMENT_SEQUENCE.md
-    └── MVP_BUILD_MAP.md
+    ├── MVP_BUILD_MAP.md
+    └── BOOTSTRAP_FIRST_30_DAYS.md
 ```
 
 ---
 
-## 3. Flat-agent operating principle
+## 3. What is defined here
+
+This repository now contains five layers.
+
+### Company operating system
+How a completely AI-native, flat specialist organization makes decisions, resolves conflicts, handles safety and preserves evidence.
+
+### Specialist network
+A comprehensive roster spanning systems, product, analog, digital, PCB, power, battery, sensors, RF, firmware, test, mechanical, industrial design, CMF, wearable technology, manufacturing, AI/ML, computer vision, web/mobile/software, security, science, research, finance, HR, legal, IP, market research, GTM, applications and documentation.
+
+### Reasoning / engineering schemas
+Reusable structures for first-principles analysis, design review, experiments, failure analysis and durable engineering decisions.
+
+### Runtime specification
+How agents are instantiated, routed, reviewed, given tools, assigned compute/model difficulty and connected to evidence/configuration memory.
+
+### Build roadmap
+Which agents and product layers to activate first so the project validates the core intelligence loop before investing in custom wearable hardware.
+
+---
+
+## 4. Flat-agent operating principle
 
 There is **no boss-agent**. There are only:
 
@@ -87,9 +120,11 @@ There is **no boss-agent**. There are only:
 
 An Analog Agent can reject an unsafe measurement setup. A Manufacturing Agent can reject a design that cannot be built reproducibly. A Product Agent can challenge a technically elegant feature with no customer value. A Finance Agent can challenge a cost structure that destroys the business. None is organizationally senior to the others.
 
+**Flat does not mean consensus voting.** For each task, the specialist owning the relevant mechanism provides the primary analysis, adjacent agents review interfaces, and a temporary integrator reconciles the evidence.
+
 ---
 
-## 4. Experience levels used in agent specifications
+## 5. Experience levels used in agent specifications
 
 | Level | Experience archetype | Expected behavior |
 |---|---:|---|
@@ -103,7 +138,7 @@ These are **capability profiles**, not reporting levels.
 
 ---
 
-## 5. What "AI-built" means
+## 6. What "AI-built" means
 
 The company is designed so that AI agents perform as much of the work as technically possible:
 
@@ -124,7 +159,7 @@ However, software agents cannot physically solder, probe, fabricate, operate an 
 
 ---
 
-## 6. Non-negotiable company principles
+## 7. Non-negotiable company principles
 
 1. **Evidence beats authority.** Assertions without evidence are hypotheses.
 2. **First-principles before pattern matching.** State governing physics, constraints and causal mechanism.
@@ -138,10 +173,12 @@ However, software agents cannot physically solder, probe, fabricate, operate an 
 10. **Optimize for time-to-correct-root-cause, not answer fluency.**
 11. **Flat does not mean unstructured.** Artifact ownership, review gates and evidence requirements remain strict.
 12. **Customer ROI is an engineering constraint.** A technically excellent capability that saves no meaningful engineer time is not automatically valuable.
+13. **Persist auditable reasoning artifacts, not opaque internal monologue.** Assumptions, equations, evidence, alternatives, experiments and decisions belong in the repo/evidence store.
+14. **Exact configuration matters.** Board, firmware, fixture, software, model and calibration revisions must follow evidence everywhere.
 
 ---
 
-## 7. Initial north-star use case
+## 8. Initial north-star use case
 
 > **"This revision draws 4 mA more than the previous board. Find the cause."**
 
@@ -149,7 +186,35 @@ The system should autonomously gather design context, compare revisions and gold
 
 ---
 
-## 8. Product moat hypothesis
+## 9. Initial active work cells
+
+The complete registry is broad, but the first product should dynamically activate only the specialists needed for each task.
+
+```text
+DESIGN INGESTION
+EDA Intelligence + Knowledge Graph + Retrieval + Systems + Schematic/PCB
+
+BENCH CONTROL
+Instrument Control + Lab Automation + Safety + Metrology + Backend/Desktop
+
+DEBUG REASONING
+Domain Expert + Hypothesis Agent + Experiment Planner + Waveform/Protocol + Failure Analysis
+
+PROBE-AWARE VISION
+CV + CAD Registration + Probe Tracking + EDA Intelligence + Metrology
+
+PRODUCT EXPERIENCE
+Hardware Workflow Product + Desktop/Web + Applications + Security
+
+EVALUATION
+AI Evaluation + Test/Validation + Data/Statistics + Domain Experts
+```
+
+See `runtime/DEPLOYMENT_MANIFEST.md` for the initial active roster and on-demand specialist pools.
+
+---
+
+## 10. Product moat hypothesis
 
 The durable asset is not the glasses, a single foundation model, or SCPI integration. It is the accumulated causal engineering graph:
 
@@ -177,12 +242,40 @@ Every completed debugging trajectory should improve future diagnosis, experiment
 
 ---
 
-## 9. Start here
+## 11. What is not yet implemented
 
-1. Read `governance/OPERATING_CONSTITUTION.md`.
-2. Read `agents/AGENT_RUNTIME_STANDARD.md`.
-3. Inspect `agents/AGENT_REGISTRY.md` for the full specialist network.
-4. Use `schemas/UNIVERSAL_REASONING_SCHEMA.md` for every consequential agent task.
-5. Follow `roadmap/AGENT_DEPLOYMENT_SEQUENCE.md` rather than activating every agent simultaneously.
+The repository currently defines the **company/agent architecture and operating contracts**. It does not yet contain the production orchestration runtime that instantiates every agent as a process/service.
+
+The next software layer should translate the canonical Markdown specifications into:
+
+- machine-readable agent configs;
+- prompt composition;
+- dynamic task routing;
+- model selection;
+- tool permissioning;
+- evidence/configuration storage;
+- reviewer/falsification workflows;
+- benchmark harnesses;
+- instrument adapters;
+- desktop engineering workspace.
+
+This is intentional: the agent constitution and domain boundaries should be stable before runtime code hardens around them.
+
+---
+
+## 12. Start here
+
+For a human or AI agent entering this repository:
+
+1. Read `AGENTS.md`.
+2. Read `governance/OPERATING_CONSTITUTION.md`.
+3. Read `agents/AGENT_RUNTIME_STANDARD.md`.
+4. Inspect `agents/AGENT_REGISTRY.md` for the full specialist network.
+5. Read the relevant domain handbook under `agents/`.
+6. Use `schemas/UNIVERSAL_REASONING_SCHEMA.md` for consequential work.
+7. Use `runtime/TASK_ROUTER_AND_REVIEW_MESH.md` to form the work cell.
+8. Use `docs/03_MODEL_ROUTING_AND_COMPUTE_POLICY.md` to select model/compute difficulty.
+9. Use `runtime/MEMORY_EVIDENCE_AND_CONFIGURATION.md` for persistence and provenance.
+10. Follow `roadmap/BOOTSTRAP_FIRST_30_DAYS.md` for initial implementation.
 
 The goal is not to simulate a large company for its own sake. The goal is to create the **smallest collection of high-quality specialist reasoning loops that can repeatedly build, test and improve the product without losing cross-disciplinary rigor**.
