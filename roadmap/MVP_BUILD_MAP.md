@@ -6,6 +6,8 @@
 
 The MVP should prove the **intelligence + tool loop** before any custom wearable hardware.
 
+XR-01 may evaluate commercial glasses as an optional interface during the MVP, but that investigation must not consume the core design-ingestion, instrument-control, diagnostic-reasoning or evaluation milestones.
+
 ## 1. User scenario
 
 Engineer provides:

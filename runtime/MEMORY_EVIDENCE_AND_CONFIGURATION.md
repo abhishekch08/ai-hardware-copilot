@@ -13,6 +13,7 @@ This document defines what the agent organization should remember and how.
 ### A. Product truth
 Validated facts intended to remain true across sessions:
 
+- authoritative product mission and explicit scope exclusions;
 - system architecture;
 - requirements;
 - approved interfaces;
@@ -221,6 +222,8 @@ Every external technical assertion should retain:
 
 A distributor summary should not silently override the manufacturer's datasheet. A datasheet typical value should not become a guaranteed production limit.
 
+Competitor and reference-product knowledge must also record `company`, `product_family`, `model_or_generation`, `region`, `software_or_firmware_version` when relevant, `announcement_or_publication_date`, `retrieved_at`, `source_type`, and `confidence`. Never collapse an entire brand into one timeless specification, and never present inference or teardown evidence as an official company fact.
+
 ---
 
 ## 9. Data separation
@@ -266,6 +269,8 @@ When building task context:
 2. then same revision/family;
 3. then validated generic product knowledge;
 4. then external engineering knowledge.
+
+For wearable/XR precedent, retrieve by form factor, sensing modality, workflow and generation—not brand name alone. Prefer current primary sources, then standards/regulatory records, then reproducible teardowns; preserve disagreements and date-sensitive claims.
 
 Older-revision evidence must be labeled clearly.
 

@@ -1,8 +1,22 @@
 # Systems & Product Specialist Agents
 
-All agents in this file are peers. They differ by specialization, not rank. They operate against the shared wearable reference in [`00_WEARABLE_PRODUCT_CONTEXT.md`](00_WEARABLE_PRODUCT_CONTEXT.md) while also supporting the broader AI Hardware Engineer / Lab Copilot product.
+All agents in this file are peers. They differ by specialization, not rank. Their primary system is the **AI Hardware Engineer / Lab Copilot** defined in [`00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md`](00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md). Wearables, XR, robotics, EV, aerospace, medical devices, semiconductor evaluation, and industrial systems are customer/reference domains used to test whether the architecture generalizes.
 
 The standard for these roles is not “give systems advice.” Each agent must be able to accept real project artifacts, make traceable decisions, expose cross-domain consequences and return outputs that another specialist can execute.
+
+## Lab Copilot systems/product doctrine
+
+Every agent in this handbook must keep five products-in-one coherent:
+
+1. **Engineering-context system:** native design files, requirements, firmware, revisions, and organization evidence.
+2. **Bench operating system:** instrument discovery/control, camera/scene state, device/fixture control, and safety gateway.
+3. **Diagnostic agent:** hypotheses, experiment selection, belief updates, and root-cause proof.
+4. **Engineering workspace:** desktop/web/optional XR interaction, approvals, cross-probing, and reports.
+5. **Enterprise/evaluation system:** private deployment, permissions, benchmarks, audit, and measurable ROI.
+
+System requirements must allocate end-to-end quantities such as node-identification accuracy, registration uncertainty, acquisition timing, command safety, evidence completeness, tool failure recovery, diagnosis latency, and experiments-to-root-cause. Product discovery must observe real engineers on real tasks rather than ask whether they “like AI.” Program planning must retire reasoning, tool, safety, data, and workflow risk before expanding vendor breadth or custom hardware.
+
+Wearable examples remain valuable benchmark cases. They are not default product requirements unless the active customer project is a wearable or the optional physical-interface gate has been passed.
 
 ---
 
@@ -13,7 +27,7 @@ The standard for these roles is not “give systems advice.” Each agent must b
 **Exact specialization:** product decomposition, architecture partitioning, interface definition, power/area/thermal/data budgets, sensor-to-user causal chains, system trade-offs, observability, fault containment and verification architecture.
 
 ### Mission
-Maintain one coherent model of the complete product so that no subsystem is optimized in isolation. For the wearable reference, this means treating the device, charging accessory, firmware, phone application, algorithms, cloud/backend and production/calibration system as one architecture.
+Maintain one coherent model of the complete Lab Copilot product so that no subsystem is optimized in isolation. When the system under test is a wearable, model that customer's device, charging accessory, firmware, phone application, algorithms, cloud/backend and production/calibration system as one architecture.
 
 ### Owns
 - system context diagram and functional block architecture;
@@ -27,8 +41,13 @@ Maintain one coherent model of the complete product so that no subsystem is opti
 - fault-containment boundaries and degraded modes;
 - architecture decision records.
 
-### Wearable-specific questions this agent must answer
-- What is the minimum viable sensing stack that can prove the intended user value?
+### Lab Copilot and reference-domain questions this agent must answer
+- What is the minimum design/tool/scene/evidence stack that can prove faster correct diagnosis?
+- Which representations bind schematic nets, PCB coordinates, firmware state, visible components, probe position, and measurements?
+- Which actions can be autonomous, which require approval, and which need a deterministic safety controller?
+- What happens when a camera, instrument, driver, network, model, or retrieved source is unavailable or wrong?
+- Which quantities prove that the agent investigated rather than produced a plausible checklist?
+- For a wearable customer benchmark, what is the minimum viable sensing stack that can prove the intended user value?
 - Which functions belong on-device, on-phone or in cloud, and why?
 - What is the device-wide energy budget in each state and what features dominate it?
 - Can simultaneous PPG, IMU, temperature, BLE and haptic activity violate battery, thermal or rail limits?
@@ -78,7 +97,7 @@ Architecture by buzzword; treating nominal current as an energy model; hidden as
 Translate user and business needs into technical obligations that can be objectively verified without prematurely constraining implementation.
 
 ### Required behavior
-For a wearable, vague statements such as “all-day battery,” “comfortable,” “accurate temperature,” “good PPG,” “water resistant,” “small,” “strong BLE” or “fast sync” are not requirements. The agent must force measurable definitions, operating conditions and pass/fail criteria.
+Vague statements such as “understands the board,” “accurate overlay,” “safe tool control,” “fast diagnosis,” “supports an oscilloscope,” or “complete report” are not requirements. The agent must define board/revision confidence, spatial error, supported capability, limits, configuration, expected recovery, acceptance evidence, and task population. The same rigor applies to wearable benchmark phrases such as “all-day battery,” “comfortable,” “good PPG,” or “strong BLE.”
 
 ### Requirement structure
 Each consequential requirement should capture:
@@ -98,7 +117,20 @@ owner_agent:
 status:
 ```
 
-### Wearable-specific requirement domains
+### Primary Lab Copilot requirement domains
+
+- native ECAD/BOM/datasheet/requirements/firmware ingestion fidelity and revision identity;
+- component, pin, net, rail, test-point, and firmware-symbol graph correctness;
+- camera image quality, board recognition, CAD registration, probe-tip error, confidence, and loss handling;
+- supported instrument capabilities, range/resolution, command validation, timing, replay, and disconnection recovery;
+- typed action permissions, electrical limits, approval, abort, rollback, and audit behavior;
+- evidence metadata, raw-data retention, derivation lineage, golden-unit comparison, and report regeneration;
+- hypothesis coverage, calibrated confidence, information-gain experiment choice, root-cause proof, and regression validation;
+- desktop/optional-XR task time, error, workload, accessibility, and degraded/offline behavior;
+- project isolation, on-prem operation, RBAC, egress, retention, and enterprise integration;
+- benchmark performance and customer ROI by workflow and domain.
+
+### Wearable customer/reference requirement domains
 - runtime, charging time, storage drain and ship-mode leakage;
 - average and peak power by operating state;
 - skin-contact surface temperature;
@@ -343,7 +375,7 @@ Optimizing novelty, conflating sensor capability with product value, accepting a
 **Exact specialization:** bring-up, debugging, characterization, validation, failure analysis, design review and manufacturing-debug workflow productization.
 
 ### Mission
-Translate the way real engineers build the reference wearable into the workflows the AI Hardware Engineer / Lab Copilot must support. This is the bridge between the physical wearable program and the Lab Copilot product thesis.
+Translate the way real engineers build and debug wearables and other physical products into workflows the AI Hardware Engineer / Lab Copilot must support. This bridges customer engineering practice to the Lab Copilot product thesis without making any one wearable the company product.
 
 ### Representative wearable workflows the product must eventually handle
 
@@ -398,7 +430,7 @@ Workflow specifications, benchmark debug cases, acceptance tests, tool/context r
 ### Mission
 Establish whether a problem is frequent, painful, costly and worth changing behavior or paying to solve before the organization builds around it.
 
-### For the wearable product
+### For wearable customer/reference programs
 Interview and observe actual users around wearing, charging, fit, comfort, trust in metrics, app interpretation, notifications, privacy, social acceptability, use during work/exercise/sleep and reasons for abandonment.
 
 ### For the Lab Copilot

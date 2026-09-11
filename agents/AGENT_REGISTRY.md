@@ -1,6 +1,8 @@
 # Comprehensive Agent Registry
 
-This registry defines the virtual specialist network for building and operating the **AI Hardware Engineer / Lab Copilot**. All agents are peers in a flat organization. Capability level describes the expertise they emulate; it does not create reporting hierarchy.
+This registry defines the virtual specialist network for building and operating the **AI Hardware Engineer / Lab Copilot**. All agents are peers in a flat organization. Capability level describes the expertise they emulate; it does not create reporting hierarchy. Product scope is governed by [`00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md`](00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md): wearables/XR are deep customer and reference domains, while the Lab Copilot is the product.
+
+Registry rows are routing summaries, not complete prompts. Detailed operating behavior lives in the linked domain handbooks and must satisfy [`AGENT_RUNTIME_STANDARD.md`](AGENT_RUNTIME_STANDARD.md). The registry and handbook IDs must remain synchronized.
 
 ## Capability interpretation
 
@@ -52,6 +54,11 @@ For an AI-first company with no conventional team, critical design/review agents
 | EE-17 | **FPGA / RTL Hardware Agent** | L6 / 12–20 yr | FPGA architecture, Verilog/SystemVerilog/VHDL, timing closure | Designs RTL, interfaces, deterministic acquisition/control logic, CDC handling, simulation, assertions, synthesis and timing verification. |
 | EE-18 | **Clock / Timing Agent** | L6 / 15–20 yr | Oscillators, PLLs, jitter, synchronization, timestamping | Owns timing architecture, clock-quality budgets, synchronization, timestamp integrity and timing-failure diagnostics. |
 | EE-19 | **Electrical CAD Library Agent** | L5 / 10–15 yr | Symbol/footprint/3D-model/library QA | Creates and validates symbols, footprints, pin maps, courtyards, manufacturing layers and component metadata; prevents library-originated board defects. |
+| EE-20 | **Biopotential / Electrode Front-End Agent** | L6 / 15–25 yr | EEG/ECG/EMG-class high-impedance differential AFEs, bias, electrodes, protection | Models electrode/source impedance, common mode, input range, noise, leakage, saturation/recovery, safety and motion/RF coupling; produces AFE budgets and validation. |
+| EE-21 | **EDA / Bioimpedance Hardware Agent** | L6 / 12–20 yr | Electrodermal activity and impedance excitation/sensing | Designs excitation, current limits, electrode geometry, synchronous detection, frequency strategy, calibration, artifact controls and user-contact safety. |
+| EE-22 | **Advanced Packaging / SiP Integration Agent** | L6 / 15–25 yr | SiP, package substrate, bare die, IPD, die-to-die integration | Converts area/height goals into die/package architecture, pad maps, passives, power/RF/thermal/test paths, sourcing, yield and qualification requirements. |
+| EE-23 | **Flex / Rigid-Flex & Interconnect Agent** | L6 / 12–20 yr | Flex stack-ups, bend/fatigue, connectors, micro-coax and dense interconnect | Owns flex materials, copper geometry, bend zones, strain relief, impedance, assembly, reliability and testability across moving/miniature interconnects. |
+| EE-24 | **Ultra-Low-Power System Electronics Agent** | L6 / 15–25 yr | State-based energy, leakage, wake architecture and pulse-load behavior | Audits every current path and state, builds measured energy models, finds hidden leakage/back-powering and balances wake latency, retention and observability. |
 
 ---
 
@@ -69,6 +76,8 @@ For an AI-first company with no conventional team, critical design/review agents
 | EMB-08 | **Protocol Analysis Agent** | L6 / 12–20 yr | I2C/SPI/UART/CAN/USB protocol diagnostics | Correlates logic traces with firmware/design intent, detects timing/contention/format errors and generates protocol-specific experiments. |
 | EMB-09 | **Device Communications/API Agent** | L5 / 8–15 yr | Device-host protocols, RPC, telemetry schemas | Designs robust host/device interfaces, framing, schema/versioning, command safety, telemetry and remote diagnostics. |
 | EMB-10 | **Test Fixture Firmware Agent** | L5 / 8–15 yr | Fixtures, boundary control, production/validation firmware | Builds fixture controllers and deterministic interfaces for automated board test and characterization. |
+| EMB-11 | **Sensor Acquisition & Synchronization Firmware Agent** | L6 / 12–20 yr | Multi-rate acquisition, timestamping, FIFO/DMA, markers and calibration metadata | Designs time-consistent acquisition and proves latency/jitter/drop behavior across sensors, instruments, firmware events and host transport. |
+| EMB-12 | **Low-Power Firmware Agent** | L6 / 12–20 yr | MCU/SoC sleep states, wake sources, peripheral gating and energy profiling | Owns the firmware state/current map, wake races, clock/peripheral shutdown, retention, event batching and measured energy regression tests. |
 
 ---
 
@@ -101,6 +110,9 @@ For an AI-first company with no conventional team, critical design/review agents
 | AI-23 | **Engineering Visualization Agent** | L5 / 8–15 yr | 2D/3D technical visualization, waveform plotting | Produces precise board overlays, signal plots, cross-probing UI and visual explanations without hiding uncertainty. |
 | AI-24 | **Data Engineering Agent** | L6 / 10–15 yr | Event/data pipelines, time-series, metadata, lineage | Designs durable ingestion/storage for instrument data, logs, model outputs, experiment metadata and customer evidence. |
 | AI-25 | **Data Science / Product Analytics Agent** | L6 / 10–15 yr | Statistical analysis, product metrics, experiment analytics | Measures diagnosis time, interventions, adoption, false positives, user workflows, ROI and product improvement opportunities. |
+| AI-26 | **Physiological Signal Algorithm Agent** | L6 / Research Specialist | PPG/HR/HRV/respiration/temperature and artifact-aware estimation | Builds signal-quality-aware estimators with raw lineage, ground-truth validation, invalid-data behavior, subgroup analysis and bounded wellness/medical claims. |
+| AI-27 | **Sensor Fusion / Context Modeling Agent** | L6 / research+production | Multi-sensor state estimation and quality-aware context | Fuses motion, optical, temperature, device and environment state with synchronized uncertainty; proves contribution through ablations and failure cases. |
+| AI-28 | **Edge AI / TinyML Agent** | L6 / 10–15 yr | MCU/NPU inference, quantization, memory/latency/energy optimization | Ports and verifies models under flash/RAM/latency/energy limits while preserving numerical equivalence, confidence and safe fallback. |
 
 ---
 
@@ -120,6 +132,26 @@ For an AI-first company with no conventional team, critical design/review agents
 | ME-10 | **Sealing / Environmental Agent** | L6 / 12–20 yr | IP sealing, gaskets, vents, adhesives, contamination | Designs environmental sealing and test strategy for moisture, dust, sweat, chemicals and pressure effects. |
 | ME-11 | **Adhesives / Encapsulation Agent** | L5 / 10–15 yr | PSA, epoxy, silicone, potting/resin, bonding processes | Selects bonding/encapsulation systems and defines dispense, cure, rework, compatibility and reliability testing. |
 | ME-12 | **Robotics / Manipulation Agent** | L6 / 12–20 yr | Robotic probing, motion planning, machine vision integration | Future-facing agent for automated probe positioning, fixtures and safe physical manipulation; initially designs interfaces for human-guided execution. |
+| ME-13 | **Skin Interface / Contact Mechanics Agent** | L6 / Research Specialist | Compliant contact, pressure/friction, body variation and sensor coupling | Defines force/pressure/geometry/material windows, maps motion and user variation to signal/comfort, and verifies with pressure/force and wear studies. |
+| ME-14 | **Miniaturization / Packaging Architecture Agent** | L6 / 15–25 yr | 3D volume/height architecture for compact electronics | Builds volume and stack budgets, evaluates rigid/flex/SiP options, assembly access, thermal/RF consequences and whether custom integration truly reduces system size. |
+
+---
+
+# E2. XR, AR, VR and spatial-computing agents
+
+Detailed dossiers: [`12_XR_AR_VR_SPATIAL_COMPUTING.md`](12_XR_AR_VR_SPATIAL_COMPUTING.md).
+
+| ID | Agent | Capability / experience | Exact specialization | Job description / outputs |
+|---|---|---|---|---|
+| XR-01 | **XR / AR / VR Systems Engineering Agent** | L6 / 15–25 yr | End-to-end spatial/wearable system architecture | Owns task, coordinate-frame, latency/error/power, platform, privacy and custom-vs-commercial architecture for optional hands-free interfaces. |
+| XR-02 | **Display Optics, Waveguide & Visual-Systems Agent** | L6 / Research Specialist, 15–25 yr | Displays, waveguides/combiners, eye box, FOV, MTF, visual comfort | Defines optical requirements, architecture, tolerances, calibration, safety interfaces and metrology for readable, accurate overlays. |
+| XR-03 | **Spatial Tracking, SLAM & Calibration Agent** | L6 / Research Specialist, 12–20 yr | Visual-inertial tracking, frame transforms, calibration and uncertainty | Maintains board/camera/head/display/world transforms, drift/loss handling and task-specific spatial error bounds. |
+| XR-04 | **Spatial Interaction, Voice, Gaze & HCI Agent** | L6 / Research Specialist, 12–20 yr | Multimodal hands-free interaction and human error | Maps actions to voice/gaze/gesture/touch controls, designs confirmation/fallback/accessibility and measures attention, workload and mistakes. |
+| XR-05 | **Head-Worn Camera, Sensor & Edge-Hardware Agent** | L6 / 15–25 yr | Compact camera/IMU/audio/compute/power/RF hardware | Converts PCB/task detail into camera and sensor requirements, synchronization, bandwidth, power/thermal, privacy and calibration-retention architecture. |
+| XR-06 | **XR Runtime, Rendering & Platform Integration Agent** | L6 / 10–18 yr | Real-time rendering, OpenXR/platform SDKs, spatial anchors | Builds portable spatial clients with pose-time alignment, device capability negotiation, secure streaming, failure recovery and automated testing. |
+| XR-07 | **Head-Worn Ergonomics, Visual Comfort & Wearability Agent** | L6 / Research Specialist, 12–20 yr | Anthropometry, fit, mass/pressure, heat, vision and PPE | Proves that hands-free benefit survives real users, duration, prescription/PPE constraints, hygiene, comfort and calibration shift. |
+| XR-08 | **Industrial AR Workflow & Remote-Collaboration Agent** | L6 / 12–20 yr | Guided work, remote assist, field/assembly workflows and ROI | Converts lab/field work into auditable spatial workflows, enterprise integrations, exception handling, adoption and proof-of-value metrics. |
+| XR-09 | **XR Metrology, Verification & Reliability Agent** | L6 / 15–25 yr | Spatial/display/latency metrology and calibration reliability | Builds ground-truth methods, uncertainty budgets and stress/user/unit validation for tracking, overlay, latency, relocalization and claims. |
 
 ---
 
@@ -139,6 +171,8 @@ For an AI-first company with no conventional team, critical design/review agents
 | TEST-10 | **Quality Engineering Agent** | L6 / 15–20 yr | Quality systems, defect metrics, CAPA, control plans | Owns quality metrics, NCR/CAPA logic, design/manufacturing quality gates and evidence completeness. |
 | TEST-11 | **Production Test Agent** | L6 / 12–20 yr | ICT/FCT/EOL/fixture strategy, test coverage | Designs production test coverage, limits, fixtures, takt-time considerations, guard bands and correlation to engineering validation. |
 | TEST-12 | **Software QA / Verification Agent** | L6 / 10–15 yr | Unit/integration/system/agent-tool testing | Builds software test strategy including hardware mocks, deterministic tool tests, regression suites and failure injection. |
+| TEST-13 | **Wearable Sensor System Validation Agent** | L6 / Research Specialist | End-to-end body-sensor/reference validation | Validates raw signal through user metric across contact, motion, environment, population and device variation using synchronized reference methods. |
+| TEST-14 | **Wearability / User Reliability Agent** | L6 / 12–20 yr | Long-duration fit, comfort, cleaning and real-use durability | Tests don/doff, retention, pressure, sweat, sleep/exercise, hygiene, user variation and signal/reliability consequences over realistic wear. |
 
 ---
 
@@ -156,6 +190,9 @@ For an AI-first company with no conventional team, critical design/review agents
 | MFG-08 | **Cost Engineering Agent** | L6 / 10–15 yr | Should-cost, BOM/tooling/assembly economics | Builds should-cost models, identifies dominant cost drivers and quantifies design-to-cost alternatives. |
 | MFG-09 | **Packaging & Logistics Agent** | L5 / 8–15 yr | Shipping protection, ESD, battery logistics, labeling | Designs shipping/handling constraints, packaging qualification and logistics requirements. |
 | MFG-10 | **Manufacturing Data / Yield Agent** | L5 / 8–15 yr | SPC, yield analytics, defect pareto | Analyzes production measurements, process capability, excursions, station correlation and yield-improvement experiments. |
+| MFG-11 | **Micro-Assembly / Wearable Integration Agent** | L6 / 12–20 yr | Precision flex/battery/sensor/adhesive integration | Defines micro-assembly sequence, fixtures, allowable forces, CTQs, inspection and rework for fragile tightly stacked products. |
+| MFG-12 | **Calibration Manufacturing Agent** | L6 / 10–20 yr | Scalable calibration stations, GR&R and coefficient traceability | Converts lab calibration into controlled station hardware/software, reference standards, guard bands, write/verify and station-correlation evidence. |
+| MFG-13 | **Advanced Package / SiP Manufacturing Agent** | L6 / 15–25 yr | Bare-die/package substrate assembly, test, yield and qualification | Owns known-good-die strategy, substrate/assembly DFM, interconnect, mold/underfill, package test, supplier qualification and yield/cost model. |
 
 ---
 
@@ -171,6 +208,11 @@ For an AI-first company with no conventional team, critical design/review agents
 | SCI-06 | **Research Reproducibility Agent** | L6 / research methods | Reproducible analysis, notebooks, provenance | Audits whether scientific claims can be regenerated from source data/code/configuration. |
 | SCI-07 | **Technology Scout Agent** | L6 / broad research depth | Emerging sensors, AI, instruments, EDA, robotics, wearables | Continuously maps relevant new technologies to product opportunities, maturity, evidence and integration cost. |
 | SCI-08 | **Standards Research Agent** | L6 / 12–20 yr | Technical standards discovery and interpretation | Identifies applicable IEC/ISO/IPC/IEEE/USB/Bluetooth/etc. requirements and maps them to design/test obligations. |
+| SCI-09 | **Physiological Modeling Agent** | Research Specialist | Mechanistic cardiovascular/autonomic/thermal/electrodermal modeling | Maps latent physiology through body site, sensor coupling, measured features and estimator to bounded product meaning with explicit confounders. |
+| SCI-10 | **Physiological Algorithm Validation Agent** | Research Specialist / biostatistics | Agreement, classification/calibration and subgroup validation | Designs synchronized reference studies, reports bias/error/data yield and defines permissible claims and invalid-use conditions. |
+| SCI-11 | **Thermal Physiology / Body-Heat Agent** | Research Specialist | Skin/core/ambient/perfusion/device thermal coupling | Builds and validates body-site thermal models, transient/steady tests, confidence limits and ground-truth requirements. |
+| SCI-12 | **Optical / Tissue Interaction Science Agent** | Research Specialist | Absorption/scattering, wavelength, perfusion and optical confounders | Grounds optical geometry and wavelength hypotheses in tissue physics, user variation and experiments. |
+| SCI-13 | **Electrode / Biointerface Science Agent** | Research Specialist | Electrode-skin electrochemistry, impedance, polarization and motion | Provides equivalent-circuit/material/contact models and long-wear validation for biopotential, EDA and bioimpedance systems. |
 
 ---
 
@@ -185,6 +227,9 @@ For an AI-first company with no conventional team, critical design/review agents
 | SEC-05 | **Privacy Engineering Agent** | L6 / 10–15 yr | Data minimization, retention, telemetry/privacy architecture | Defines what customer artifacts leave the machine, retention, redaction, access and privacy-by-design controls. |
 | INFRA-01 | **Cloud / DevOps / SRE Agent** | L6 / 10–15 yr | CI/CD, observability, reliability, infrastructure as code | Operates build/release/infrastructure, service health, logs, metrics, deployment safety and disaster recovery. |
 | INFRA-02 | **Local / Edge Compute Agent** | L6 / 10–15 yr | GPU/CPU/NPU edge inference, local services | Designs high-performance local runtime for camera, retrieval, tool control and private model inference. |
+| SEC-06 | **Embedded Device Security Agent** | L6 / 12–20 yr | Secure boot/update, device identity, debug locking and key provisioning | Designs field/factory trust, signing, anti-rollback, per-device credentials, recovery, revocation and production verification. |
+| SEC-07 | **Wireless / BLE Security Agent** | L6 / 10–15 yr | Pairing/bonding, authorization, ownership transfer and replay resistance | Defines wireless security state machines and adversarial tests for device data/control and service exposure. |
+| INFRA-03 | **Device Telemetry Reliability Agent** | L6 / 10–15 yr | Fleet/time-series ingestion, ordering, schema evolution and observability | Preserves device/session identity, deduplication, late/out-of-order handling, replay/backfill, compatibility and data-quality SLOs. |
 
 ---
 
@@ -215,6 +260,8 @@ For an AI-first company with no conventional team, critical design/review agents
 | REG-01 | **Product Regulatory Agent** | L6 / 12–20 yr | CE/FCC/UKCA/RoHS/REACH/battery/product regulations | Builds market-specific compliance matrix and evidence plan; coordinates with EMC, safety, battery and legal agents. |
 | REG-02 | **AI / Data Regulatory Agent** | L6 / policy+technical depth | AI governance, privacy/data obligations, enterprise policy | Tracks relevant AI/data regulations and maps requirements to product architecture, logging, transparency and contracts. |
 | GOV-01 | **Risk & Governance Agent** | L6 / 12–20 yr | Enterprise/product risk register, controls, auditability | Maintains risk taxonomy, controls, evidence and residual-risk acceptance records across product and company operations. |
+| REG-03 | **Wearable Claims / Medical-Device Boundary Agent** | L6 / regulatory-science depth | Wellness versus medical claims, intended use and evidence pathway | Maps wording/features/markets to regulatory consequences and prevents physiological inferences from outrunning validation. |
+| LEG-05 | **Product Liability / Consumer Risk Agent** | L6 / 12–20 yr equivalent | Foreseeable misuse, warnings, safety evidence and liability workflow | Identifies harm scenarios in agent-controlled tools and physical products, aligns controls/warnings/evidence and escalates to qualified counsel. |
 
 ---
 
@@ -238,6 +285,8 @@ For an AI-first company with no conventional team, critical design/review agents
 ---
 
 # M. Meta-agents needed specifically because the company is AI-native
+
+Detailed dossiers: [`14_META_ORCHESTRATION_AGENTS.md`](14_META_ORCHESTRATION_AGENTS.md).
 
 | ID | Agent | Capability | Exact specialization | Job description / outputs |
 |---|---|---|---|---|
@@ -291,6 +340,8 @@ Do **not** activate every agent for every task. The initial bench-debugging MVP 
 33. DOC-01 Technical Documentation
 34. META-04 Independent Critic
 35. META-05 Evidence & Provenance Auditor
+
+**XR-01 XR/AR/VR Systems Engineering** is deployed as an on-demand interface specialist from day one. It joins only when a task involves hands-free workflow, commercial glasses, spatial UI or a custom-interface gate; it is not an always-running dependency of the bench MVP. XR-02 through XR-09 join when their specific optics, tracking, interaction, hardware, runtime, ergonomics, industrial-workflow or verification expertise is needed.
 
 Everything else joins as the product scope expands.
 

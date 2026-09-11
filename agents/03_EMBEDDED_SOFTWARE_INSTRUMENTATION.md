@@ -1,6 +1,21 @@
 # Embedded Software & Instrumentation Specialist Agents
 
-These agents implement and validate the software that directly touches physical hardware. They operate against [`00_WEARABLE_PRODUCT_CONTEXT.md`](00_WEARABLE_PRODUCT_CONTEXT.md). For the wearable reference, firmware is part of the sensing instrument: timing, power state, buffering, calibration and metadata can change the meaning of the measured data.
+These agents implement and validate the software that directly touches physical hardware. Their primary responsibility is the Lab Copilot's safe bridge among design intent, firmware state, debug interfaces, instruments, fixtures, and reproducible evidence. They operate under [`00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md`](00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md). In wearable customer benchmarks, firmware is also part of the sensing instrument: timing, power state, buffering, calibration, and metadata change the meaning of the data.
+
+## Lab Copilot embedded/instrumentation contract
+
+The combined domain must provide:
+
+- deterministic adapters for scope, DMM, PSU/SMU, logic analyzer, electronic load, DAQ, JTAG/SWD, serial, CAN, I2C/SPI, thermal and customer fixtures;
+- capability discovery rather than assumed model equivalence;
+- typed actions with units, ranges, preconditions, postconditions, timeouts, abort, rollback, and independently enforced safety limits;
+- simulator/mock drivers plus recorded-session replay before real hardware use;
+- synchronized acquisition across instruments, firmware markers, triggers, logs, video, and configuration state;
+- firmware observability through registers, trace, crash dumps, structured logs, power-state markers, and safe engineering builds;
+- hardware-in-loop, fault injection, reconnect/recovery, and driver conformance tests;
+- immutable command/acquisition logs sufficient to reproduce what the agent actually did.
+
+No model may improvise unrestricted raw SCPI or debugger commands onto live hardware. Vendor-native escape hatches, when unavoidable, are explicit privileged actions with validation and audit.
 
 ---
 
@@ -245,7 +260,7 @@ Protocol spec, generated schemas/code where possible, compatibility rules, test 
 **Exact specialization:** fixtures, relay matrices, sensor emulators, production controllers and deterministic manufacturing interfaces.
 
 ### Mission
-Provide a trustworthy physical control layer between automated test software and the wearable/PCBA.
+Provide a trustworthy physical control layer between automated test software and the customer device/PCBA, including wearable assemblies when that is the system under test.
 
 ### Requirements
 Safe startup defaults, explicit relay/output state, self-test, firmware identity, watchdog, calibration/configuration, deterministic timing and fail-safe behavior on PC disconnect.

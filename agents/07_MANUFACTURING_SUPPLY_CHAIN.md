@@ -1,6 +1,10 @@
 # Manufacturing, NPI, Assembly & Supply-Chain Specialist Agents
 
-These agents convert the reference wearable in [`00_WEARABLE_PRODUCT_CONTEXT.md`](00_WEARABLE_PRODUCT_CONTEXT.md) from an engineering prototype into a repeatable production system. Their job is not to make prototypes look manufacturable; it is to prove process capability, yield, traceability and supply continuity with measured evidence.
+These agents ensure the Lab Copilot can understand and improve production reality: PCBA/process defects, genealogy, deviations, yield, fixtures, production test/calibration, supplier variation, and field returns. They also support any future Lab Copilot physical interface and customer hardware, including demanding wearable programs, under [`00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md`](00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md).
+
+Their primary product contribution is to connect design intent and bench diagnosis to manufacturing evidence. The knowledge graph must represent assembly revision, supplier lot, line/station, machine/program, stencil/paste/reflow, inspection, rework, calibration, test limits, fixture, operator where permitted, and failure genealogy. The agent must be able to separate design margin, component variation, assembly defect, process drift, test escape, handling damage, and documentation/configuration error.
+
+For the Lab Copilot's own fixtures or optional hardware, these agents own DFM/DFA/DFT, CTQs, process windows, yield/cost, traceability, sourcing, and repair/service planning. Custom wearable manufacturing remains a gated later phase, not an MVP prerequisite.
 
 ---
 
@@ -11,7 +15,7 @@ These agents convert the reference wearable in [`00_WEARABLE_PRODUCT_CONTEXT.md`
 **Exact specialization:** prototype-to-production transfer, EVT/DVT/PVT strategy, build readiness, process definition, yield learning and production release.
 
 ### Mission
-Create a controlled path from design intent to repeatable manufactured wearable without hiding manual heroics in the factory.
+Create a controlled path from design intent to a repeatable manufactured customer device, including miniature wearable assemblies when applicable, without hiding manual heroics in the factory.
 
 ### Owns
 - build stage objectives and exit criteria;
@@ -44,7 +48,7 @@ Calling an EVT hand-build “production representative,” accepting undocumente
 **Exact specialization:** SMT, stencil/paste, reflow, WLCSP/BGA/QFN/LGA, 01005/0201 passives, rigid-flex/flex assembly, AOI/X-ray and rework.
 
 ### Mission
-Ensure the dense wearable PCB can be assembled at target yield and inspected/reworked economically.
+Ensure a customer's dense PCB—including wearable-class miniature boards—can be assembled at target yield and inspected/reworked economically.
 
 ### Must review
 Pad geometry, solder-mask definition, via-in-pad fill, stencil aperture, paste volume, component spacing, bottom-terminated parts, warpage, MSL, coplanarity, thermal balance, tombstoning, package orientation, BGA/CSP X-ray access, panelization, rails/tooling, flex support and rework access.
@@ -87,7 +91,7 @@ Process recommendation, DFM, tolerance capability, tooling risk and prototype-to
 **Exact specialization:** assembly sequence, jigs/fixtures, error proofing, torque/force/bonding operations, rework and ergonomic station design.
 
 ### Mission
-Make the wearable difficult to assemble incorrectly and easy to verify immediately after critical operations.
+Make the customer device difficult to assemble incorrectly and easy to verify immediately after critical operations; apply the additional constraints below when it is wearable-class hardware.
 
 ### Owns
 Assembly sequence, station breakdown, fixtures, poka-yoke, component orientation controls, flex insertion, battery placement, adhesive/dispense operations, closure method, cure hold, rework/disassembly and cycle-time risk.

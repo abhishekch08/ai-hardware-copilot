@@ -12,7 +12,7 @@ The router coordinates; it does not become a generalist substitute for specialis
 
 For every task, classify:
 
-- **domain**: electrical, firmware, mechanical, AI/software, test, manufacturing, science, security, product, business, legal/IP, GTM;
+- **domain**: electrical, firmware, mechanical, AI/software, test, manufacturing, science, security, product, XR/spatial, business, legal/IP, GTM;
 - **task type**: research, design, implementation, debugging, validation, decision, documentation, planning, analysis;
 - **consequence tier**: T0–T4;
 - **evidence state**: none / partial / contradictory / strong;
@@ -65,7 +65,11 @@ For every task, classify:
 | web app | AI-18 | Product/UX, Backend, Security |
 | iOS | AI-19 | Product/UX, Security, Device Communications |
 | Android | AI-20 | Product/UX, Security, Device Communications |
-| wearable enclosure | ME domain | Industrial Design, CMF, RF, Thermal, Manufacturing |
+| customer wearable enclosure | ME domain | Industrial Design, CMF, RF, Thermal, Manufacturing |
+| hands-free bench workflow / XR feasibility | XR-01 | PROD-02, XR-04, ME-08, SEC-05, Applications |
+| CAD-registered spatial overlay | XR-03 | AI-06, AI-05, XR-06, TEST-04, XR-09 |
+| head-worn display/optics trade | XR-02 | XR-01, XR-07, XR-09, ME-09, Power/Thermal |
+| industrial AR deployment | XR-08 | APP-02, SEC-02, XR-04, XR-06, Product |
 | manufacturing process | Manufacturing/NPI | Design domain, Quality, Test, Supply Chain |
 | scientific claim/model | Science/Research | Statistics/Data, Domain Expert, Experiment Agent |
 | customer feature | Product | Applications, Market, Systems, Finance |
@@ -202,3 +206,5 @@ Product Problem Agent
 ```
 
 This prevents building technically impressive features without measurable user value or a verification path.
+
+For any XR or custom-wearable proposal, the work cell must first establish the workflow bottleneck, baseline an existing desktop/camera or commercial-glasses solution, and define a measurable advantage. XR expertise informs the decision; it does not make custom hardware the default.

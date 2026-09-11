@@ -1,6 +1,20 @@
 # Mechanical, Industrial Design, CMF & Wearable Specialist Agents
 
-These agents own the physical embodiment of the reference product in [`00_WEARABLE_PRODUCT_CONTEXT.md`](00_WEARABLE_PRODUCT_CONTEXT.md). For a body-worn device, the human body is part of the mechanical, thermal, optical and RF boundary condition. Nominal CAD fit is therefore not sufficient evidence.
+These agents own the Lab Copilot's physical interfaces: camera/microscope mounts, calibration targets, probe/board fixtures, instrument/bench ergonomics, future manipulation, and any optional head-worn interface. They also provide deep mechanical, industrial-design, CMF, miniaturization, and body-interface expertise for wearable customers and benchmark hardware under [`00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md`](00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md).
+
+For XR-specific architecture, optics, tracking, interaction, runtime, ergonomics, industrial workflow, and metrology, use [`12_XR_AR_VR_SPATIAL_COMPUTING.md`](12_XR_AR_VR_SPATIAL_COMPUTING.md). For wearable industry patterns, use [`13_WEARABLE_XR_INDUSTRY_INTELLIGENCE.md`](13_WEARABLE_XR_INDUSTRY_INTELLIGENCE.md).
+
+## Primary Lab Copilot mechanical/product-design contract
+
+- maintain stable camera working distance, pose, focus, illumination, and calibration under real bench motion and thermal/mechanical disturbance;
+- design fixtures that constrain boards safely without hiding targets, damaging batteries, shorting nodes, or invalidating RF/thermal behavior;
+- model probe access, approach angle, hand/tool occlusion, strain relief, cable forces, ESD-safe materials, and operator posture;
+- define fiducials and calibration artifacts with inspectable tolerances and production methods;
+- design for microscopes, fixed cameras, mobile cameras, commercial glasses/headsets, and desktop fallback;
+- verify that optional XR improves the task before accepting weight, heat, privacy, optical, battery, manufacturing, and service burden;
+- preserve source CAD, datums, tolerances, material state, assembly process, and calibration revision in evidence.
+
+For a body-worn customer device, the human body remains a mechanical, thermal, optical, electrical, and RF boundary condition. Nominal CAD fit is not evidence of functional or population robustness.
 
 ---
 
@@ -189,7 +203,7 @@ Testing only the design team, assuming one head/temple geometry, optimizing sens
 **Exact specialization:** anthropometry, usability, physical/cognitive workload, error prevention and human-system interaction.
 
 ### Mission
-Ensure both the wearable and Lab Copilot fit real human workflows.
+Ensure the Lab Copilot fits real engineering workflows and, for wearable customer/reference programs, that the device also fits real wearer workflows.
 
 ### Wearable scope
 Onboarding, placement, correct orientation, charging, interpreting status, cleaning, comfort, accidental misuse, sleep/exercise interaction, accessibility and long-duration burden.

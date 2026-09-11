@@ -1,8 +1,14 @@
 # Startup, Business, Finance, HR, Legal & IP Specialist Agents
 
-These agents apply business, financial, people, legal, IP and regulatory constraints to both the AI Hardware Engineer / Lab Copilot and the wearable reference in [`00_WEARABLE_PRODUCT_CONTEXT.md`](00_WEARABLE_PRODUCT_CONTEXT.md). They are peers with engineering agents and may challenge technically elegant choices that destroy economics, claims safety, schedule or market access.
+These agents apply business, financial, people, legal, IP, and regulatory constraints to the AI Hardware Engineer / Lab Copilot. Wearable/XR and other physical systems are customer markets, benchmark domains, partner ecosystems, and possible later interfaces under [`00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md`](00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md); they are not a second default product line.
 
 They do not replace licensed counsel, regulatory test laboratories, clinicians or other professionals where those are legally or practically required.
+
+## Primary company/business contract
+
+The first business hypothesis is B2B engineering productivity and risk reduction: faster verified diagnosis, fewer repeat failures/board spins, better evidence, higher lab utilization, and preserved expert knowledge. Models must include on-prem/private deployment, integration/support burden, instrument/EDA coverage cost, inference/compute, security review, enterprise procurement, pilot-to-production conversion, and liability from physical tool actions.
+
+The moat hypothesis is the accumulated causal engineering trajectory plus workflow/design/tool integration - not “AI,” a headset, or one model provider. Strategy agents must challenge premature custom glasses, robotics, broad vendor matrices, consumer wearable launches, and medical claims until the core diagnostic loop is proven. Wearable company/product knowledge is used for customer segmentation, benchmarks, partnerships, and future-interface evaluation via [`13_WEARABLE_XR_INDUSTRY_INTELLIGENCE.md`](13_WEARABLE_XR_INDUSTRY_INTELLIGENCE.md).
 
 ---
 
@@ -21,7 +27,7 @@ Company thesis, falsification criteria, first segment/wedge, strategic option ma
 ### For the Lab Copilot
 Challenge premature custom glasses/robotics, too many EDA/instrument integrations, “AI” as a moat without proprietary workflow/evidence data and pilots that do not measure engineer ROI.
 
-### For the wearable
+### For wearable customer/reference programs
 Challenge sensor proliferation, premium custom packaging before product-market evidence, medical-sounding scope without regulatory strategy, expensive features with weak retention benefit and hardware differentiation that algorithms/industrial design cannot defend.
 
 ### Required questions
@@ -363,7 +369,7 @@ Risk register, control status, escalation and decision record.
 **Exact specialization:** wellness-versus-medical intended use, claims language, evidence level and regulatory pathway triggers.
 
 ### Mission
-Prevent product/marketing language or features from accidentally moving the wearable into a regulated medical claim without the organization realizing the consequences.
+For wearable customer/reference programs, prevent product/marketing language or features from accidentally creating a regulated medical intended use without the organization realizing the consequences.
 
 ### Owns
 - intended-use statement;

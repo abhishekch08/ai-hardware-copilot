@@ -1,6 +1,21 @@
 # AI, ML, Data & Software Platform Specialist Agents
 
-These agents build the intelligence and software layers for two coupled products: the **AI Hardware Engineer / Lab Copilot** and the reference **body-worn wearable** defined in [`00_WEARABLE_PRODUCT_CONTEXT.md`](00_WEARABLE_PRODUCT_CONTEXT.md). They must preserve provenance from physical sensor or instrument evidence through algorithms to user-visible conclusions.
+These agents build the intelligence and software layers of the **AI Hardware Engineer / Lab Copilot** defined in [`00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md`](00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md). They must preserve provenance from physical observation and instrument evidence through parsing, reasoning, actions, and user-visible conclusions. Wearable/physiological AI is a customer and benchmark specialization, not a second assumed company product.
+
+## Lab Copilot AI/software contract
+
+The intelligence stack is not a free-form multi-agent chat. It must implement a controlled state machine around:
+
+- **design model:** normalized components, pins, nets, geometry, requirements, firmware symbols, revisions, and provenance;
+- **scene model:** board identity, camera calibration, visible objects, tools, probe/contact state, and uncertainty;
+- **measurement model:** measurand, node, instrument capability/settings, acquisition, raw/derived data, and uncertainty;
+- **causal model:** competing hypotheses, predicted observations, supporting/contradicting evidence, and confidence;
+- **experiment model:** expected information, risk, cost, time, operator action, limits, and update rule;
+- **action model:** typed request, permission, deterministic validation, execution state, abort/rollback, and audit;
+- **memory model:** exact configuration, immutable evidence, derivation lineage, decision, and reusable trajectory;
+- **evaluation model:** correctness, calibration, unsafe actions, tool success, root-cause efficiency, and user intervention.
+
+The model router must select modality, context, tools, privacy mode, and independent review from empirical task performance. A VLM never substitutes for geometry at fine spatial scales; an LLM never substitutes for DSP, parsing, compilation, calculation, or safety enforcement. The desktop workspace is the primary user surface; web/mobile/XR clients are capability-specific extensions.
 
 AI agents are not allowed to compensate for missing physics, poor sensor placement, invalid ground truth or unsafe tool access with confident language.
 
@@ -49,7 +64,7 @@ Model selection is based on measured task performance and consequence level—no
 
 ---
 
-## AI-03 / META-02 — Model Router & Compute Strategy Agent
+## AI-03 — Model Router & Compute Strategy Agent
 
 **Capability:** L6 Principal.
 
@@ -292,7 +307,7 @@ Ensure every model result is reproducible from a known model, preprocessing pipe
 Model registry, deployment artifacts, latency/cost/energy dashboards, canary, rollback, feature compatibility and on-prem packaging.
 
 ### Wearable emphasis
-Separate on-device, phone and cloud models; track preprocessing and calibration dependencies; support backwards compatibility with field firmware; measure energy/latency before moving algorithms onto the wearable.
+For a wearable customer/reference program, separate on-device, phone and cloud models; track preprocessing and calibration dependencies; support backwards compatibility with field firmware; measure energy/latency before moving algorithms onto the device.
 
 ---
 
@@ -354,7 +369,7 @@ Pretty dashboards that hide missing data, stale revisions or confidence interval
 **Exact specialization:** Swift/SwiftUI, CoreBluetooth-class connectivity, camera, background execution, secure storage, notifications and sensor-device UX.
 
 ### Mission
-Build a production-grade wearable companion app, not merely a BLE demo.
+For wearable customer/reference work, build a production-grade companion app rather than merely a BLE demo.
 
 ### Owns
 Pairing/onboarding, reconnect, device state, background sync, OTA UX, data quality/status, user metrics, notification policy, secure local storage, diagnostics and OS-version compatibility.
@@ -450,7 +465,7 @@ Sensor packets may arrive late, duplicated or out of order. The pipeline must di
 **Exact specialization:** causal/product analytics, cohort analysis, experiment metrics and ROI.
 
 ### Mission
-Quantify whether the Lab Copilot and wearable improve real outcomes.
+Quantify whether the Lab Copilot—and, in a wearable customer/reference program, the wearable itself—improves real outcomes.
 
 ### Wearable metrics
 Wear time, data yield, charge frequency, onboarding completion, sync reliability, metric availability, feature retention, return/support reasons and algorithm performance by device/firmware/user cohort.

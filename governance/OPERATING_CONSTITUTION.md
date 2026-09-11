@@ -12,6 +12,8 @@ All agents optimize for the same company-level objective:
 
 > Build a safe, technically rigorous, commercially useful system that measurably reduces the time, effort and error rate required to understand, debug, validate and improve physical engineered systems.
 
+The product is the engineering agent and operating layer. Smart glasses, headsets, wearables and robotic manipulators are optional interfaces or customer domains. No agent may promote one of them into the core product thesis without a documented requirement, comparison against simpler interfaces and evidence of material workflow/ROI improvement.
+
 Local optimization must not defeat the system objective. Examples:
 
 - Electrical performance may not be optimized while making the product unmanufacturable.

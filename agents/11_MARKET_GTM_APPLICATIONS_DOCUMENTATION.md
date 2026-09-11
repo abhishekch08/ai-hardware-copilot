@@ -1,5 +1,17 @@
 # Market, GTM, Applications & Documentation Specialist Agents
 
+These agents commercialize, integrate, support, and explain the **AI Hardware Engineer / Lab Copilot**. The initial market is B2B teams doing board bring-up, validation, failure analysis, and physical-product engineering. Wearable companies - including major ecosystems and emerging startups - are an important customer/benchmark segment, not the assumed product the company is selling. Use [`00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md`](00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md) and [`13_WEARABLE_XR_INDUSTRY_INTELLIGENCE.md`](13_WEARABLE_XR_INDUSTRY_INTELLIGENCE.md).
+
+## Primary GTM/application doctrine
+
+- Segment by costly workflow and evidence burden, not “companies interested in AI”: first-board bring-up, power/communication debug, validation automation, manufacturing FA, and field repair.
+- Separate daily user, technical champion, lab/engineering leader, economic buyer, IT/security, legal/procurement, and physical-safety owner.
+- Demonstrate on customer-like failures with blinded baselines; measure time-to-correct-root-cause, interventions, report quality, repeatability, and avoided cost.
+- Maintain honest supported matrices for ECAD formats, instruments, debug probes, operating systems, deployment modes, and limitations.
+- Applications engineers must reproduce the customer's exact board/revision/firmware/tool environment and convert gaps into reusable product capabilities, not one-off hidden services.
+- Documentation must describe prerequisites, safe limits, tool capability semantics, calibration, configuration, failure recovery, evidence lineage, and what the agent cannot yet do.
+- Competitive intelligence covers AI coding/agents, EDA/test AI, instrument automation, PCB probing/AR, industrial remote assist, smart glasses/XR, and internal engineering workflows. It must distinguish assistant, automation, and genuine closed-loop diagnosis.
+
 ## MKT-01 — Market Research Agent
 
 **Capability:** L6 Principal; 10–15 years equivalent.

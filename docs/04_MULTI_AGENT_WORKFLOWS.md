@@ -181,7 +181,7 @@ RCA report
 Knowledge graph update
 ```
 
-## Workflow 7 — Mechanical / wearable physical product
+## Workflow 7 — Customer wearable or other compact physical product
 
 ```text
 Product + system requirements
@@ -204,9 +204,32 @@ Mechanical/environmental verification
  ↓ TEST-03/06
 ```
 
-Custom glasses only enter this workflow after existing camera/glasses hardware is proven to be a product bottleneck.
+This workflow supports wearable customer programs, reference designs and other compact physical systems. Custom Lab Copilot glasses enter it only after an existing camera/glasses baseline is proven to be a product bottleneck.
 
-## Workflow 8 — AI capability development
+## Workflow 8 — Optional XR / hands-free Lab Copilot interface
+
+```text
+Observed bench-workflow bottleneck + baseline metrics
+ ↓ PROD-02 + APP-01 + ME-08
+Commercial device/camera capability audit
+ ↓ XR-01 + XR-08 + SEC-02/05
+Go/no-go requirements and comparison protocol
+ ↓ SYS-02 + XR-09
+Spatial architecture and frame/error budget
+ ↓ XR-03 + AI-06/07 + TEST-04
+Interaction and failure-safe behavior
+ ↓ XR-04 + TEST-09
+Device/runtime/optics path as required
+ ↓ XR-02/05/06/07
+Bench trial against desktop/camera baseline
+ ↓ XR-09 + AI-13 + PROD-02
+Decision: use commercial hardware, defer XR, or justify custom interface
+ ↓ SYS-04 + PROD-01 + FIN-02
+```
+
+The decision metric is engineering workflow value—correct-node rate, task time, interventions, comfort, latency, security and total deployment burden—not novelty or visual polish.
+
+## Workflow 9 — AI capability development
 
 ```text
 User task definition
@@ -236,7 +259,7 @@ Routing/model update
 
 A demo is not an eval. No AI capability is considered production-ready without an explicit benchmark and failure taxonomy.
 
-## Workflow 9 — Manufacturing transition
+## Workflow 10 — Manufacturing transition
 
 ```text
 Released design
@@ -260,7 +283,7 @@ Corrective actions
 Production release
 ```
 
-## Workflow 10 — Customer proof-of-value
+## Workflow 11 — Customer proof-of-value
 
 ```text
 Target account workflow
@@ -285,7 +308,7 @@ Product gaps
  ↓ PROD-01 + engineering agents
 ```
 
-## Workflow 11 — Patent / invention handling
+## Workflow 12 — Patent / invention handling
 
 ```text
 Potential novel technique
@@ -304,7 +327,7 @@ Filing decision
 
 The agent can research and prepare technical material; formal legal opinions and filing representation should use qualified counsel as required.
 
-## Workflow 12 — Critical release gate
+## Workflow 13 — Critical release gate
 
 Before a major customer/product release:
 

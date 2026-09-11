@@ -132,6 +132,7 @@ Cross-domain synthesis
 | Source code | strong code reasoning + compiler/tests |
 | Schematic/PCB image | vision-language + EDA-native structured data whenever possible |
 | Camera/video | CV pipeline + VLM; do not rely on VLM pixel judgment alone for fine geometry |
+| XR/spatial scene | calibrated CV/SLAM/geometry + device pose/time synchronization + XR runtime; language-model interpretation is not a metrology source |
 | Waveforms | numeric DSP/feature extraction + model interpretation |
 | CAD geometry | CAD parser/geometry engine + model synthesis |
 | Large document set | retrieval + long-context synthesis + provenance |
@@ -151,6 +152,10 @@ Cross-domain synthesis
 | Instrument automation | EMB-06/07, Tier 2–3 | API docs, simulators/mocks, safety limits |
 | PCB registration | AI-05/06, Tier 3–4 | CV code, calibration datasets, geometry metrics |
 | Probe tracking | AI-07, Tier 3–4 | video datasets, calibration, safety review |
+| XR workflow/system architecture | XR-01, Tier 3 | user-study evidence, device constraints, security and systems review |
+| Head-worn optics/display | XR-02, Tier 3–4 | optical simulation/metrology, ergonomics and safety review |
+| Spatial tracking/calibration | XR-03, Tier 3–4 | timestamped sensor/camera data, ground truth, TEST-04/XR-09 review |
+| Industrial AR deployment | XR-08, Tier 2–3 | customer workflow evidence, IT/security/platform constraints |
 | Root-cause diagnosis | AI-08 + domain agent, Tier 3–4 | hypothesis table, experiment loop |
 | Next experiment | AI-09 + TEST-09, Tier 3–4 | information-gain/risk model |
 | Web/frontend | AI-18, Tier 2–3 | code tools, tests, design system |

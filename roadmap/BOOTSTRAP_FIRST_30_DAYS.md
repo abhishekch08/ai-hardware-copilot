@@ -13,6 +13,7 @@ The first month should produce evidence that the architecture can ingest a desig
 ### Deliverables
 - Convert registry entries for the initial core into machine-readable configs.
 - Implement prompt composition from constitution + schema + domain handbook + agent contract.
+- Load the authoritative product-mission file for every agent and task-relevant industry intelligence only when needed.
 - Implement task router and consequence-tier classification.
 - Define evidence/configuration data model.
 - Create normalized project manifest for one reference PCB.

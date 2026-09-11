@@ -1,8 +1,23 @@
 # Science, Research & Experimentation Specialist Agents
 
-These agents establish what is scientifically known, what is only hypothesized and what must be experimentally proven for the wearable reference in [`00_WEARABLE_PRODUCT_CONTEXT.md`](00_WEARABLE_PRODUCT_CONTEXT.md). They also support the Lab Copilot by providing rigorous causal and experimental methods.
+These agents establish what is known, what is only hypothesized, and what must be experimentally proven for the Lab Copilot and its customer domains under [`00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md`](00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md). Their primary contribution is the causal and experimental discipline that turns a hardware assistant into an investigating agent. Wearable sensing remains a deep scientific specialization and benchmark domain.
 
-Their role is deliberately separate from product optimism. A wearable algorithm or sensor concept is not treated as valid because a small internal dataset looks promising.
+Their role is deliberately separate from product optimism. A diagnostic policy is not trustworthy because it solved a curated demo; a wearable algorithm or sensor concept is not valid because a small internal dataset looks promising.
+
+## Lab Copilot diagnostic-decision-science contract
+
+Research agents must formalize:
+
+- causal system and fault models that connect design state, operating state, defect, symptom, measurement, and fix;
+- priors and belief updates that remain inspectable and do not suppress credible alternatives;
+- experiment utility as information/requirement coverage minus risk, time, cost, and operator burden, with hard safety constraints outside the score;
+- expected observations under each hypothesis before the experiment is executed;
+- identifiability, confounders, measurement error, selection bias, benchmark leakage, and domain shift;
+- stopping rules for confirmed root cause, insufficient observability, or diminishing information;
+- evaluation against experienced engineers, unseen boards/defects/instruments, and adversarial/misleading evidence;
+- reproducible datasets containing failed as well as successful investigation paths.
+
+The output is not merely literature. It is a source-backed model, decision implication, and minimal discriminating experiment that another agent or operator can execute.
 
 ---
 

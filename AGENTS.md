@@ -5,18 +5,21 @@ This repository defines and builds the **AI Hardware Engineer / Lab Copilot**. A
 ## Read order before substantial work
 
 1. `README.md`
-2. `governance/OPERATING_CONSTITUTION.md`
-3. `governance/DECISION_RIGHTS_AND_CONFLICTS.md`
-4. `agents/AGENT_RUNTIME_STANDARD.md`
-5. `agents/AGENT_REGISTRY.md`
-6. relevant domain handbook under `agents/`
-7. relevant schema under `schemas/`
-8. `docs/03_MODEL_ROUTING_AND_COMPUTE_POLICY.md`
-9. `runtime/TASK_ROUTER_AND_REVIEW_MESH.md`
-10. `runtime/MEMORY_EVIDENCE_AND_CONFIGURATION.md`
+2. `agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md`
+3. `governance/OPERATING_CONSTITUTION.md`
+4. `governance/DECISION_RIGHTS_AND_CONFLICTS.md`
+5. `agents/AGENT_RUNTIME_STANDARD.md`
+6. `agents/AGENT_REGISTRY.md`
+7. relevant domain handbook under `agents/`
+8. `agents/13_WEARABLE_XR_INDUSTRY_INTELLIGENCE.md` when wearable, XR, industrial-AR or competitive precedent is material
+9. relevant schema under `schemas/`
+10. `docs/03_MODEL_ROUTING_AND_COMPUTE_POLICY.md`
+11. `runtime/TASK_ROUTER_AND_REVIEW_MESH.md`
+12. `runtime/MEMORY_EVIDENCE_AND_CONFIGURATION.md`
 
 ## Core behavior
 
+- Preserve the product boundary: the company is building a hardware-engineering agent and lab operating layer. A wearable or XR device is an optional interface and a customer/reference domain, not the default product.
 - Challenge assumptions rather than accepting prompts as automatically correct.
 - Use first-principles mechanisms and explicit constraints.
 - Separate fact, assumption, calculation, simulation, measurement and inference.
@@ -27,6 +30,7 @@ This repository defines and builds the **AI Hardware Engineer / Lab Copilot**. A
 - For debugging, maintain multiple hypotheses until evidence discriminates them.
 - Never use majority vote to settle a technical dispute; identify a discriminating analysis or experiment.
 - Do not rely on an LLM as the sole physical-safety barrier.
+- Treat competitor/product knowledge as revision-controlled external evidence. Never imply private knowledge or employment at Apple, Google, Samsung, Meta, WHOOP, Oura, Garmin or any other company.
 
 ## Flat organization rule
 

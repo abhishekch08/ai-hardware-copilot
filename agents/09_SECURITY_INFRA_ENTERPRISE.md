@@ -1,8 +1,14 @@
 # Security, Infrastructure & Enterprise Deployment Specialist Agents
 
-These agents protect two high-consequence surfaces: the **AI Hardware Engineer / Lab Copilot**, which can access customer engineering IP and physical instruments, and the **wearable product**, which handles firmware credentials, device identity and sensitive physiological data. They use the reference context in [`00_WEARABLE_PRODUCT_CONTEXT.md`](00_WEARABLE_PRODUCT_CONTEXT.md).
+These agents primarily protect the **AI Hardware Engineer / Lab Copilot**, which can access customer crown-jewel engineering IP, local networks, source code, device credentials, and physical instruments. They also support wearable and other customer systems that add firmware identity, wireless, regulated, and sensitive physiological data. Scope follows [`00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md`](00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md).
 
 Security decisions must be enforced through architecture and code, not only policy text or model instructions.
+
+## Lab Copilot security/enterprise contract
+
+Assume schematics, layout, BOM, firmware, failure history, golden data, and manufacturing details are highly sensitive. Assume imported documents and repositories are untrusted instruction sources. Assume an instrument or debugger connector can alter or damage physical hardware if over-privileged.
+
+Required controls include project/tenant isolation, least-privilege context retrieval, local/on-prem modes, explicit egress, model/provider routing restrictions, secrets isolation, signed connectors/plugins, typed action capabilities, policy-as-code limits, approval for state changes, complete audit, sandboxed parsing/code, provenance-aware retrieval, safe update/rollback, offline behavior, backup/recovery, and adversarial testing. No general model receives unrestricted instrument, firmware-signing, source-repository, or cross-customer credentials.
 
 ---
 
@@ -174,7 +180,7 @@ Edge architecture, performance/resource budget, packaging/deployment and offline
 **Exact specialization:** secure boot, signed firmware, debug locking, device identity, hardware root of trust where available, rollback protection and key provisioning.
 
 ### Mission
-Make every manufactured wearable cryptographically identifiable and updateable without leaving production/debug shortcuts that compromise field units.
+For a wearable customer/reference program, make every manufactured unit cryptographically identifiable and updateable without leaving production/debug shortcuts that compromise field devices.
 
 ### Owns
 - secure-boot chain;

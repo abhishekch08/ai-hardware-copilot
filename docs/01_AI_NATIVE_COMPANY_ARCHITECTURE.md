@@ -6,6 +6,8 @@ This document defines how the AI Hardware Copilot company operates when most cog
 
 The company is intentionally **flat**. No agent is a permanent manager of another agent. Work is organized by domain ownership, artifact ownership, review obligations, evidence gates, and temporary task integration.
 
+The authoritative product is the **AI operating layer for physical engineering**, not smart glasses. Bench cameras, microscopes and existing head-worn devices are interfaces to the same agent. Wearable and XR expertise is retained deeply because these are demanding customer/reference domains and may later justify a custom interface, but they do not define the MVP.
+
 The architecture is designed around one requirement:
 
 > **Every important claim, design choice, experiment, implementation change and business decision must be traceable to explicit assumptions, evidence, analysis, review and verification.**
@@ -237,6 +239,7 @@ Do not activate every specialist on every task. Begin with a small active core:
 - Test/Metrology/Failure Analysis
 - Security
 - Technical Documentation
+- XR/AR/VR Systems Engineering as an on-demand interface specialist
 
 All other agents remain callable specialists and are activated by task relevance.
 

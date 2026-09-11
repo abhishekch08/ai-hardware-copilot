@@ -1,8 +1,25 @@
 # Test, Reliability, Safety & Quality Specialist Agents
 
-These agents define how the wearable and Lab Copilot are proven, not merely demonstrated. They use the shared wearable assumptions in [`00_WEARABLE_PRODUCT_CONTEXT.md`](00_WEARABLE_PRODUCT_CONTEXT.md).
+These agents define how the Lab Copilot is proven, not merely demonstrated. The governing scope is [`00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md`](00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md). Wearables supply demanding validation cases, but the primary release question is whether the Copilot safely and reproducibly improves physical-engineering outcomes.
 
 A test result is only meaningful when the exact unit/configuration, stimulus, instrumentation, uncertainty, processing and acceptance criterion are known.
+
+## Lab Copilot verification contract
+
+The test organization must independently evaluate:
+
+- design-ingestion correctness across supported native formats, revisions, hierarchy, optional populations, and malformed/stale sources;
+- board/revision/component/net/probe recognition accuracy and calibrated refusal under glare, occlusion, rotation, blur, tiny features, and tracking loss;
+- instrument capability discovery, command translation, range/limit enforcement, synchronization, timeout, disconnection, replay, and vendor variation;
+- measurement validity: probe loading, grounding, bandwidth, aliasing, trigger, common mode, uncertainty, and configuration identity;
+- causal diagnosis across normal, missing, misleading, and contradictory evidence;
+- experiment efficiency, expected prediction quality, one-variable control, and recovery from a wrong hypothesis;
+- safety/security against overvoltage, current-limit changes, raw-command injection, wrong-node actions, stale overlays, and untrusted documents;
+- evidence/report completeness and regeneration from raw artifacts;
+- enterprise isolation, offline/on-prem behavior, audit, update, and rollback;
+- real-engineer time-to-root-cause, intervention, workload, trust calibration, and avoided repeat failure.
+
+Benchmark defects must span wrong values/populations, opens/shorts/solder defects, power/sequencing, clocks/resets, buses/protocols, firmware regressions, leakage, SI/PI/EMI, sensor configuration, thermal/mechanical intermittency, measurement traps, and configuration mismatches. A plausible answer without causal proof is a failed benchmark.
 
 ---
 

@@ -88,6 +88,12 @@ Activate when task tags require them:
 - Production test
 - Quality/FMEA
 
+### XR / AR / VR specialists available from day one
+
+- **XR-01 XR/AR/VR Systems Engineering** is deployed as the default on-demand owner for hands-free bench-interface feasibility and cross-domain XR architecture.
+- **XR-02 Display Optics**, **XR-03 Spatial Tracking**, **XR-04 Spatial Interaction**, **XR-05 Head-Worn Sensor Hardware**, **XR-06 XR Runtime**, **XR-07 Head-Worn Ergonomics**, **XR-08 Industrial AR Workflow**, and **XR-09 XR Verification** are activated by the specific interface or evidence risk.
+- Their first responsibility is to evaluate commercial hardware and prove workflow value. They do not initiate a custom-glasses program without the Phase 6 evidence gate.
+
 ---
 
 ## 3. On-demand manufacturing and operations specialists
@@ -149,7 +155,7 @@ Activate when task tags require them:
 
 ## 6. Mobile / interface specialists
 
-Deploy iOS and Android agents only when companion/field workflows enter scope. Custom wearable/glasses specialists remain available but are not a prerequisite for the MVP.
+Deploy iOS and Android agents only when companion/field workflows enter scope. XR-01 is callable from day one; the rest of the XR group and custom wearable/glasses specialists are pulled in when a task requires them. None is a prerequisite for the desktop/camera MVP.
 
 ---
 
@@ -187,6 +193,11 @@ Do not call every agent for completeness. More agents can reduce quality by addi
 
 ### Work cell F — Evaluation
 `AI Evaluation + Test/Validation + Domain Experts + Data/Statistics + Security/Safety`
+
+### Work cell G — Optional XR / hands-free interface gate
+`XR-01 + Hardware Workflow Product + XR-03/04/07 as needed + Human Factors + Applications + Security + XR-09`
+
+This cell must compare against the existing desktop/bench-camera baseline and define go/no-go metrics before custom hardware work begins.
 
 ---
 

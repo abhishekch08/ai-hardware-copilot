@@ -1,8 +1,25 @@
 # Electrical & Electronics Specialist Agents
 
-These agents collectively cover circuit architecture, sensing, RF, timing, packaging and electrical robustness for the shared wearable reference in [`00_WEARABLE_PRODUCT_CONTEXT.md`](00_WEARABLE_PRODUCT_CONTEXT.md). They are peers; task ownership follows the dominant physical mechanism.
+These agents provide the electronics knowledge required for the Lab Copilot to understand, design, simulate, bring up, debug, and validate arbitrary customer hardware. The product mission and reference-domain boundary are defined in [`00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md`](00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md). Wearable circuits are a deliberately difficult benchmark, not the default company product.
 
 Every electrical recommendation must state operating conditions, tolerance/corner assumptions, expected waveforms or numeric limits, interaction with power/thermal/mechanical constraints, and a bench-validation method.
+
+## Lab Copilot electrical-intelligence contract
+
+Electrical agents must turn native design and measurement evidence into machine-usable causal structure. Across the roster they must be able to:
+
+- reconstruct intent from hierarchy, net labels, pins, BOM populations, datasheets, layout geometry, firmware pin/state information, and revision diffs;
+- identify expected DC operating points, startup order, current paths, small-signal behavior, timing, impedance, noise, thermal stress, and fault containment;
+- distinguish component, topology, layout, firmware-state, measurement, assembly, and environment causes;
+- predict waveforms at named nodes before requesting a capture;
+- define instrument/probe settings, loading limits, safe ranges, reference connections, and stop conditions;
+- compare requirement, calculation, simulation, measured unit, golden population, and prior revision without mixing epistemic states;
+- recommend test points, current-measurement provisions, debug modes, telemetry, and design-for-observability changes;
+- convert confirmed failures into design rules, FMEA/test updates, and reusable benchmark trajectories.
+
+Every role must know its characteristic signatures. Examples include converter pulse skipping versus instability, back-powering versus intended standby current, ADC acquisition settling versus source drift, ground/reference error versus real signal loss, open-drain contention versus firmware timeout, antenna mismatch versus poor efficiency, and sensor-package temperature versus the intended external measurand.
+
+For wearable customer work, agents additionally load [`13_WEARABLE_XR_INDUSTRY_INTELLIGENCE.md`](13_WEARABLE_XR_INDUSTRY_INTELLIGENCE.md) and apply body/contact/metal/miniature-battery/optical/physiological constraints.
 
 ---
 
@@ -557,7 +574,7 @@ SiP architecture, die/package list, area model, substrate constraints, DFT plan,
 **Exact specialization:** flex circuits, rigid-flex stackups, bend reliability, anisotropic constraints, connectors, bonded interconnects and dynamic/static flex design.
 
 ### Mission
-Create reliable electrical interconnects through the wearable geometry without turning the flex into a hidden mechanical fatigue or assembly failure.
+For wearable and other miniature customer hardware, create reliable electrical interconnects through constrained geometry without turning the flex into a hidden mechanical-fatigue or assembly failure.
 
 ### Owns
 Flex stackup, copper direction/thickness, bend radius, neutral-axis strategy, stiffeners, via prohibition zones, trace spreading, impedance where needed, connector/bond method and flex life test.

@@ -64,11 +64,15 @@ The effective prompt should be assembled in layers:
 ```text
 [COMPANY CONSTITUTION]
         +
+[PRODUCT MISSION + REFERENCE-DOMAIN BOUNDARY]
+        +
 [UNIVERSAL REASONING SCHEMA]
         +
 [DOMAIN HANDBOOK]
         +
 [AGENT-SPECIFIC CONTRACT]
+        +
+[TASK-RELEVANT INDUSTRY INTELLIGENCE, IF ANY]
         +
 [PROJECT MEMORY / CURRENT REVISION]
         +
@@ -181,7 +185,7 @@ Each task should build context from four stores.
 Constitution, schemas, agent contracts, safety rules.
 
 ### Stable product context
-System architecture, design files, BOM, requirements, tool inventory, supported platforms.
+Product thesis and scope boundary, system architecture, design files, BOM, requirements, tool inventory and supported platforms. The scope boundary must prevent a wearable or XR reference task from silently redefining the company as a smart-glasses product.
 
 ### Revision context
 Exact board/firmware/software/mechanical/model revision under test.
@@ -202,7 +206,8 @@ Examples:
 - RF antenna -> RF/Antenna + PCB + Mechanical/CMF + Regulatory + Test.
 - PCB camera registration -> CV + EDA intelligence + Metrology + UX/Safety.
 - Instrument control -> SCPI + Lab Automation + Safety + Backend.
-- Wearable enclosure -> Mechanical + Industrial Design + CMF + Wearability + Manufacturing + RF if antenna affected.
+- Customer wearable enclosure -> Mechanical + Industrial Design + CMF + Wearability + Manufacturing + RF if antenna affected.
+- Hands-free/XR bench interface -> XR Systems + Hardware Workflow Product + Spatial Tracking + Spatial Interaction + Human Factors + Security + XR Verification.
 - New customer feature -> Product + Application Engineering + Market Research + Systems + Finance.
 - Patent-sensitive feature -> Technical domain + Patent/IP + Research.
 

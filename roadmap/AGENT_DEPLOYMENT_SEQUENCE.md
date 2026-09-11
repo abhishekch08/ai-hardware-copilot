@@ -77,6 +77,8 @@ Add:
 - AI-23 Engineering Visualization
 - ME-08 Human Factors
 
+Keep **XR-01 XR/AR/VR Systems Engineering** callable in this phase to review hands-free workflow and commercial-device feasibility. It is an interface reviewer, not a custom-hardware workstream.
+
 ### Exit criteria
 
 - camera is reliably registered to known board revision;
@@ -134,7 +136,10 @@ Add MFG/TEST/quality/supplier agents to support:
 Only after proving a software/camera-based product bottleneck, deploy deeper custom-hardware agents for:
 
 - custom wearable/glasses;
-- optics/display;
+- XR-01 systems architecture and XR-02 optics/display;
+- XR-03 spatial tracking/calibration and XR-04 spatial interaction;
+- XR-05 head-worn sensing hardware and XR-06 runtime/platform integration;
+- XR-07 ergonomics, XR-08 industrial workflow and XR-09 metrology/verification;
 - low-power wearable electronics;
 - custom camera/lighting;
 - industrial design/CMF;
