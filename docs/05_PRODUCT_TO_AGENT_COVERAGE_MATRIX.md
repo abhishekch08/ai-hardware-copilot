@@ -20,7 +20,7 @@ Status values:
 - `BENCHMARKED` — representative evaluation has run;
 - `PHYSICALLY_VALIDATED` — representative bench/customer evidence passes acceptance criteria.
 
-At the current repository stage, the 184 agent records are `CONFIGURED`. All-agent screening, mandatory routing, structured independent analysis, objection/revision iteration, version invalidation, local persistence and fail-closed convergence are `IMPLEMENTED` as an alpha runtime. Domain model execution, evidence semantic validation and physical tool integrations are not yet production implemented or bench validated.
+At the current repository stage, the 184 agent records are `CONFIGURED`. Conference routing/iteration, a reference model gateway, content-addressed evidence, narrow KiCad/BOM/firmware ingestion, seeded diagnostic planning, typed SCPI safety primitives, a durable single-node job API, container packaging and CI are `IMPLEMENTED` as alpha software. None of this implies `PHYSICALLY_VALIDATED`: live-model accuracy, exact instrument models, scene/probe perception and real bench/customer outcomes remain unproved.
 
 ## 1. Core product capability coverage
 
@@ -104,23 +104,22 @@ Wearables and XR are maintained as deep reference/customer domains through [`../
 | Semiconductor evaluation | EE domain expert, EMB-06/07, TEST-02/04/08, AI-10 | datasheet-limit characterization, corner sweeps, automated bench evidence and applications-debug workflows |
 | Industrial commissioning/repair | APP-01/02, XR-08, EMB-06/08, TEST-09, SEC-02 | offline/rugged workflows, legacy buses, remote guidance, safe state changes and service reporting |
 
-## 5. Coverage gaps after the executable alpha
+## 5. Residual gaps after the engineering-runtime alpha
 
 The repository now specifies owners, but written expertise is not deployed capability. The following are implementation gaps, ordered by product risk:
 
-1. **Production model gateway:** implement prompt composition, benchmark-based model/effort routing, structured retries, model diversity, cost controls and prompt/model provenance behind the provider-neutral HTTP contract.
-2. **Evidence/configuration service:** replace identifier registration alone with hashes, immutable raw evidence, derivation lineage, claim-to-source checks and exact board/firmware/instrument/model/calibration identity.
-3. **Contextual retrieval:** deliver current, scoped evidence to each specialist without contaminating independent analysis or crossing revisions.
-4. **Design ingestion:** prove one ECAD path and one firmware repository path end to end before broad format support.
-5. **Instrument conformance:** implement one or two scope families plus bounded PSU/DMM and JTAG/UART with mocks, hardware-in-loop tests and disconnect recovery.
-6. **Causal diagnosis benchmark:** build seeded power/boot/interface faults and compare against experienced-engineer and generic-assistant baselines.
-7. **Scene benchmark:** collect ground-truth board registration, component/pad localization, probe-tip and contact data under glare/occlusion/viewpoint changes.
-8. **Physical safety case:** keep LLM proposals behind deterministic voltage/current/state limits and validate approval/abort/recovery behavior.
-9. **Enterprise runtime:** add durable queue/workers, authorization, tenant isolation, observability, replay, recovery and on-prem update provenance.
-10. **Adversarial conference evaluation:** measure relevance false negatives, correlated hallucination, stale approval, unsupported consensus, prompt injection and objection-resolution failures.
-11. **Customer ROI evidence:** run representative partner cases and measure correct root cause, elapsed/active engineer time, experiments, interventions and report completeness.
-12. **Wearable/XR intelligence refresh:** maintain generation- and date-specific evidence rather than relying on static brand summaries.
-13. **Custom interface decision:** do not begin custom glasses until an existing camera/commercial-device baseline demonstrates a quantified unsolved bottleneck.
+1. **Model benchmarks:** assign real models to standard/deep/maximum profiles from measured domain accuracy, diversity, cost, latency and privacy—not static preference.
+2. **Semantic evidence/retrieval:** prove claim-to-source support and deliver configuration-filtered requirements, datasheets, history, golden units and prior failures without contaminating independent analysis.
+3. **Design intelligence depth:** complete KiCad connectivity/geometry queries and code-to-pin/net links before adding Altium/Cadence breadth.
+4. **Instrument conformance:** qualify exact PSU/DMM/scope models and add JTAG/SWD, UART and logic analysis with malformed-reply, disconnect and safe-recovery tests.
+5. **Causal diagnosis benchmark:** expand beyond the three-hypothesis simulation to seeded power/boot/interface faults and compare against experienced engineers and generic assistants.
+6. **Scene benchmark:** collect ground-truth board registration, component/pad localization, probe-tip and contact data under glare/occlusion/viewpoint changes.
+7. **Physical safety case:** add independent hardware limits/emergency stop and validate wrong-state, wrong-revision, partial-execution, abort and recovery behavior.
+8. **Enterprise runtime:** evolve the authenticated single-node queue into multi-user RBAC/SSO, tenant isolation, encryption, observability, backup/restore and distributed leases.
+9. **Adversarial system evaluation:** measure routing false negatives, correlated hallucination, stale approval, unsupported consensus, prompt injection, evidence poisoning and objection-resolution failures.
+10. **Customer ROI evidence:** run representative partner cases and measure correct root cause, elapsed/active engineer time, experiments, interventions and report completeness.
+11. **Wearable/XR intelligence refresh:** maintain generation- and date-specific evidence rather than relying on static brand summaries.
+12. **Custom interface decision:** do not begin custom glasses until an existing camera/commercial-device baseline demonstrates a quantified unsolved bottleneck.
 
 ## 6. Coverage-change rule
 

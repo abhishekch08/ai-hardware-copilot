@@ -1,0 +1,12 @@
+project_id: demo-power-board
+hardware_revision: REV-A
+firmware_revision: null
+sources:
+  - kind: kicad_schematic
+    path: board.kicad_sch
+  - kind: kicad_pcb
+    path: board.kicad_pcb
+  - kind: bom_csv
+    path: bom.csv
+  - kind: firmware_tree
+    path: firmware

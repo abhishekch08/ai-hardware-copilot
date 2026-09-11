@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Content and configuration addressed evidence record",
+  "type": "object",
+  "required": ["evidence_id", "sha256", "kind", "source_uri", "media_type", "byte_count", "created_at", "configuration", "derived_from", "metadata"],
+  "properties": {
+    "evidence_id": {"type": "string", "pattern": "^evidence://sha256/[0-9a-f]{64}$"},
+    "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "kind": {"type": "string", "minLength": 1},
+    "source_uri": {"type": "string", "minLength": 1},
+    "media_type": {"type": "string", "minLength": 1},
+    "byte_count": {"type": "integer", "minimum": 0},
+    "created_at": {"type": "string", "format": "date-time"},
+    "configuration": {"type": "object"},
+    "derived_from": {"type": "array", "items": {"type": "string"}},
+    "metadata": {"type": "object"}
+  },
+  "additionalProperties": false
+}

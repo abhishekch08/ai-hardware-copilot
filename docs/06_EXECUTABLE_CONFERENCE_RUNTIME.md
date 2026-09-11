@@ -4,7 +4,7 @@
 
 This repository contains an executable alpha of the multi-agent product-design conference. It compiles the 184 canonical specialists into machine-readable configurations, screens every specialist against every proposal version, runs independent analysis for the active work cell, turns disagreement or missing evidence into explicit objections, iterates versioned revisions, and refuses finalization when coverage or evidence checks fail.
 
-The alpha is an **orchestration and evidence-control layer**. It does not make an arbitrary model truthful, does not replace physical testing, and does not yet control lab instruments. The included dry-run provider deliberately produces `insufficient_evidence`; therefore a dry run can prove routing, persistence and fail-closed behavior but can never approve a product.
+The conference remains an **orchestration and decision-control layer**. It does not make an arbitrary model truthful and does not replace physical testing. The repository now also supplies content-addressed evidence, narrow project ingestion, typed instrument-control primitives, diagnostic simulation, an authenticated job service and a reference model gateway. The included dry-run provider deliberately produces `insufficient_evidence`; therefore a dry run can prove routing, persistence and fail-closed behavior but can never approve a product.
 
 No software can guarantee “no hallucinations” or “no errors.” This runtime reduces those risks through independent analysis, registered evidence identifiers, explicit assumptions, typed outputs, objection ownership, revision invalidation, independent critics and deterministic release gates. Consequential claims still require source validation, calculation, simulation, experiment or authorized human review.
 
@@ -40,6 +40,12 @@ flowchart TD
 | Report | `src/ai_hardware_copilot/report.py` | Renders attendance, positions, objections and release checks from structured state. |
 | Policy/config | `config/` | Stores mandatory review rules, capability dependencies, model profiles, tool permission levels and compiled agents. |
 | Contracts | `schemas/conference/` | Defines task, attendance, position, objection, deliberation, synthesis, revision, coverage and decision objects. |
+| Evidence store | `src/ai_hardware_copilot/evidence.py` | Stores immutable blobs and configuration-addressed records, verifies integrity/lineage and records explicit claim assessments. |
+| Model router/gateway | `model_router.py`, `gateway.py` | Selects reasoning profile and validates authenticated backend JSON against the operation schema with prompt/model provenance. |
+| Project ingestion | `project.py` | Registers and indexes a bounded KiCad/BOM/firmware/Git subset with source evidence links. |
+| Diagnostic loop | `diagnosis.py` | Ranks experiments by expected information gain per cost and updates hypothesis probabilities from outcomes. |
+| Instrument boundary | `instruments.py` | Enforces typed capabilities, deterministic limits, exact-action approval and evidence capture around driver execution. |
+| Control plane | `jobs.py`, `service.py` | Provides recoverable SQLite jobs and an authenticated asynchronous HTTP API. |
 
 ## Quick start
 
@@ -101,7 +107,7 @@ Start from `examples/lab_copilot_probe_aware_mvp.yaml`. The key controls are:
 | `proposal` and `proposal_version` | Defines the exact design under discussion. |
 | `physical_action` | Triggers deterministic safety and tool-control review. |
 
-## Model-gateway contract
+## Model-gateway contract and reference implementation
 
 The HTTP adapter sends a JSON object:
 
@@ -114,7 +120,7 @@ The HTTP adapter sends a JSON object:
 
 For deep-analysis calls, the runtime embeds the agent configuration plus the full, SHA-256-identified mission, governance, runtime, reasoning and domain-handbook documents. Relevance screening uses the compact agent configuration to avoid sending all handbooks before the work cell is known. The applicable JSON Schema is embedded in every request.
 
-The gateway owns authentication, model selection, prompt assembly from the supplied canonical documents, token/context management, retries, output-schema validation and model/prompt version logging. It must return one JSON object matching the supplied schema.
+The gateway owns authentication, model selection, prompt assembly from the supplied canonical documents, token/context management, retries, output-schema validation and model/prompt version logging. It must return one JSON object matching the supplied schema. `src/ai_hardware_copilot/gateway.py` implements this contract for an explicitly configured Chat-Completions-compatible HTTPS backend. It verifies instruction-document hashes, separates trusted instructions from untrusted task content, retries one rejected response and attaches route/model/request/prompt metadata. It is a reference single-node gateway; model quality must still be benchmarked.
 
 The gateway must enforce these prompt rules:
 
@@ -155,17 +161,17 @@ runs/CONF-<task-id>/
 
 `state.json` is the current canonical record. `events.ndjson` is the ordered audit trail. `report.md` is derived and must not be treated as the primary state.
 
-## What must be built next
+## Remaining production work
 
-Before production use, add:
+The repository has implemented the narrow software primitives above. Before granting production engineering or actuation authority, add and validate:
 
-1. a real model gateway with benchmark-based model routing, prompt/version registry, cost controls and schema validation;
-2. an evidence service that hashes artifacts, validates revision/configuration identity, resolves citations and checks claim-to-source support;
-3. retrieval over ECAD, firmware, requirements, datasheets, prior failures and golden-unit measurements;
-4. sandboxed deterministic calculation/simulation/code tools;
-5. typed instrument adapters with hardware-enforced voltage/current/state limits, approval and emergency-stop paths;
-6. a durable database/queue/worker deployment with idempotency, authorization, observability and recovery;
-7. adversarial evaluation for routing misses, stale evidence, prompt injection, sycophancy, correlated model error and false consensus;
-8. real bench benchmarks against experienced engineers.
+1. benchmark-based provider/model selection, cost/latency budgets and live-model adversarial evaluations;
+2. semantic claim-to-source checks and configuration-filtered retrieval over requirements, datasheets, issue history, golden units and prior failures;
+3. complete KiCad electrical connectivity/geometry, then explicitly scoped Altium/Cadence importers;
+4. sandboxed calculation, circuit simulation, firmware build/test and code-analysis tools;
+5. exact vendor/model driver conformance, out-of-band current/voltage protection, emergency-stop behavior, serial/JTAG/SWD/logic-analyzer support and real hardware-in-loop tests;
+6. camera calibration, CAD registration, board/revision identification, probe tracking and spatial uncertainty gates;
+7. multi-user RBAC/SSO, secret management, encrypted storage, centralized audit/metrics and distributed worker leasing;
+8. end-to-end seeded-fault and customer benchmarks against experienced engineers, including unsafe-action, false-root-cause and repeatability metrics.
 
-Until those exist and pass representative tests, this runtime is a trustworthy scaffold for structured deliberation—not an autonomous authority to release or actuate hardware.
+Until those pass representative tests, this runtime is a trustworthy scaffold for structured deliberation and shadow-mode experiments—not an autonomous authority to release or actuate hardware.

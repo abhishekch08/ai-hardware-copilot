@@ -29,6 +29,14 @@ class AgentCompilerTests(unittest.TestCase):
                 value = json.loads(path.read_text(encoding="utf-8"))
                 self.assertEqual(value["$schema"], "https://json-schema.org/draft/2020-12/schema")
 
+    def test_runtime_schemas_are_valid_json(self):
+        files = sorted((ROOT / "schemas" / "runtime").glob("*.json"))
+        self.assertGreaterEqual(len(files), 4)
+        for path in files:
+            with self.subTest(path=path.name):
+                value = json.loads(path.read_text(encoding="utf-8"))
+                self.assertEqual(value["$schema"], "https://json-schema.org/draft/2020-12/schema")
+
 
 if __name__ == "__main__":
     unittest.main()

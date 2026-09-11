@@ -6,7 +6,7 @@ Stand up the minimum AI-native engineering organization and prove one closed-loo
 
 The first month should produce evidence that the architecture can ingest a design, understand a board, control a limited lab stack, reason over measurements and produce a correct traceable root-cause report.
 
-**Current checkpoint:** the conference/orchestration slice of Week 1 is implemented as an alpha: all 184 roles compile to validated configurations; deterministic plus semantic relevance screening, independent positions, objection/revision loops, convergence gates and local audit persistence run through the CLI. The model gateway, semantic evidence service and product/instrument integrations below remain work.
+**Current checkpoint:** the software foundation spans parts of Weeks 1–3. All 184 roles compile; conference screening/iteration/fail-closed convergence, model routing/reference gateway, content-addressed evidence, narrow KiCad/BOM/firmware ingestion, typed instrument safety, a seeded closed-loop diagnostic simulation, durable job service, container packaging and CI are implemented and tested. These are alpha capabilities: real instruments, physical perception, live-model benchmarks and bench/customer proof remain unvalidated.
 
 ---
 
@@ -17,12 +17,11 @@ The first month should produce evidence that the architecture can ingest a desig
 - [x] Package constitution + schema + domain handbook + agent contract for the external model gateway.
 - [x] Load the authoritative product-mission file for each active agent; keep optional industry intelligence task-routed.
 - [x] Implement the first task router, consequence tiers, mandatory review rules and dependency expansion.
-- [ ] Define the complete evidence/configuration service. The conference record and registered evidence IDs exist; immutable hashes and semantic claim support remain.
-- Create normalized project manifest for one reference PCB.
-- Parse one ECAD flow: start with **KiCad or Altium**, not both if implementation speed suffers.
-- Import schematic/netlist/BOM/PCB coordinates.
-- Link datasheets and source files.
-- Build a simple knowledge graph: component -> pins -> nets -> PCB locations -> source docs.
+- [x] Implement immutable content/configuration-addressed evidence, derivation lineage, integrity verification and explicit claim assessment records.
+- [x] Create a normalized project manifest and reference KiCad/firmware fixture.
+- [x] Parse a narrow KiCad schematic/PCB subset and CSV BOM; preserve every source as evidence.
+- [x] Index firmware symbols and verify an explicitly supplied Git revision.
+- [ ] Complete schematic pin/net connectivity, requirements/datasheet links and component-pin-net-location-source graph queries.
 
 ### Exit criteria
 An agent can answer, with provenance:
@@ -38,13 +37,13 @@ An agent can answer, with provenance:
 ## Week 2 — Instrument layer and evidence capture
 
 ### Deliverables
-- Support one oscilloscope family.
-- Support one SCPI PSU and one DMM/SMU path.
+- [x] Implement generic typed SCPI PSU, DMM and ASCII-waveform oscilloscope adapters behind test transports.
+- [ ] Qualify one exact oscilloscope, PSU and DMM model on real hardware with conformance fixtures.
 - Support serial logs.
 - Support one JTAG/SWD flow.
-- Typed instrument abstraction with deterministic operating limits.
-- Session metadata capture.
-- Waveform file acquisition and plotting.
+- [x] Typed instrument abstraction with deterministic operating limits and exact-action approval.
+- [x] Session/action/result metadata captured as content-addressed evidence.
+- [x] Bounded ASCII waveform acquisition path; binary blocks and plotting remain.
 - Golden-trace comparison prototype.
 - Desktop UI skeleton for project, board revision, instruments, experiment timeline and evidence.
 
@@ -63,13 +62,13 @@ From software, the system can safely:
 ## Week 3 — Closed-loop debugging intelligence
 
 ### Deliverables
-- Hypothesis object and ranking.
+- [x] Hypothesis objects, Bayesian updates and ranking.
 - Fault-tree generation from design graph.
-- Active experiment planner.
+- [x] Expected-information-gain/cost experiment planner for the seeded benchmark.
 - Protocol/waveform interpretation.
 - Golden-unit/revision comparison.
-- Independent critic/reviewer pass.
-- Root-cause report generator.
+- [x] Independent critic/reviewer conference gates.
+- [ ] Integrate diagnosis state, experiment execution and verified-fix report into one real bench loop.
 
 ### Build a seeded fault bench
 Create known faults such as:

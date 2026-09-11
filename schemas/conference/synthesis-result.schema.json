@@ -11,7 +11,8 @@
     "changed_interfaces": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
     "evidence_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
     "addressed_objection_ids": {"type": "array", "items": {"type": "string"}},
-    "unresolved_objection_ids": {"type": "array", "items": {"type": "string"}}
+    "unresolved_objection_ids": {"type": "array", "items": {"type": "string"}},
+    "model_metadata": {"type": "object"}
   },
   "additionalProperties": false
 }

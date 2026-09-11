@@ -1,0 +1,15 @@
+(kicad_pcb
+  (version 20240108)
+  (generator ai_hardware_copilot_demo)
+  (net 1 "GND")
+  (net 2 "VBAT")
+  (net 3 "1V8_SYS")
+  (net 4 "REG_EN")
+  (footprint "Package_BGA:Texas_S-PVSON-N8"
+    (layer "F.Cu")
+    (at 10 20 90)
+    (property "Reference" "U1")
+    (pad "1" smd rect (at -0.5 -0.5) (size 0.3 0.3) (layers "F.Cu") (net 2 "VBAT"))
+    (pad "2" smd rect (at 0.5 -0.5) (size 0.3 0.3) (layers "F.Cu") (net 3 "1V8_SYS"))
+    (pad "3" smd rect (at -0.5 0.5) (size 0.3 0.3) (layers "F.Cu") (net 4 "REG_EN"))
+    (pad "4" smd rect (at 0.5 0.5) (size 0.3 0.3) (layers "F.Cu") (net 1 "GND"))))

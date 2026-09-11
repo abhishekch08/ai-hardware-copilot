@@ -7,4 +7,6 @@ dist/
 build/
 *.egg-info/
 runs/
-
+data/
+projects/*
+!projects/README.md

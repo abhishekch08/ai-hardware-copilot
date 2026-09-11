@@ -1,0 +1,9 @@
+.git
+__pycache__
+*.pyc
+.pytest_cache
+.coverage
+.venv
+data
+runs
+*.egg-info

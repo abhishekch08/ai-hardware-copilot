@@ -72,6 +72,9 @@ class TaskManifest:
 
     @classmethod
     def from_dict(cls, value: dict[str, Any]) -> "TaskManifest":
+        unknown = set(value) - set(cls.__dataclass_fields__)
+        if unknown:
+            raise ValueError(f"unknown TaskManifest fields: {sorted(unknown)}")
         required = ("task_id", "title", "objective", "description")
         missing = [key for key in required if not str(value.get(key, "")).strip()]
         if missing:
@@ -116,6 +119,7 @@ class AttendanceRecord:
     mandatory: bool
     reasons: list[str] = field(default_factory=list)
     interfaces_affected: list[str] = field(default_factory=list)
+    model_metadata: dict[str, Any] = field(default_factory=dict)
 
 
 @dataclass(slots=True)
@@ -132,6 +136,7 @@ class AgentPosition:
     evidence_refs: list[str] = field(default_factory=list)
     requested_agents: list[str] = field(default_factory=list)
     verification: list[str] = field(default_factory=list)
+    model_metadata: dict[str, Any] = field(default_factory=dict)
 
 
 @dataclass(slots=True)
@@ -163,6 +168,7 @@ class DeliberationContribution:
     evidence_refs: list[str] = field(default_factory=list)
     resolve_objection_ids: list[str] = field(default_factory=list)
     requested_agents: list[str] = field(default_factory=list)
+    model_metadata: dict[str, Any] = field(default_factory=dict)
 
 
 @dataclass(slots=True)
@@ -175,6 +181,7 @@ class SynthesisResult:
     evidence_refs: list[str] = field(default_factory=list)
     addressed_objection_ids: list[str] = field(default_factory=list)
     unresolved_objection_ids: list[str] = field(default_factory=list)
+    model_metadata: dict[str, Any] = field(default_factory=dict)
 
 
 @dataclass(slots=True)

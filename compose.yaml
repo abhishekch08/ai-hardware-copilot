@@ -1,0 +1,24 @@
+services:
+  copilot:
+    build: .
+    restart: unless-stopped
+    environment:
+      COPILOT_API_TOKEN: ${COPILOT_API_TOKEN:?Set COPILOT_API_TOKEN}
+      COPILOT_MODEL_GATEWAY_URL: ${COPILOT_MODEL_GATEWAY_URL:-}
+      COPILOT_MODEL_GATEWAY_API_KEY: ${COPILOT_MODEL_GATEWAY_API_KEY:-}
+    command: ["--provider", "${COPILOT_PROVIDER:-dry-run}"]
+    ports:
+      - "127.0.0.1:${COPILOT_PORT:-8080}:8080"
+    volumes:
+      - copilot-data:/data
+      - ${COPILOT_PROJECTS_PATH:-./projects}:/projects:ro
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+volumes:
+  copilot-data:

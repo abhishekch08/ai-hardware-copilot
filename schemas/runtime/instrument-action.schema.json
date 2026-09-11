@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Typed instrument action",
+  "type": "object",
+  "required": ["instrument_id", "capability", "parameters", "requested_by"],
+  "properties": {
+    "instrument_id": {"type": "string", "minLength": 1},
+    "capability": {"enum": ["identify", "measure_voltage", "measure_current", "capture_waveform", "set_voltage", "set_current_limit", "configure_channel", "configure_trigger", "set_output"]},
+    "parameters": {"type": "object"},
+    "hardware_revision": {"type": ["string", "null"]},
+    "requested_by": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": false
+}

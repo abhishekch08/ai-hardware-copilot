@@ -10,8 +10,8 @@
     "score": {"type": "number", "minimum": 0},
     "mandatory": {"type": "boolean"},
     "reasons": {"type": "array", "items": {"type": "string"}, "minItems": 1},
-    "interfaces_affected": {"type": "array", "items": {"type": "string"}}
+    "interfaces_affected": {"type": "array", "items": {"type": "string"}},
+    "model_metadata": {"type": "object"}
   },
   "additionalProperties": false
 }
-

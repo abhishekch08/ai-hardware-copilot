@@ -23,6 +23,7 @@ from .models import (
     TaskManifest,
     Verdict,
 )
+from .model_router import ModelRoutingPolicy
 
 
 class ReasoningProvider(Protocol):
@@ -212,6 +213,7 @@ class HttpJsonProvider:
         api_key: str | None = None,
         timeout_s: float = 120.0,
         repo_root: str | Path | None = None,
+        model_policy: ModelRoutingPolicy | None = None,
     ):
         if not endpoint.startswith(("https://", "http://localhost", "http://127.0.0.1")):
             raise ValueError("provider endpoint must use HTTPS or be localhost")
@@ -219,6 +221,7 @@ class HttpJsonProvider:
         self.api_key = api_key
         self.timeout_s = timeout_s
         self.repo_root = Path(repo_root).resolve() if repo_root else None
+        self.model_policy = model_policy
         self._document_cache: dict[str, dict[str, str]] = {}
 
     def assess_relevance(
@@ -232,6 +235,7 @@ class HttpJsonProvider:
             "task": asdict(task),
             "deterministic_screen": _jsonable(asdict(deterministic)),
             "required_output_schema": self._output_schema("attendance-record"),
+            "model_route": self._model_route(task, "assess_relevance"),
         })
         # A model may increase relevance, but never erase a deterministic safety net.
         proposed = deterministic.relevance.__class__(value.get("relevance", deterministic.relevance.value))
@@ -250,6 +254,7 @@ class HttpJsonProvider:
             interfaces_affected=sorted(set(
                 deterministic.interfaces_affected + list(value.get("interfaces_affected", []))
             )),
+            model_metadata=self._model_metadata(value, task, "assess_relevance"),
         )
 
     def analyze(
@@ -263,6 +268,7 @@ class HttpJsonProvider:
             "task": asdict(task),
             "shared_context": shared_context,
             "required_output_schema": self._output_schema("agent-position"),
+            "model_route": self._model_route(task, "independent_analysis"),
         })
         if value.get("agent_id") not in (None, agent.agent_id):
             raise ValueError("provider returned a position for the wrong agent")
@@ -282,6 +288,7 @@ class HttpJsonProvider:
             evidence_refs=list(value.get("evidence_refs", [])),
             requested_agents=list(value.get("requested_agents", [])),
             verification=list(value.get("verification", [])),
+            model_metadata=self._model_metadata(value, task, "independent_analysis"),
         )
 
     def deliberate(
@@ -295,6 +302,7 @@ class HttpJsonProvider:
             "task": asdict(task),
             "shared_context": shared_context,
             "required_output_schema": self._output_schema("deliberation-contribution"),
+            "model_route": self._model_route(task, "deliberation"),
         })
         return DeliberationContribution(
             agent_id=agent.agent_id,
@@ -308,6 +316,7 @@ class HttpJsonProvider:
             evidence_refs=list(value.get("evidence_refs", [])),
             resolve_objection_ids=list(value.get("resolve_objection_ids", [])),
             requested_agents=list(value.get("requested_agents", [])),
+            model_metadata=self._model_metadata(value, task, "deliberation"),
         )
 
     def synthesize(
@@ -323,6 +332,7 @@ class HttpJsonProvider:
             "contributions": [asdict(item) for item in contributions],
             "shared_context": shared_context,
             "required_output_schema": self._output_schema("synthesis-result"),
+            "model_route": self._model_route(task, "synthesis"),
         })
         return SynthesisResult(
             proposal_version=task.proposal_version,
@@ -333,6 +343,7 @@ class HttpJsonProvider:
             evidence_refs=list(value.get("evidence_refs", [])),
             addressed_objection_ids=list(value.get("addressed_objection_ids", [])),
             unresolved_objection_ids=list(value.get("unresolved_objection_ids", [])),
+            model_metadata=self._model_metadata(value, task, "synthesis"),
         )
 
     def _post(self, operation: str, payload: dict[str, Any]) -> dict[str, Any]:
@@ -387,6 +398,20 @@ class HttpJsonProvider:
         if not isinstance(value, dict):
             raise ValueError(f"output schema is not an object: {source}")
         return value
+
+    def _model_route(self, task: TaskManifest, operation: str) -> dict[str, Any]:
+        if self.model_policy is None:
+            return {}
+        return self.model_policy.select(task, operation).as_dict()
+
+    def _model_metadata(
+        self, value: dict[str, Any], task: TaskManifest, operation: str
+    ) -> dict[str, Any]:
+        supplied = value.get("_model", {})
+        if not isinstance(supplied, dict):
+            raise ValueError("_model metadata must be an object")
+        # The untrusted gateway response may not overwrite the locally selected route.
+        return {**supplied, "requested_route": self._model_route(task, operation)}
 
 
 def _relevance_rank(value) -> int:

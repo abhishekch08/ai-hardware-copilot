@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: python -m pip install --disable-pip-version-check -e .
+      - run: python scripts/compile_agent_configs.py
+      - run: python -m compileall -q src scripts tests
+      - run: python -m unittest discover -v
+      - run: hardware-copilot validate
+      - run: hardware-copilot model-route --task examples/lab_copilot_probe_aware_mvp.yaml --operation synthesis --active-agents 20
+      - run: hardware-copilot debug-demo --data-root /tmp/copilot-ci --true-hypothesis H_FW
+      - run: hardware-copilot project-ingest --data-root /tmp/copilot-ci --manifest examples/demo_project/project.yaml --project-root examples/demo_project

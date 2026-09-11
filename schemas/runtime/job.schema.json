@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Durable control-plane job",
+  "type": "object",
+  "required": ["job_id", "operation", "status", "payload", "created_at", "updated_at"],
+  "properties": {
+    "job_id": {"type": "string", "pattern": "^JOB-[0-9a-f]{32}$"},
+    "operation": {"enum": ["conference", "project_ingest", "debug_demo", "evidence_text"]},
+    "status": {"enum": ["queued", "running", "succeeded", "failed"]},
+    "payload": {"type": "object"},
+    "result": {"type": ["object", "null"]},
+    "error": {"type": ["string", "null"]},
+    "created_at": {"type": "string", "format": "date-time"},
+    "updated_at": {"type": "string", "format": "date-time"},
+    "idempotency_key": {"type": ["string", "null"]}
+  },
+  "additionalProperties": false
+}

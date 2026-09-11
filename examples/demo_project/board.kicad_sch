@@ -1,0 +1,11 @@
+(kicad_sch
+  (version 20231120)
+  (generator ai_hardware_copilot_demo)
+  (symbol
+    (lib_id "Regulator_Linear:TPS62843")
+    (property "Reference" "U1")
+    (property "Value" "TPS62843")
+    (property "Footprint" "Package_BGA:Texas_S-PVSON-N8"))
+  (global_label "VBAT")
+  (global_label "1V8_SYS")
+  (global_label "REG_EN"))

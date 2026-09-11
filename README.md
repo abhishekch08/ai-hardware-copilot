@@ -75,7 +75,8 @@ The product is successful only when this loop is **measurably faster, safer, mor
 │   ├── 03_MODEL_ROUTING_AND_COMPUTE_POLICY.md
 │   ├── 04_MULTI_AGENT_WORKFLOWS.md
 │   ├── 05_PRODUCT_TO_AGENT_COVERAGE_MATRIX.md
-│   └── 06_EXECUTABLE_CONFERENCE_RUNTIME.md
+│   ├── 06_EXECUTABLE_CONFERENCE_RUNTIME.md
+│   └── 07_ENGINEERING_RUNTIME_SERVICES.md
 ├── conference/                 # deliberation and convergence policy
 ├── config/
 │   ├── agents/                 # 184 generated specialist configs
@@ -83,9 +84,12 @@ The product is successful only when this loop is **measurably faster, safer, mor
 │   ├── capability_graph.yaml
 │   ├── model_profiles.yaml
 │   └── tool_permissions.yaml
-├── src/ai_hardware_copilot/   # executable alpha orchestrator
-├── examples/
+├── src/ai_hardware_copilot/   # conference, evidence, ingestion, diagnosis, tools, APIs
+├── examples/                  # conference tasks and a minimal KiCad/firmware project
 ├── tests/
+├── .github/workflows/ci.yml
+├── Dockerfile
+├── compose.yaml
 ├── runtime/
 │   ├── AGENT_PROMPT_TEMPLATE.md
 │   ├── TASK_ROUTER_AND_REVIEW_MESH.md
@@ -97,7 +101,8 @@ The product is successful only when this loop is **measurably faster, safer, mor
 │   ├── DESIGN_REVIEW_SCHEMA.md
 │   ├── FAILURE_ANALYSIS_SCHEMA.md
 │   ├── DECISION_RECORD_TEMPLATE.md
-│   └── conference/             # machine-readable runtime contracts
+│   ├── conference/             # machine-readable conference contracts
+│   └── runtime/                # evidence/project/instrument/job contracts
 ├── roadmap/
 │   ├── AGENT_DEPLOYMENT_SEQUENCE.md
 │   ├── MVP_BUILD_MAP.md
@@ -128,8 +133,8 @@ Reusable structures for first-principles analysis, design review, experiments, f
 ### Runtime specification
 How agents are instantiated, routed, reviewed, given tools, assigned compute/model difficulty and connected to evidence/configuration memory.
 
-### Executable conference alpha
-Python code and typed contracts that compile the 184 roles, screen every agent, run independent specialist analysis, track objections, iterate versioned revisions, re-screen affected interfaces, persist an audit trail and block finalization unless every convergence gate passes.
+### Executable engineering-runtime alpha
+Python code and typed contracts that compile the 184 roles, screen every agent, run independent specialist analysis, track objections, iterate versioned revisions, re-screen affected interfaces, persist an audit trail and block finalization unless every convergence gate passes. The same package now includes content/configuration-addressed evidence, narrow KiCad/BOM/firmware ingestion, information-gain experiment planning, typed guarded PSU/DMM/scope interfaces, a durable local job queue, authenticated HTTP control plane and a schema-validating model gateway.
 
 ### Build roadmap
 Which agents and product layers to activate first so the project validates the core intelligence loop before investing in any custom physical interface.
@@ -276,31 +281,47 @@ Every completed debugging trajectory should improve future diagnosis, experiment
 
 ---
 
-## 11. Run the conference alpha
+## 11. Run the engineering-runtime alpha
 
 ```bash
 python -m pip install -e .
 python scripts/compile_agent_configs.py
 hardware-copilot validate
 hardware-copilot run --task examples/lab_copilot_probe_aware_mvp.yaml
+hardware-copilot project-ingest \
+  --manifest examples/demo_project/project.yaml \
+  --project-root examples/demo_project \
+  --data-root data
+hardware-copilot debug-demo --data-root data --true-hypothesis H_FW
 ```
 
-The default dry-run provider validates routing, state, persistence and fail-closed behavior. It intentionally cannot approve engineering work. See `docs/06_EXECUTABLE_CONFERENCE_RUNTIME.md` for the model-gateway contract, iteration commands and exact convergence semantics.
+The default dry-run provider validates routing, state, persistence and fail-closed behavior. It intentionally cannot approve engineering work. For the authenticated asynchronous service, evidence API, reference model gateway and container deployment, see `docs/07_ENGINEERING_RUNTIME_SERVICES.md`. See `docs/06_EXECUTABLE_CONFERENCE_RUNTIME.md` for iteration commands and exact convergence semantics.
 
 ---
 
-## 12. What is not yet production implemented
+## 12. Implementation status and remaining boundary
 
-The repository now has an executable orchestration alpha, not a production autonomous engineering authority. The next layers are:
+The repository is now a deployable **single-node engineering-runtime alpha**, not a production autonomous engineering authority.
 
-- a benchmarked model gateway with canonical prompt composition and model/prompt provenance;
-- semantic evidence validation, immutable artifact hashes and configuration-aware retrieval;
-- ECAD, firmware, requirements, datasheet and prior-failure ingestion;
-- deterministic calculation, simulation and code tools;
-- safe typed instrument adapters and hardware-in-loop testing;
-- durable distributed execution, authentication, authorization and observability;
-- adversarial conference benchmarks and real bench/customer validation;
-- the desktop engineering workspace.
+Implemented and tested in software:
+
+- all-agent screening, evidence-gated conference iteration and fail-closed convergence;
+- policy-based model difficulty routing plus an authenticated, schema-validating reference model gateway with prompt/model provenance;
+- immutable content/configuration-addressed evidence, derivation lineage, integrity verification and explicit claim assessments;
+- narrow KiCad schematic/PCB, CSV BOM, firmware-source and Git-revision ingestion into an evidence-linked project graph;
+- Bayesian hypothesis updating and expected-information-gain experiment selection with a seeded excess-current benchmark;
+- typed safety envelopes, exact-action approval and auditable mock/generic SCPI PSU, DMM and oscilloscope adapters;
+- SQLite job recovery/idempotency, authenticated HTTP job API, Docker/Compose packaging and GitHub Actions CI.
+
+Still requiring integration, data or physical validation:
+
+- benchmarked provider/model selection and live provider credentials;
+- semantic claim-to-source adjudication and production retrieval over datasheets, requirements, history and golden units;
+- complete ECAD connectivity/geometry plus Altium/Cadence importers;
+- vendor/model instrument conformance, serial/JTAG/SWD/logic-analyzer tools and real hardware-in-loop safety testing;
+- camera calibration, PCB-to-CAD registration, probe tracking and uncertainty-gated guidance;
+- desktop engineering workspace, multi-user RBAC/SSO, centralized observability and distributed workers;
+- adversarial model/system evaluation and representative bench/customer ROI trials.
 
 No model or multi-agent discussion can guarantee zero hallucinations. Release authority comes from source-backed claims, calculations, simulations, measurements, independent verification and deterministic safety gates—not fluency or agreement.
 
@@ -322,7 +343,8 @@ For a human or AI agent entering this repository:
 10. Use `runtime/MEMORY_EVIDENCE_AND_CONFIGURATION.md` for persistence and provenance.
 11. Read `conference/CONFERENCE_PROTOCOL.md` and `conference/CONVERGENCE_POLICY.md` before running a product conference.
 12. Use `docs/06_EXECUTABLE_CONFERENCE_RUNTIME.md` for setup, commands and provider contracts.
-13. Follow `roadmap/BOOTSTRAP_FIRST_30_DAYS.md` for the remaining implementation sequence.
-14. Use `docs/05_PRODUCT_TO_AGENT_COVERAGE_MATRIX.md` to check ownership and implementation gaps before adding another agent.
+13. Read `docs/07_ENGINEERING_RUNTIME_SERVICES.md` before operating or deploying the service boundary.
+14. Follow `roadmap/BOOTSTRAP_FIRST_30_DAYS.md` for the remaining implementation sequence.
+15. Use `docs/05_PRODUCT_TO_AGENT_COVERAGE_MATRIX.md` to check ownership and implementation gaps before adding another agent.
 
 The goal is not to simulate a large company for its own sake. The goal is to create the **smallest collection of high-quality specialist reasoning loops that can repeatedly build, test and improve the product without losing cross-disciplinary rigor**.
