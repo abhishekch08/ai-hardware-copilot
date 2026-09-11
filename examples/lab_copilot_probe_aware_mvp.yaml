@@ -1,0 +1,70 @@
+task_id: probe-aware-mvp-001
+title: Probe-aware Lab Copilot MVP architecture
+objective: >-
+  Design a safe desktop-first system that imports one ECAD flow, registers a bench-camera
+  view to PCB CAD, guides a human probe, configures supported instruments and iterates
+  toward verified root cause for first-board power and communication faults.
+description: >-
+  New product architecture conference covering schematic and PCB ingestion, firmware and
+  Git context, camera calibration, component/pad/net localization, probe tracking, SCPI
+  oscilloscope/PSU/DMM integration, UART and JTAG/SWD, hypothesis ranking, experiment
+  planning, evidence memory, desktop UI, enterprise security and evaluation. Existing
+  commercial glasses may be assessed as an optional interface; no custom glasses are in
+  the MVP baseline.
+task_type: new_product_design
+risk_tier: T3
+domains:
+  - systems
+  - product
+  - electrical
+  - embedded
+  - ai_software_data
+  - test_quality_safety
+  - security
+interfaces:
+  - pcb
+  - camera
+  - probe
+  - oscilloscope
+  - psu
+  - dmm
+  - uart
+  - jtag
+  - desktop
+  - evidence
+keywords:
+  - schematic
+  - ecad
+  - pcb registration
+  - computer vision
+  - probe tracking
+  - instrument control
+  - power debugging
+  - communication debugging
+  - closed-loop experiment
+excluded_keywords:
+  - custom wearable
+  - custom glasses
+required_agents:
+  - XR-01
+requirements:
+  - Every capture identifies board revision, firmware revision, instrument setup and measured net.
+  - Unsafe or spatially uncertain actions must be blocked outside the language model.
+  - The agent must retain competing hypotheses and predicted observations.
+  - Initial operation must not require custom wearable hardware.
+constraints:
+  - Support one ECAD flow and a narrow instrument set first.
+  - Preserve customer design IP and support an on-prem path.
+  - Human approval is required for unvalidated state-changing hardware actions.
+evidence_refs:
+  - agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+  - roadmap/MVP_BUILD_MAP.md
+  - schemas/ENGINEERING_EXPERIMENT_LOOP.md
+proposal:
+  interface: desktop_with_bench_camera
+  design_ingestion: one_ecad_flow
+  tool_control: typed_vendor_neutral_gateway
+  manipulation: human_guided_probe
+  reasoning: evidence_hypothesis_experiment_loop
+  custom_glasses: excluded_from_mvp
+physical_action: true

@@ -1,0 +1,42 @@
+agent_id: EMB-07
+name: Lab Automation Agent
+capability_level: L6 / 12–20 yr
+exact_specialization: Automated characterization rigs, HIL, Python/LabVIEW/TestStand concepts
+summary: Converts manual validation into automated sequences, fixtures, data capture, metadata, pass/fail
+  logic and regression runs.
+domains:
+- embedded
+activation_keywords:
+- lab
+- automation
+- automated
+- characterization
+- rigs
+- hil
+- python/labview/teststand
+- concepts
+- converts
+- manual
+- validation
+- sequences
+- fixtures
+- data
+- capture
+- metadata
+- pass/fail
+- logic
+- regression
+- runs
+handbook: agents/03_EMBEDDED_SOFTWARE_INSTRUMENTATION.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- compiler_tests
+- debugger
+- instrument_simulator
+can_block: []
+status: configured

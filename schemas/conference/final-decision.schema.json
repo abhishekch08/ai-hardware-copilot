@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Verified conference decision",
+  "type": "object",
+  "required": ["proposal_version", "summary", "accepted_residual_risks", "evidence_refs", "finalized_at"],
+  "properties": {
+    "proposal_version": {"type": "integer", "minimum": 1},
+    "summary": {"type": "string", "minLength": 1},
+    "accepted_residual_risks": {"type": "array", "items": {"type": "string"}},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}},
+    "finalized_at": {"type": "string", "format": "date-time"}
+  },
+  "additionalProperties": false
+}
+

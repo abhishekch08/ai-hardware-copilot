@@ -1,0 +1,44 @@
+agent_id: ME-14
+name: Miniaturization / Packaging Architecture Agent
+capability_level: L6 / 15–25 yr
+exact_specialization: 3D volume/height architecture for compact electronics
+summary: Builds volume and stack budgets, evaluates rigid/flex/SiP options, assembly access, thermal/RF
+  consequences and whether custom integration truly reduces system size.
+domains:
+- mechanical
+activation_keywords:
+- miniaturization
+- packaging
+- architecture
+- volume/height
+- compact
+- electronics
+- volume
+- stack
+- budgets
+- evaluates
+- rigid/flex/sip
+- options
+- assembly
+- access
+- thermal/rf
+- consequences
+- whether
+- custom
+- integration
+- truly
+- reduces
+- size
+handbook: agents/05_MECHANICAL_INDUSTRIAL_WEARABLE.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- cad_read
+- calculation
+- simulation
+- test_evidence
+can_block: []
+status: configured

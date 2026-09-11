@@ -1,0 +1,38 @@
+agent_id: EE-16
+name: Electrical Protection Agent
+capability_level: L6 / 15–20 yr
+exact_specialization: ESD/EFT/surge/reverse polarity/hot plug/protection networks
+summary: Designs protection architecture and validates that protection does not compromise signal/power
+  performance.
+domains:
+- electrical
+activation_keywords:
+- electrical
+- protection
+- esd/eft/surge/reverse
+- polarity/hot
+- plug/protection
+- networks
+- designs
+- architecture
+- validates
+- does
+- not
+- compromise
+- signal/power
+- performance
+handbook: agents/02_ELECTRICAL_ELECTRONICS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- calculator
+- datasheet_retrieval
+- eda_read
+- simulation
+can_block:
+- unsafe electrical action
+- unverified electrical release
+status: configured

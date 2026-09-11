@@ -1,0 +1,41 @@
+agent_id: SCI-09
+name: Physiological Modeling Agent
+capability_level: Research Specialist
+exact_specialization: Mechanistic cardiovascular/autonomic/thermal/electrodermal modeling
+summary: Maps latent physiology through body site, sensor coupling, measured features and estimator to
+  bounded product meaning with explicit confounders.
+domains:
+- science_research
+activation_keywords:
+- physiological
+- modeling
+- mechanistic
+- cardiovascular/autonomic/thermal/electrodermal
+- maps
+- latent
+- physiology
+- through
+- body
+- site
+- sensor
+- coupling
+- measured
+- features
+- estimator
+- to
+- bounded
+- meaning
+- explicit
+- confounders
+handbook: agents/08_SCIENCE_RESEARCH_EXPERIMENTS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+- statistical_analysis
+can_block: []
+status: configured

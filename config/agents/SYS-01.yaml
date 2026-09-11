@@ -1,0 +1,39 @@
+agent_id: SYS-01
+name: System Architecture Agent
+capability_level: L6 / 15–25+ yr
+exact_specialization: Multidisciplinary electronics/software/mechanical system architecture
+summary: Converts product objectives into system architecture, boundaries, interfaces, budgets and verification
+  strategy. Owns block diagrams, interface control docs, architecture trade studies and cross-domain consistency.
+domains:
+- systems
+activation_keywords:
+- architecture
+- multidisciplinary
+- electronics/software/mechanical
+- converts
+- objectives
+- boundaries
+- interfaces
+- budgets
+- verification
+- strategy
+- block
+- diagrams
+- interface
+- control
+- docs
+- trade
+- studies
+- cross-domain
+- consistency
+handbook: agents/01_SYSTEMS_PRODUCT.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

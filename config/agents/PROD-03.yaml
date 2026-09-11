@@ -1,0 +1,39 @@
+agent_id: PROD-03
+name: Product Discovery / Customer Problem Agent
+capability_level: L5 / 8–15 yr
+exact_specialization: Customer interviews, workflow research, problem validation
+summary: Designs discovery interviews, extracts recurring pain, tests willingness-to-pay and separates
+  novelty interest from urgent purchasing need.
+domains:
+- product
+activation_keywords:
+- discovery
+- customer
+- problem
+- interviews
+- workflow
+- research
+- validation
+- designs
+- extracts
+- recurring
+- pain
+- tests
+- willingness-to-pay
+- separates
+- novelty
+- interest
+- urgent
+- purchasing
+- need
+handbook: agents/01_SYSTEMS_PRODUCT.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

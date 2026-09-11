@@ -1,0 +1,42 @@
+agent_id: SCI-05
+name: Human / Wearable Sensing Science Agent
+capability_level: Research Specialist
+exact_specialization: Physiological sensing, motion/contact artifacts, validation
+summary: Supports any wearable/body-sensing direction; defines physiological plausibility, ground truth
+  and study design without overclaiming medical meaning.
+domains:
+- science_research
+activation_keywords:
+- human
+- wearable
+- sensing
+- science
+- physiological
+- motion/contact
+- artifacts
+- validation
+- supports
+- any
+- wearable/body-sensing
+- direction
+- defines
+- plausibility
+- ground
+- truth
+- study
+- without
+- overclaiming
+- medical
+- meaning
+handbook: agents/08_SCIENCE_RESEARCH_EXPERIMENTS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+- statistical_analysis
+can_block: []
+status: configured

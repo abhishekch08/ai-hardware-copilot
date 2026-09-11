@@ -1,0 +1,43 @@
+agent_id: AI-27
+name: Sensor Fusion / Context Modeling Agent
+capability_level: L6 / research+production
+exact_specialization: Multi-sensor state estimation and quality-aware context
+summary: Fuses motion, optical, temperature, device and environment state with synchronized uncertainty;
+  proves contribution through ablations and failure cases.
+domains:
+- ai_software_data
+activation_keywords:
+- sensor
+- fusion
+- context
+- modeling
+- multi-sensor
+- state
+- estimation
+- quality-aware
+- fuses
+- motion
+- optical
+- temperature
+- device
+- environment
+- synchronized
+- uncertainty
+- proves
+- contribution
+- through
+- ablations
+- failure
+- cases
+handbook: agents/04_AI_ML_DATA.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- code_execution
+- evaluation_harness
+can_block: []
+status: configured

@@ -1,0 +1,35 @@
+agent_id: APP-02
+name: Solutions Architecture Agent
+capability_level: L6 / 12–20 yr
+exact_specialization: Enterprise deployment and technical solution design
+summary: Designs customer-specific deployment topology, permissions, instruments, EDA/Git/PLM integrations
+  and evaluation plan.
+domains:
+- applications_solutions
+activation_keywords:
+- solutions
+- architecture
+- enterprise
+- deployment
+- technical
+- solution
+- designs
+- customer-specific
+- topology
+- permissions
+- instruments
+- eda/git/plm
+- integrations
+- evaluation
+- plan
+handbook: agents/11_MARKET_GTM_APPLICATIONS_DOCUMENTATION.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

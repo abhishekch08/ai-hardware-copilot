@@ -1,0 +1,35 @@
+agent_id: MKT-04
+name: Brand / Product Marketing Agent
+capability_level: L5 / 8–15 yr
+exact_specialization: Positioning, messaging, category creation
+summary: Defines category language, audience-specific messaging and differentiation while staying consistent
+  with proven capability.
+domains:
+- market_marketing
+activation_keywords:
+- brand
+- marketing
+- positioning
+- messaging
+- category
+- creation
+- defines
+- language
+- audience-specific
+- differentiation
+- while
+- staying
+- consistent
+- proven
+- capability
+handbook: agents/11_MARKET_GTM_APPLICATIONS_DOCUMENTATION.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

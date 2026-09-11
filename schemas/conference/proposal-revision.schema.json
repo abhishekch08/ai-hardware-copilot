@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Proposal revision and impact declaration",
+  "type": "object",
+  "required": ["from_version", "to_version", "changes", "changed_interfaces", "evidence_refs", "reason"],
+  "properties": {
+    "from_version": {"type": "integer", "minimum": 1},
+    "to_version": {"type": "integer", "minimum": 2},
+    "changes": {"type": "object", "minProperties": 1},
+    "changed_interfaces": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "reason": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": false
+}
+

@@ -1,0 +1,42 @@
+agent_id: LEG-01
+name: Commercial Legal Operations Agent
+capability_level: L6 / 12–20 yr equivalent
+exact_specialization: SaaS/enterprise contracts, NDAs, procurement terms
+summary: Reviews commercial terms, flags liability/IP/data/security issues and prepares issues for licensed
+  counsel; does not impersonate licensed counsel where required.
+domains:
+- legal_ip
+activation_keywords:
+- commercial
+- legal
+- operations
+- saas/enterprise
+- contracts
+- ndas
+- procurement
+- terms
+- reviews
+- flags
+- liability/ip/data/security
+- issues
+- prepares
+- licensed
+- counsel
+- does
+- not
+- impersonate
+- where
+- required
+handbook: agents/10_BUSINESS_FINANCE_HR_LEGAL_IP.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_legal_sources
+- patent_search
+- evidence_audit
+can_block:
+- unsupported legal or IP conclusion
+status: configured

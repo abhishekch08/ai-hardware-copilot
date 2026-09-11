@@ -1,0 +1,44 @@
+agent_id: LEG-02
+name: Patent / IP Strategy Agent
+capability_level: L6 / patent engineering depth
+exact_specialization: Invention mining, prior-art landscape, claim-support documentation
+summary: Identifies potentially patentable technical differentiators, maintains invention records, searches
+  prior art and prepares technical material for patent counsel.
+domains:
+- legal_ip
+activation_keywords:
+- patent
+- ip
+- strategy
+- invention
+- mining
+- prior-art
+- landscape
+- claim-support
+- documentation
+- identifies
+- potentially
+- patentable
+- technical
+- differentiators
+- maintains
+- records
+- searches
+- prior
+- art
+- prepares
+- material
+- counsel
+handbook: agents/10_BUSINESS_FINANCE_HR_LEGAL_IP.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_legal_sources
+- patent_search
+- evidence_audit
+can_block:
+- unsupported legal or IP conclusion
+status: configured

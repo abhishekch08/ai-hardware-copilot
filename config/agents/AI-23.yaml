@@ -1,0 +1,38 @@
+agent_id: AI-23
+name: Engineering Visualization Agent
+capability_level: L5 / 8–15 yr
+exact_specialization: 2D/3D technical visualization, waveform plotting
+summary: Produces precise board overlays, signal plots, cross-probing UI and visual explanations without
+  hiding uncertainty.
+domains:
+- ai_software_data
+activation_keywords:
+- visualization
+- d/3d
+- technical
+- waveform
+- plotting
+- precise
+- board
+- overlays
+- signal
+- plots
+- cross-probing
+- ui
+- visual
+- explanations
+- without
+- hiding
+- uncertainty
+handbook: agents/04_AI_ML_DATA.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- code_execution
+- evaluation_harness
+can_block: []
+status: configured

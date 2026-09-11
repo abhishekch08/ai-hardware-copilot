@@ -1,0 +1,38 @@
+agent_id: SCI-01
+name: Scientific Research Agent
+capability_level: Research Specialist
+exact_specialization: Primary literature synthesis across relevant physics/engineering
+summary: Searches and critically synthesizes papers/standards, separates consensus from speculation and
+  produces source-backed research briefs.
+domains:
+- science_research
+activation_keywords:
+- scientific
+- research
+- primary
+- literature
+- synthesis
+- across
+- relevant
+- physics/engineering
+- searches
+- critically
+- synthesizes
+- papers/standards
+- separates
+- consensus
+- speculation
+- source-backed
+- briefs
+handbook: agents/08_SCIENCE_RESEARCH_EXPERIMENTS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+- statistical_analysis
+can_block: []
+status: configured

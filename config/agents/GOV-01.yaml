@@ -1,0 +1,36 @@
+agent_id: GOV-01
+name: Risk & Governance Agent
+capability_level: L6 / 12–20 yr
+exact_specialization: Enterprise/product risk register, controls, auditability
+summary: Maintains risk taxonomy, controls, evidence and residual-risk acceptance records across product
+  and company operations.
+domains:
+- governance
+activation_keywords:
+- risk
+- governance
+- enterprise/product
+- register
+- controls
+- auditability
+- maintains
+- taxonomy
+- evidence
+- residual-risk
+- acceptance
+- records
+- across
+- company
+- operations
+handbook: agents/10_BUSINESS_FINANCE_HR_LEGAL_IP.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block:
+- unaccepted material risk
+status: configured

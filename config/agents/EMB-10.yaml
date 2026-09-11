@@ -1,0 +1,34 @@
+agent_id: EMB-10
+name: Test Fixture Firmware Agent
+capability_level: L5 / 8–15 yr
+exact_specialization: Fixtures, boundary control, production/validation firmware
+summary: Builds fixture controllers and deterministic interfaces for automated board test and characterization.
+domains:
+- embedded
+activation_keywords:
+- test
+- fixture
+- firmware
+- fixtures
+- boundary
+- control
+- production/validation
+- controllers
+- deterministic
+- interfaces
+- automated
+- board
+- characterization
+handbook: agents/03_EMBEDDED_SOFTWARE_INSTRUMENTATION.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- compiler_tests
+- debugger
+- instrument_simulator
+can_block: []
+status: configured

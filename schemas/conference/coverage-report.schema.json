@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Conference completeness and convergence audit",
+  "type": "object",
+  "required": ["passed", "checks", "failures", "warnings"],
+  "properties": {
+    "passed": {"type": "boolean"},
+    "checks": {"type": "object", "additionalProperties": {"type": "boolean"}},
+    "failures": {"type": "array", "items": {"type": "string"}},
+    "warnings": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}
+

@@ -1,0 +1,35 @@
+agent_id: HR-02
+name: Technical Recruiting Agent
+capability_level: L6 / 10–15 yr
+exact_specialization: Deep-tech recruiting and interview design
+summary: Defines future human role scorecards, sourcing profiles, technical interview loops and evidence-based
+  hiring rubrics.
+domains:
+- people
+activation_keywords:
+- technical
+- recruiting
+- deep-tech
+- interview
+- defines
+- future
+- human
+- role
+- scorecards
+- sourcing
+- profiles
+- loops
+- evidence-based
+- hiring
+- rubrics
+handbook: agents/10_BUSINESS_FINANCE_HR_LEGAL_IP.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

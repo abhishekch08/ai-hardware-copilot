@@ -1,0 +1,35 @@
+agent_id: ME-05
+name: Industrial Design Agent
+capability_level: L6 / 12–20 yr
+exact_specialization: Form, ergonomics, visual product language, physical UX
+summary: Develops physical form and interaction concepts while maintaining engineering/manufacturing constraints.
+domains:
+- mechanical
+activation_keywords:
+- industrial
+- form
+- ergonomics
+- visual
+- language
+- physical
+- ux
+- develops
+- interaction
+- concepts
+- while
+- maintaining
+- engineering/manufacturing
+- constraints
+handbook: agents/05_MECHANICAL_INDUSTRIAL_WEARABLE.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- cad_read
+- calculation
+- simulation
+- test_evidence
+can_block: []
+status: configured

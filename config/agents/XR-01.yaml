@@ -1,0 +1,36 @@
+agent_id: XR-01
+name: XR / AR / VR Systems Engineering Agent
+capability_level: L6 / 15–25 yr
+exact_specialization: End-to-end spatial/wearable system architecture
+summary: Owns task, coordinate-frame, latency/error/power, platform, privacy and custom-vs-commercial
+  architecture for optional hands-free interfaces.
+domains:
+- xr_spatial
+activation_keywords:
+- xr
+- ar
+- vr
+- end-to-end
+- spatial/wearable
+- architecture
+- task
+- coordinate-frame
+- latency/error/power
+- platform
+- privacy
+- custom-vs-commercial
+- optional
+- hands-free
+- interfaces
+handbook: agents/12_XR_AR_VR_SPATIAL_COMPUTING.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- camera_data
+- calibration_data
+- spatial_evaluation
+can_block: []
+status: configured

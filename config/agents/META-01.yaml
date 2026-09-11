@@ -1,0 +1,46 @@
+agent_id: META-01
+name: Task Decomposition & Agent Routing Agent
+capability_level: L6
+exact_specialization: Intent parsing, domain routing, dependency graphs
+summary: Converts user/company objectives into bounded work packages, chooses specialist agents and defines
+  owner/reviewer/verifier roles. It must not solve every task itself.
+domains:
+- orchestration
+activation_keywords:
+- task
+- decomposition
+- routing
+- intent
+- parsing
+- domain
+- dependency
+- graphs
+- converts
+- user/company
+- objectives
+- bounded
+- work
+- packages
+- chooses
+- specialist
+- agents
+- defines
+- owner/reviewer/verifier
+- roles
+- it
+- must
+- not
+- solve
+- every
+- itself
+handbook: agents/14_META_ORCHESTRATION_AGENTS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

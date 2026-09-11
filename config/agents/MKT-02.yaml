@@ -1,0 +1,40 @@
+agent_id: MKT-02
+name: Competitive Intelligence Agent
+capability_level: L6 / 10–15 yr
+exact_specialization: Competitor/product/strategy analysis
+summary: Maintains structured competitor map across AI coding, EDA/test AI, AR, remote assist, PCB probing,
+  lab automation and robotics.
+domains:
+- market_marketing
+activation_keywords:
+- competitive
+- intelligence
+- competitor/product/strategy
+- analysis
+- maintains
+- structured
+- competitor
+- map
+- across
+- ai
+- coding
+- eda/test
+- ar
+- remote
+- assist
+- pcb
+- probing
+- lab
+- automation
+- robotics
+handbook: agents/11_MARKET_GTM_APPLICATIONS_DOCUMENTATION.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

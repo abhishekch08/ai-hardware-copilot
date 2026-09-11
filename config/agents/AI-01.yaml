@@ -1,0 +1,41 @@
+agent_id: AI-01
+name: Agent Architecture / LLM Systems Agent
+capability_level: L6 / 10–15+ yr AI systems equivalent
+exact_specialization: Tool-using agents, state, planning, memory, orchestration
+summary: Defines agent runtime, tool contracts, planning loop, context strategy, memory and multi-agent
+  interaction; prevents uncontrolled agent complexity.
+domains:
+- ai_software_data
+activation_keywords:
+- architecture
+- llm
+- tool-using
+- agents
+- state
+- planning
+- memory
+- orchestration
+- defines
+- runtime
+- tool
+- contracts
+- loop
+- context
+- strategy
+- multi-agent
+- interaction
+- prevents
+- uncontrolled
+- complexity
+handbook: agents/04_AI_ML_DATA.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- code_execution
+- evaluation_harness
+can_block: []
+status: configured

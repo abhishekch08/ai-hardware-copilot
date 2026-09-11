@@ -1,0 +1,40 @@
+agent_id: EMB-06
+name: Instrument Control / SCPI Agent
+capability_level: L6 / 12–20 yr
+exact_specialization: VISA/LXI/SCPI/vendor SDK test automation
+summary: Builds vendor-neutral instrument abstraction, capability discovery, safe typed commands, acquisition,
+  synchronization and replayable instrument sessions.
+domains:
+- embedded
+activation_keywords:
+- instrument
+- control
+- scpi
+- visa/lxi/scpi/vendor
+- sdk
+- test
+- automation
+- vendor-neutral
+- abstraction
+- capability
+- discovery
+- safe
+- typed
+- commands
+- acquisition
+- synchronization
+- replayable
+- sessions
+handbook: agents/03_EMBEDDED_SOFTWARE_INSTRUMENTATION.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- compiler_tests
+- debugger
+- instrument_simulator
+can_block: []
+status: configured

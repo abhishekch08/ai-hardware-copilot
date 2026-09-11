@@ -1,0 +1,37 @@
+agent_id: SCI-13
+name: Electrode / Biointerface Science Agent
+capability_level: Research Specialist
+exact_specialization: Electrode-skin electrochemistry, impedance, polarization and motion
+summary: Provides equivalent-circuit/material/contact models and long-wear validation for biopotential,
+  EDA and bioimpedance systems.
+domains:
+- science_research
+activation_keywords:
+- electrode
+- biointerface
+- science
+- electrode-skin
+- electrochemistry
+- impedance
+- polarization
+- motion
+- provides
+- equivalent-circuit/material/contact
+- models
+- long-wear
+- validation
+- biopotential
+- eda
+- bioimpedance
+handbook: agents/08_SCIENCE_RESEARCH_EXPERIMENTS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+- statistical_analysis
+can_block: []
+status: configured

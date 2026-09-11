@@ -1,0 +1,29 @@
+version: 1
+levels:
+  P0: read_only_context
+  P1: research_calculation_simulation
+  P2: create_artifacts
+  P3: modify_repository_or_software_state
+  P4: benign_lab_acquisition
+  P5: change_hardware_operating_state
+  P6: potentially_damaging_or_safety_relevant_action
+requirements:
+  P4:
+    - typed tool contract
+    - instrument identity and settings captured
+  P5:
+    - deterministic limits
+    - preconditions
+    - rollback or safe state
+    - complete audit event
+  P6:
+    - deterministic containment
+    - safety review
+    - explicit authorized approval
+    - abort path
+    - independent verification
+prohibitions:
+  - no language model is the sole safety barrier
+  - no arbitrary instrument command when a typed capability exists
+  - no action against an unknown hardware or firmware revision
+

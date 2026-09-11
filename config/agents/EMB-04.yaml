@@ -1,0 +1,39 @@
+agent_id: EMB-04
+name: Real-Time Systems Agent
+capability_level: L6 / 15–20 yr
+exact_specialization: Scheduling, latency, ISR/DMA/concurrency
+summary: Analyzes deadlines, race conditions, ISR load, DMA, priority inversion, timing determinism and
+  real-time test methodology.
+domains:
+- embedded
+activation_keywords:
+- real-time
+- scheduling
+- latency
+- isr/dma/concurrency
+- analyzes
+- deadlines
+- race
+- conditions
+- isr
+- load
+- dma
+- priority
+- inversion
+- timing
+- determinism
+- test
+- methodology
+handbook: agents/03_EMBEDDED_SOFTWARE_INSTRUMENTATION.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- compiler_tests
+- debugger
+- instrument_simulator
+can_block: []
+status: configured

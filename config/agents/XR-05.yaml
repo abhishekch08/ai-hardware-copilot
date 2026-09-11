@@ -1,0 +1,38 @@
+agent_id: XR-05
+name: Head-Worn Camera, Sensor & Edge-Hardware Agent
+capability_level: L6 / 15–25 yr
+exact_specialization: Compact camera/IMU/audio/compute/power/RF hardware
+summary: Converts PCB/task detail into camera and sensor requirements, synchronization, bandwidth, power/thermal,
+  privacy and calibration-retention architecture.
+domains:
+- xr_spatial
+activation_keywords:
+- head-worn
+- camera
+- sensor
+- edge-hardware
+- compact
+- camera/imu/audio/compute/power/rf
+- hardware
+- converts
+- pcb/task
+- detail
+- requirements
+- synchronization
+- bandwidth
+- power/thermal
+- privacy
+- calibration-retention
+- architecture
+handbook: agents/12_XR_AR_VR_SPATIAL_COMPUTING.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- camera_data
+- calibration_data
+- spatial_evaluation
+can_block: []
+status: configured

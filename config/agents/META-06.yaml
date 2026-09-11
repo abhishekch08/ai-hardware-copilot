@@ -1,0 +1,38 @@
+agent_id: META-06
+name: Agent Performance / Calibration Agent
+capability_level: Research Specialist
+exact_specialization: Per-agent evals, calibration, routing quality
+summary: Measures which agents/models are reliable on which tasks, tracks confidence calibration and updates
+  routing policy from empirical performance.
+domains:
+- orchestration
+activation_keywords:
+- performance
+- calibration
+- per-agent
+- evals
+- routing
+- quality
+- measures
+- which
+- agents/models
+- are
+- reliable
+- 'on'
+- tasks
+- tracks
+- confidence
+- updates
+- policy
+- empirical
+handbook: agents/14_META_ORCHESTRATION_AGENTS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

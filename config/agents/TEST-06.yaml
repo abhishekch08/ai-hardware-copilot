@@ -1,0 +1,41 @@
+agent_id: TEST-06
+name: Reliability Engineering Agent
+capability_level: L6 / 15–25 yr
+exact_specialization: HALT/HASS, life models, accelerated testing, wearout
+summary: Creates reliability models, stress profiles, acceleration assumptions, qualification plans and
+  field-return learning loops.
+domains:
+- test_quality_safety
+activation_keywords:
+- reliability
+- halt/hass
+- life
+- models
+- accelerated
+- testing
+- wearout
+- creates
+- stress
+- profiles
+- acceleration
+- assumptions
+- qualification
+- plans
+- field-return
+- learning
+- loops
+handbook: agents/06_TEST_RELIABILITY_SAFETY_QUALITY.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- instrument_evidence
+- calculation
+- test_database
+can_block:
+- invalid measurement
+- unsafe experiment
+- unverified release
+status: configured

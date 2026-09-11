@@ -1,0 +1,36 @@
+agent_id: REG-01
+name: Product Regulatory Agent
+capability_level: L6 / 12–20 yr
+exact_specialization: CE/FCC/UKCA/RoHS/REACH/battery/product regulations
+summary: Builds market-specific compliance matrix and evidence plan; coordinates with EMC, safety, battery
+  and legal agents.
+domains:
+- regulatory
+activation_keywords:
+- regulatory
+- ce/fcc/ukca/rohs/reach/battery/product
+- regulations
+- market-specific
+- compliance
+- matrix
+- evidence
+- plan
+- coordinates
+- emc
+- safety
+- battery
+- legal
+- agents
+handbook: agents/10_BUSINESS_FINANCE_HR_LEGAL_IP.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_regulatory_sources
+- standards
+- evidence_audit
+can_block:
+- unsupported regulated claim or release
+status: configured

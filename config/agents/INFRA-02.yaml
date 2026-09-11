@@ -1,0 +1,35 @@
+agent_id: INFRA-02
+name: Local / Edge Compute Agent
+capability_level: L6 / 10–15 yr
+exact_specialization: GPU/CPU/NPU edge inference, local services
+summary: Designs high-performance local runtime for camera, retrieval, tool control and private model
+  inference.
+domains:
+- infrastructure
+activation_keywords:
+- local
+- edge
+- compute
+- gpu/cpu/npu
+- inference
+- services
+- designs
+- high-performance
+- runtime
+- camera
+- retrieval
+- tool
+- control
+- private
+- model
+handbook: agents/09_SECURITY_INFRA_ENTERPRISE.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

@@ -1,0 +1,35 @@
+agent_id: SCI-06
+name: Research Reproducibility Agent
+capability_level: L6 / research methods
+exact_specialization: Reproducible analysis, notebooks, provenance
+summary: Audits whether scientific claims can be regenerated from source data/code/configuration.
+domains:
+- science_research
+activation_keywords:
+- research
+- reproducibility
+- reproducible
+- analysis
+- notebooks
+- provenance
+- audits
+- whether
+- scientific
+- claims
+- can
+- be
+- regenerated
+- source
+- data/code/configuration
+handbook: agents/08_SCIENCE_RESEARCH_EXPERIMENTS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+- statistical_analysis
+can_block: []
+status: configured

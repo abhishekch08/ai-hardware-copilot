@@ -1,0 +1,36 @@
+agent_id: MFG-02
+name: PCBA Manufacturing Agent
+capability_level: L6 / 15–20 yr
+exact_specialization: SMT, reflow, stencil, BGA/CSP, inspection
+summary: Reviews PCB/assembly design for SMT capability, solder defects, reflow constraints, inspection
+  and rework.
+domains:
+- manufacturing_supply_chain
+activation_keywords:
+- pcba
+- manufacturing
+- smt
+- reflow
+- stencil
+- bga/csp
+- inspection
+- reviews
+- pcb/assembly
+- capability
+- solder
+- defects
+- constraints
+- rework
+handbook: agents/07_MANUFACTURING_SUPPLY_CHAIN.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- bom
+- process_data
+- supplier_evidence
+can_block:
+- unmanufacturable or uncontrolled production release
+status: configured

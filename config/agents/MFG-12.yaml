@@ -1,0 +1,41 @@
+agent_id: MFG-12
+name: Calibration Manufacturing Agent
+capability_level: L6 / 10–20 yr
+exact_specialization: Scalable calibration stations, GR&R and coefficient traceability
+summary: Converts lab calibration into controlled station hardware/software, reference standards, guard
+  bands, write/verify and station-correlation evidence.
+domains:
+- manufacturing_supply_chain
+activation_keywords:
+- calibration
+- manufacturing
+- scalable
+- stations
+- gr
+- coefficient
+- traceability
+- converts
+- lab
+- controlled
+- station
+- hardware/software
+- reference
+- standards
+- guard
+- bands
+- write/verify
+- station-correlation
+- evidence
+handbook: agents/07_MANUFACTURING_SUPPLY_CHAIN.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- bom
+- process_data
+- supplier_evidence
+can_block:
+- unmanufacturable or uncontrolled production release
+status: configured

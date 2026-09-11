@@ -1,0 +1,41 @@
+agent_id: EE-10
+name: Antenna Engineering Agent
+capability_level: L6 / 15–25 yr
+exact_specialization: Compact wearable/metal-constrained antennas
+summary: Focuses on antenna geometry, ground clearance, detuning, user-body loading, enclosure effects,
+  efficiency/bandwidth and tuning experiments.
+domains:
+- electrical
+activation_keywords:
+- antenna
+- compact
+- wearable/metal-constrained
+- antennas
+- focuses
+- 'on'
+- geometry
+- ground
+- clearance
+- detuning
+- user-body
+- loading
+- enclosure
+- effects
+- efficiency/bandwidth
+- tuning
+- experiments
+handbook: agents/02_ELECTRICAL_ELECTRONICS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- calculator
+- datasheet_retrieval
+- eda_read
+- simulation
+can_block:
+- unsafe electrical action
+- unverified electrical release
+status: configured

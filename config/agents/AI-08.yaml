@@ -1,0 +1,41 @@
+agent_id: AI-08
+name: Scientific Reasoning / Hypothesis Agent
+capability_level: Research Specialist
+exact_specialization: Causal inference, diagnosis, Bayesian reasoning, fault trees
+summary: Maintains competing causal hypotheses, predicts observations, updates belief from evidence and
+  prevents checklist-style debugging.
+domains:
+- ai_software_data
+activation_keywords:
+- scientific
+- reasoning
+- hypothesis
+- causal
+- inference
+- diagnosis
+- bayesian
+- fault
+- trees
+- maintains
+- competing
+- hypotheses
+- predicts
+- observations
+- updates
+- belief
+- evidence
+- prevents
+- checklist-style
+- debugging
+handbook: agents/04_AI_ML_DATA.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- code_execution
+- evaluation_harness
+can_block: []
+status: configured

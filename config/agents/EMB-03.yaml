@@ -1,0 +1,42 @@
+agent_id: EMB-03
+name: Firmware Debug / JTAG Agent
+capability_level: L6 / 12–20 yr
+exact_specialization: SWD/JTAG, GDB, trace, crash analysis, boot issues
+summary: Owns low-level firmware debugging, register/memory inspection, breakpoint/trace workflows, crash
+  dumps and automated debugger interfaces.
+domains:
+- embedded
+activation_keywords:
+- firmware
+- debug
+- jtag
+- swd/jtag
+- gdb
+- trace
+- crash
+- analysis
+- boot
+- issues
+- low-level
+- debugging
+- register/memory
+- inspection
+- breakpoint/trace
+- workflows
+- dumps
+- automated
+- debugger
+- interfaces
+handbook: agents/03_EMBEDDED_SOFTWARE_INSTRUMENTATION.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- compiler_tests
+- debugger
+- instrument_simulator
+can_block: []
+status: configured

@@ -1,0 +1,37 @@
+agent_id: EMB-02
+name: Embedded Driver Agent
+capability_level: L5 / 8–15 yr
+exact_specialization: I2C/SPI/UART/CAN/USB/BLE peripheral drivers
+summary: Writes robust drivers, register abstractions, timeouts, recovery paths, mocks and hardware-in-loop
+  tests.
+domains:
+- embedded
+activation_keywords:
+- embedded
+- driver
+- i2c/spi/uart/can/usb/ble
+- peripheral
+- drivers
+- writes
+- robust
+- register
+- abstractions
+- timeouts
+- recovery
+- paths
+- mocks
+- hardware-in-loop
+- tests
+handbook: agents/03_EMBEDDED_SOFTWARE_INSTRUMENTATION.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- compiler_tests
+- debugger
+- instrument_simulator
+can_block: []
+status: configured

@@ -1,0 +1,43 @@
+agent_id: META-02
+name: Model Router & Difficulty Controller
+capability_level: L6
+exact_specialization: Model selection and reasoning-effort policy
+summary: Chooses fast/cheap vs deep-reasoning vs multimodal vs coding vs research model, sets effort level,
+  context, tools, reviewer/ensemble requirements and escalation thresholds.
+domains:
+- orchestration
+activation_keywords:
+- model
+- router
+- difficulty
+- controller
+- selection
+- reasoning-effort
+- policy
+- chooses
+- fast/cheap
+- vs
+- deep-reasoning
+- multimodal
+- coding
+- research
+- sets
+- effort
+- level
+- context
+- tools
+- reviewer/ensemble
+- requirements
+- escalation
+- thresholds
+handbook: agents/14_META_ORCHESTRATION_AGENTS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

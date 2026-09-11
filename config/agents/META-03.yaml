@@ -1,0 +1,42 @@
+agent_id: META-03
+name: Cross-Domain Synthesis Agent
+capability_level: L6
+exact_specialization: Systems synthesis and conflict integration
+summary: Integrates reviewed domain artifacts into one coherent decision while preserving disagreements
+  and uncertainty; cannot overrule hard specialist evidence without justification.
+domains:
+- orchestration
+activation_keywords:
+- cross-domain
+- synthesis
+- conflict
+- integration
+- integrates
+- reviewed
+- domain
+- artifacts
+- one
+- coherent
+- decision
+- while
+- preserving
+- disagreements
+- uncertainty
+- cannot
+- overrule
+- hard
+- specialist
+- evidence
+- without
+- justification
+handbook: agents/14_META_ORCHESTRATION_AGENTS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

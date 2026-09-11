@@ -1,0 +1,42 @@
+agent_id: AI-28
+name: Edge AI / TinyML Agent
+capability_level: L6 / 10–15 yr
+exact_specialization: MCU/NPU inference, quantization, memory/latency/energy optimization
+summary: Ports and verifies models under flash/RAM/latency/energy limits while preserving numerical equivalence,
+  confidence and safe fallback.
+domains:
+- ai_software_data
+activation_keywords:
+- edge
+- ai
+- tinyml
+- mcu/npu
+- inference
+- quantization
+- memory/latency/energy
+- optimization
+- ports
+- verifies
+- models
+- under
+- flash/ram/latency/energy
+- limits
+- while
+- preserving
+- numerical
+- equivalence
+- confidence
+- safe
+- fallback
+handbook: agents/04_AI_ML_DATA.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- code_execution
+- evaluation_harness
+can_block: []
+status: configured

@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Independent specialist position",
+  "type": "object",
+  "required": ["agent_id", "proposal_version", "verdict", "confidence", "rationale"],
+  "properties": {
+    "agent_id": {"type": "string", "pattern": "^[A-Z]+-[0-9]{2}$"},
+    "proposal_version": {"type": "integer", "minimum": 1},
+    "verdict": {"enum": ["approve", "approve_with_conditions", "object", "insufficient_evidence", "abstain_out_of_scope"]},
+    "confidence": {"type": "number", "minimum": 0, "maximum": 1},
+    "rationale": {"type": "string"},
+    "claims": {"type": "array", "items": {"type": "object"}},
+    "assumptions": {"type": "array", "items": {"type": "string"}},
+    "risks": {"type": "array", "items": {"type": "string"}},
+    "conditions": {"type": "array", "items": {"type": "string"}},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}},
+    "requested_agents": {"type": "array", "items": {"type": "string", "pattern": "^[A-Z]+-[0-9]{2}$"}},
+    "verification": {"type": "array", "items": {"type": "string"}}
+  },
+  "additionalProperties": false
+}
+

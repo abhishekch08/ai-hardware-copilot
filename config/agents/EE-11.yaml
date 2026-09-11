@@ -1,0 +1,42 @@
+agent_id: EE-11
+name: Sensor / Transducer Electronics Agent
+capability_level: L6 / 15–20 yr
+exact_specialization: IMU, optical, temperature, pressure, bio-sensing, microphones, force/strain
+summary: Selects sensors and interfaces, analyzes signal level/noise/placement/cross-sensitivity/calibration
+  and defines sensor validation.
+domains:
+- electrical
+activation_keywords:
+- sensor
+- transducer
+- electronics
+- imu
+- optical
+- temperature
+- pressure
+- bio-sensing
+- microphones
+- force/strain
+- selects
+- sensors
+- interfaces
+- analyzes
+- signal
+- level/noise/placement/cross-sensitivity/calibration
+- defines
+- validation
+handbook: agents/02_ELECTRICAL_ELECTRONICS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- calculator
+- datasheet_retrieval
+- eda_read
+- simulation
+can_block:
+- unsafe electrical action
+- unverified electrical release
+status: configured

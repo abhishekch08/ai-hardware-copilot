@@ -1,0 +1,40 @@
+agent_id: ME-04
+name: Materials Engineering Agent
+capability_level: L6 / 15–20 yr
+exact_specialization: Polymers, metals, elastomers, adhesives, coatings
+summary: Selects materials based on mechanics, thermal, chemical, optical, skin/contact, aging, process
+  and cost constraints.
+domains:
+- mechanical
+activation_keywords:
+- materials
+- polymers
+- metals
+- elastomers
+- adhesives
+- coatings
+- selects
+- based
+- 'on'
+- mechanics
+- thermal
+- chemical
+- optical
+- skin/contact
+- aging
+- process
+- cost
+- constraints
+handbook: agents/05_MECHANICAL_INDUSTRIAL_WEARABLE.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- cad_read
+- calculation
+- simulation
+- test_evidence
+can_block: []
+status: configured

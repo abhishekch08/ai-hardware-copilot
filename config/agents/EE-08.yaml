@@ -1,0 +1,43 @@
+agent_id: EE-08
+name: PCB Layout / ECAD Agent
+capability_level: L6 / 15–20 yr
+exact_specialization: Dense multilayer PCB placement/routing
+summary: Owns component placement, routing, stack-up implementation, return paths, keepouts, via strategy,
+  DFM/DFT annotations and layout review.
+domains:
+- electrical
+activation_keywords:
+- pcb
+- layout
+- ecad
+- dense
+- multilayer
+- placement/routing
+- component
+- placement
+- routing
+- stack-up
+- implementation
+- return
+- paths
+- keepouts
+- via
+- strategy
+- dfm/dft
+- annotations
+- review
+handbook: agents/02_ELECTRICAL_ELECTRONICS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- calculator
+- datasheet_retrieval
+- eda_read
+- simulation
+can_block:
+- unsafe electrical action
+- unverified electrical release
+status: configured

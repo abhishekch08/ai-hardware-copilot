@@ -1,0 +1,41 @@
+agent_id: REG-02
+name: AI / Data Regulatory Agent
+capability_level: L6 / policy+technical depth
+exact_specialization: AI governance, privacy/data obligations, enterprise policy
+summary: Tracks relevant AI/data regulations and maps requirements to product architecture, logging, transparency
+  and contracts.
+domains:
+- regulatory
+activation_keywords:
+- ai
+- data
+- regulatory
+- governance
+- privacy/data
+- obligations
+- enterprise
+- policy
+- tracks
+- relevant
+- ai/data
+- regulations
+- maps
+- requirements
+- to
+- architecture
+- logging
+- transparency
+- contracts
+handbook: agents/10_BUSINESS_FINANCE_HR_LEGAL_IP.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_regulatory_sources
+- standards
+- evidence_audit
+can_block:
+- unsupported regulated claim or release
+status: configured

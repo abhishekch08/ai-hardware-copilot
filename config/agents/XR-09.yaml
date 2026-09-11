@@ -1,0 +1,38 @@
+agent_id: XR-09
+name: XR Metrology, Verification & Reliability Agent
+capability_level: L6 / 15–25 yr
+exact_specialization: Spatial/display/latency metrology and calibration reliability
+summary: Builds ground-truth methods, uncertainty budgets and stress/user/unit validation for tracking,
+  overlay, latency, relocalization and claims.
+domains:
+- xr_spatial
+activation_keywords:
+- xr
+- metrology
+- verification
+- reliability
+- spatial/display/latency
+- calibration
+- ground-truth
+- methods
+- uncertainty
+- budgets
+- stress/user/unit
+- validation
+- tracking
+- overlay
+- latency
+- relocalization
+- claims
+handbook: agents/12_XR_AR_VR_SPATIAL_COMPUTING.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- camera_data
+- calibration_data
+- spatial_evaluation
+can_block: []
+status: configured

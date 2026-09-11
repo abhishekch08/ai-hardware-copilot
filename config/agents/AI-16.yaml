@@ -1,0 +1,37 @@
+agent_id: AI-16
+name: Backend Platform Agent
+capability_level: L6 / 12–20 yr
+exact_specialization: Distributed backend, event systems, APIs, databases
+summary: Builds session orchestration, evidence store, job execution, permissions, audit logs and durable
+  APIs.
+domains:
+- ai_software_data
+activation_keywords:
+- backend
+- platform
+- distributed
+- event
+- apis
+- databases
+- session
+- orchestration
+- evidence
+- store
+- job
+- execution
+- permissions
+- audit
+- logs
+- durable
+handbook: agents/04_AI_ML_DATA.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- code_execution
+- evaluation_harness
+can_block: []
+status: configured

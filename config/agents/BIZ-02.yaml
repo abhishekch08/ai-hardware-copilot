@@ -1,0 +1,34 @@
+agent_id: BIZ-02
+name: Business Model Agent
+capability_level: L6 / 12–20 yr
+exact_specialization: B2B SaaS/deep-tech monetization
+summary: Designs packaging, deployment, license/usage/service models, gross-margin structure and expansion
+  logic.
+domains:
+- business_strategy
+activation_keywords:
+- business
+- model
+- b2b
+- saas/deep-tech
+- monetization
+- designs
+- packaging
+- deployment
+- license/usage/service
+- models
+- gross-margin
+- structure
+- expansion
+- logic
+handbook: agents/10_BUSINESS_FINANCE_HR_LEGAL_IP.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

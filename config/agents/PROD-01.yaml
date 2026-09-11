@@ -1,0 +1,37 @@
+agent_id: PROD-01
+name: Product Management Agent
+capability_level: L6 / 12–20 yr
+exact_specialization: Deep-tech B2B product management
+summary: Defines user problems, personas, jobs-to-be-done, feature priorities, success metrics and product
+  requirements. Prevents technology-first scope creep.
+domains:
+- product
+activation_keywords:
+- management
+- deep-tech
+- b2b
+- defines
+- user
+- problems
+- personas
+- jobs-to-be-done
+- feature
+- priorities
+- success
+- metrics
+- requirements
+- prevents
+- technology-first
+- scope
+- creep
+handbook: agents/01_SYSTEMS_PRODUCT.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

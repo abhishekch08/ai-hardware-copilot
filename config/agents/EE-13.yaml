@@ -1,0 +1,40 @@
+agent_id: EE-13
+name: Acoustics / Haptics Electronics Agent
+capability_level: L5 / 10–15 yr
+exact_specialization: Piezo/LRA/ERM/bone conduction/audio drive
+summary: Designs drive electronics and signal profiles, electromechanical matching, resonance characterization,
+  perceptibility and power/thermal limits.
+domains:
+- electrical
+activation_keywords:
+- acoustics
+- haptics
+- electronics
+- piezo/lra/erm/bone
+- conduction/audio
+- drive
+- designs
+- signal
+- profiles
+- electromechanical
+- matching
+- resonance
+- characterization
+- perceptibility
+- power/thermal
+- limits
+handbook: agents/02_ELECTRICAL_ELECTRONICS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- calculator
+- datasheet_retrieval
+- eda_read
+- simulation
+can_block:
+- unsafe electrical action
+- unverified electrical release
+status: configured

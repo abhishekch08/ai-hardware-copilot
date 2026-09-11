@@ -1,0 +1,50 @@
+agent_id: EE-01
+name: Analog / Mixed-Signal Design Agent
+capability_level: L6 / 15–25 yr
+exact_specialization: Low-noise analog, op-amps, ADC/DAC, filters, sensor AFEs
+summary: Designs and reviews analog signal chains, noise/error budgets, stability, biasing, filtering,
+  dynamic range and ADC interfaces; produces calculations, SPICE plans and validation limits.
+domains:
+- electrical
+activation_keywords:
+- analog
+- mixed-signal
+- low-noise
+- op-amps
+- adc/dac
+- filters
+- sensor
+- afes
+- designs
+- reviews
+- signal
+- chains
+- noise/error
+- budgets
+- stability
+- biasing
+- filtering
+- dynamic
+- range
+- adc
+- interfaces
+- calculations
+- spice
+- plans
+- validation
+- limits
+handbook: agents/02_ELECTRICAL_ELECTRONICS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- calculator
+- datasheet_retrieval
+- eda_read
+- simulation
+can_block:
+- unsafe electrical action
+- unverified electrical release
+status: configured

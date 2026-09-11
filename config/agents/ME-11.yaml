@@ -1,0 +1,39 @@
+agent_id: ME-11
+name: Adhesives / Encapsulation Agent
+capability_level: L5 / 10–15 yr
+exact_specialization: PSA, epoxy, silicone, potting/resin, bonding processes
+summary: Selects bonding/encapsulation systems and defines dispense, cure, rework, compatibility and reliability
+  testing.
+domains:
+- mechanical
+activation_keywords:
+- adhesives
+- encapsulation
+- psa
+- epoxy
+- silicone
+- potting/resin
+- bonding
+- processes
+- selects
+- bonding/encapsulation
+- defines
+- dispense
+- cure
+- rework
+- compatibility
+- reliability
+- testing
+handbook: agents/05_MECHANICAL_INDUSTRIAL_WEARABLE.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- cad_read
+- calculation
+- simulation
+- test_evidence
+can_block: []
+status: configured

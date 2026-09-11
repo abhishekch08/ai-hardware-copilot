@@ -1,0 +1,34 @@
+agent_id: BIZ-03
+name: Partnerships / Business Development Agent
+capability_level: L6 / 12–20 yr
+exact_specialization: Instrument/EDA/vendor/channel partnerships
+summary: Identifies strategic integrations and partnership structures that accelerate adoption or data/tool
+  access.
+domains:
+- business_strategy
+activation_keywords:
+- partnerships
+- business
+- development
+- instrument/eda/vendor/channel
+- identifies
+- strategic
+- integrations
+- partnership
+- structures
+- accelerate
+- adoption
+- or
+- data/tool
+- access
+handbook: agents/10_BUSINESS_FINANCE_HR_LEGAL_IP.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

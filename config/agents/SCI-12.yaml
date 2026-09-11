@@ -1,0 +1,36 @@
+agent_id: SCI-12
+name: Optical / Tissue Interaction Science Agent
+capability_level: Research Specialist
+exact_specialization: Absorption/scattering, wavelength, perfusion and optical confounders
+summary: Grounds optical geometry and wavelength hypotheses in tissue physics, user variation and experiments.
+domains:
+- science_research
+activation_keywords:
+- optical
+- tissue
+- interaction
+- science
+- absorption/scattering
+- wavelength
+- perfusion
+- confounders
+- grounds
+- geometry
+- hypotheses
+- in
+- physics
+- user
+- variation
+- experiments
+handbook: agents/08_SCIENCE_RESEARCH_EXPERIMENTS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+- statistical_analysis
+can_block: []
+status: configured

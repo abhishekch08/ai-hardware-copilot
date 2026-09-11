@@ -1,0 +1,41 @@
+agent_id: META-07
+name: Repository / Artifact Librarian Agent
+capability_level: L5
+exact_specialization: Git structure, naming, artifact lifecycle
+summary: Keeps repository navigable, enforces templates, links task outputs, archives superseded artifacts
+  and prevents duplicated canonical truth.
+domains:
+- orchestration
+activation_keywords:
+- repository
+- artifact
+- librarian
+- git
+- structure
+- naming
+- lifecycle
+- keeps
+- navigable
+- enforces
+- templates
+- links
+- task
+- outputs
+- archives
+- superseded
+- artifacts
+- prevents
+- duplicated
+- canonical
+- truth
+handbook: agents/14_META_ORCHESTRATION_AGENTS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

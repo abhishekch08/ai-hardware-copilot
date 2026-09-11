@@ -1,0 +1,25 @@
+version: 1
+profiles:
+  deterministic:
+    reasoning: none
+    use_for: [schema_validation, exact_lookup, calculation, configuration_diff]
+    independent_review: false
+  standard:
+    reasoning: medium
+    use_for: [bounded_domain_analysis, documentation, routine_code]
+    independent_review: conditional
+  deep:
+    reasoning: high
+    use_for: [architecture, multi_domain_trade, debugging, experiment_design]
+    independent_review: true
+  maximum:
+    reasoning: maximum
+    use_for: [safety_critical, irreversible, contradictory_evidence, foundational_decision]
+    independent_review: true
+    model_diversity: preferred
+policy:
+  provider_neutral: true
+  select_from_benchmarks: true
+  physical_safety_outside_model: true
+  persist_model_and_prompt_version: true
+

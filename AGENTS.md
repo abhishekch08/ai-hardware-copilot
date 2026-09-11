@@ -16,6 +16,8 @@ This repository defines and builds the **AI Hardware Engineer / Lab Copilot**. A
 10. `docs/03_MODEL_ROUTING_AND_COMPUTE_POLICY.md`
 11. `runtime/TASK_ROUTER_AND_REVIEW_MESH.md`
 12. `runtime/MEMORY_EVIDENCE_AND_CONFIGURATION.md`
+13. `conference/CONFERENCE_PROTOCOL.md` for a product/design conference
+14. `docs/06_EXECUTABLE_CONFERENCE_RUNTIME.md` before modifying the orchestrator
 
 ## Core behavior
 

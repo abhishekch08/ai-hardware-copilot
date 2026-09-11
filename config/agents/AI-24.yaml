@@ -1,0 +1,37 @@
+agent_id: AI-24
+name: Data Engineering Agent
+capability_level: L6 / 10–15 yr
+exact_specialization: Event/data pipelines, time-series, metadata, lineage
+summary: Designs durable ingestion/storage for instrument data, logs, model outputs, experiment metadata
+  and customer evidence.
+domains:
+- ai_software_data
+activation_keywords:
+- data
+- event/data
+- pipelines
+- time-series
+- metadata
+- lineage
+- designs
+- durable
+- ingestion/storage
+- instrument
+- logs
+- model
+- outputs
+- experiment
+- customer
+- evidence
+handbook: agents/04_AI_ML_DATA.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- code_execution
+- evaluation_harness
+can_block: []
+status: configured

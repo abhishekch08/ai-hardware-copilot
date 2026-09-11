@@ -1,0 +1,14 @@
+actor: META-03
+reason: Resolve registration and wrong-node safety objections with an explicit contact gate.
+changes:
+  probe_guidance:
+    capture_gate: require_board_revision_pose_and_contact_confidence
+    low_confidence_behavior: stop_and_request_reposition
+changed_interfaces:
+  - probe
+  - camera
+  - evidence
+evidence_refs:
+  - evidence/registration-benchmark-v1.json
+  - evidence/contact-detection-benchmark-v1.json
+

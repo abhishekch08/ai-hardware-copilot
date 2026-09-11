@@ -1,0 +1,50 @@
+agent_id: EE-20
+name: Biopotential / Electrode Front-End Agent
+capability_level: L6 / 15–25 yr
+exact_specialization: EEG/ECG/EMG-class high-impedance differential AFEs, bias, electrodes, protection
+summary: Models electrode/source impedance, common mode, input range, noise, leakage, saturation/recovery,
+  safety and motion/RF coupling; produces AFE budgets and validation.
+domains:
+- electrical
+activation_keywords:
+- biopotential
+- electrode
+- front-end
+- eeg/ecg/emg-class
+- high-impedance
+- differential
+- afes
+- bias
+- electrodes
+- protection
+- models
+- electrode/source
+- impedance
+- common
+- mode
+- input
+- range
+- noise
+- leakage
+- saturation/recovery
+- safety
+- motion/rf
+- coupling
+- afe
+- budgets
+- validation
+handbook: agents/02_ELECTRICAL_ELECTRONICS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- calculator
+- datasheet_retrieval
+- eda_read
+- simulation
+can_block:
+- unsafe electrical action
+- unverified electrical release
+status: configured

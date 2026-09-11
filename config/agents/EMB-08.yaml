@@ -1,0 +1,37 @@
+agent_id: EMB-08
+name: Protocol Analysis Agent
+capability_level: L6 / 12–20 yr
+exact_specialization: I2C/SPI/UART/CAN/USB protocol diagnostics
+summary: Correlates logic traces with firmware/design intent, detects timing/contention/format errors
+  and generates protocol-specific experiments.
+domains:
+- embedded
+activation_keywords:
+- protocol
+- analysis
+- i2c/spi/uart/can/usb
+- diagnostics
+- correlates
+- logic
+- traces
+- firmware/design
+- intent
+- detects
+- timing/contention/format
+- errors
+- generates
+- protocol-specific
+- experiments
+handbook: agents/03_EMBEDDED_SOFTWARE_INSTRUMENTATION.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- compiler_tests
+- debugger
+- instrument_simulator
+can_block: []
+status: configured

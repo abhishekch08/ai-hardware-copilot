@@ -1,0 +1,41 @@
+agent_id: ME-08
+name: Human Factors / Ergonomics Agent
+capability_level: Research Specialist / 10–20 yr
+exact_specialization: Anthropometry, usability, workload, physical interaction
+summary: Designs user studies and geometry/interactions for reach, visibility, fatigue, dexterity, PPE/glove
+  use and bench ergonomics.
+domains:
+- mechanical
+activation_keywords:
+- human
+- factors
+- ergonomics
+- anthropometry
+- usability
+- workload
+- physical
+- interaction
+- designs
+- user
+- studies
+- geometry/interactions
+- reach
+- visibility
+- fatigue
+- dexterity
+- ppe/glove
+- use
+- bench
+handbook: agents/05_MECHANICAL_INDUSTRIAL_WEARABLE.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- cad_read
+- calculation
+- simulation
+- test_evidence
+can_block: []
+status: configured

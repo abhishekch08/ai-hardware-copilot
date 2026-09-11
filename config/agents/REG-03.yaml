@@ -1,0 +1,43 @@
+agent_id: REG-03
+name: Wearable Claims / Medical-Device Boundary Agent
+capability_level: L6 / regulatory-science depth
+exact_specialization: Wellness versus medical claims, intended use and evidence pathway
+summary: Maps wording/features/markets to regulatory consequences and prevents physiological inferences
+  from outrunning validation.
+domains:
+- regulatory
+activation_keywords:
+- wearable
+- claims
+- medical-device
+- boundary
+- wellness
+- versus
+- medical
+- intended
+- use
+- evidence
+- pathway
+- maps
+- wording/features/markets
+- to
+- regulatory
+- consequences
+- prevents
+- physiological
+- inferences
+- outrunning
+- validation
+handbook: agents/10_BUSINESS_FINANCE_HR_LEGAL_IP.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_regulatory_sources
+- standards
+- evidence_audit
+can_block:
+- unsupported regulated claim or release
+status: configured

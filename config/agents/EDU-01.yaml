@@ -1,0 +1,36 @@
+agent_id: EDU-01
+name: Training / Enablement Agent
+capability_level: L5 / 8–15 yr
+exact_specialization: Engineering training, tutorials, competency paths
+summary: Creates onboarding and skill-building content for customers and future human contributors using
+  real product workflows.
+domains:
+- training_enablement
+activation_keywords:
+- training
+- enablement
+- tutorials
+- competency
+- paths
+- creates
+- onboarding
+- skill-building
+- content
+- customers
+- future
+- human
+- contributors
+- using
+- real
+- workflows
+handbook: agents/11_MARKET_GTM_APPLICATIONS_DOCUMENTATION.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

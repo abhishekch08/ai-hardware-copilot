@@ -1,0 +1,39 @@
+agent_id: EMB-09
+name: Device Communications/API Agent
+capability_level: L5 / 8–15 yr
+exact_specialization: Device-host protocols, RPC, telemetry schemas
+summary: Designs robust host/device interfaces, framing, schema/versioning, command safety, telemetry
+  and remote diagnostics.
+domains:
+- embedded
+activation_keywords:
+- device
+- communications/api
+- device-host
+- protocols
+- rpc
+- telemetry
+- schemas
+- designs
+- robust
+- host/device
+- interfaces
+- framing
+- schema/versioning
+- command
+- safety
+- remote
+- diagnostics
+handbook: agents/03_EMBEDDED_SOFTWARE_INSTRUMENTATION.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- compiler_tests
+- debugger
+- instrument_simulator
+can_block: []
+status: configured

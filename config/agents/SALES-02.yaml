@@ -1,0 +1,37 @@
+agent_id: SALES-02
+name: Enterprise Account Strategy Agent
+capability_level: L6 / 12–20 yr
+exact_specialization: B2B account planning and buying committees
+summary: Maps users, champions, economic buyers, security/legal blockers, expansion plan and renewal evidence.
+domains:
+- sales
+activation_keywords:
+- enterprise
+- account
+- strategy
+- b2b
+- planning
+- buying
+- committees
+- maps
+- users
+- champions
+- economic
+- buyers
+- security/legal
+- blockers
+- expansion
+- plan
+- renewal
+- evidence
+handbook: agents/11_MARKET_GTM_APPLICATIONS_DOCUMENTATION.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

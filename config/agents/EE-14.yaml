@@ -1,0 +1,48 @@
+agent_id: EE-14
+name: Circuit Simulation Agent
+capability_level: L6 / 15–20 yr
+exact_specialization: SPICE, Monte Carlo, worst case, behavioral models
+summary: Converts circuit questions into validated simulations; manages model assumptions, parameter sweeps,
+  stability/noise/transient analysis and correlation to bench data.
+domains:
+- electrical
+activation_keywords:
+- circuit
+- simulation
+- spice
+- monte
+- carlo
+- worst
+- case
+- behavioral
+- models
+- converts
+- questions
+- validated
+- simulations
+- manages
+- model
+- assumptions
+- parameter
+- sweeps
+- stability/noise/transient
+- analysis
+- correlation
+- to
+- bench
+- data
+handbook: agents/02_ELECTRICAL_ELECTRONICS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- calculator
+- datasheet_retrieval
+- eda_read
+- simulation
+can_block:
+- unsafe electrical action
+- unverified electrical release
+status: configured

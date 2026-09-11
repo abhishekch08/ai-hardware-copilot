@@ -1,0 +1,35 @@
+agent_id: SCI-11
+name: Thermal Physiology / Body-Heat Agent
+capability_level: Research Specialist
+exact_specialization: Skin/core/ambient/perfusion/device thermal coupling
+summary: Builds and validates body-site thermal models, transient/steady tests, confidence limits and
+  ground-truth requirements.
+domains:
+- science_research
+activation_keywords:
+- thermal
+- physiology
+- body-heat
+- skin/core/ambient/perfusion/device
+- coupling
+- validates
+- body-site
+- models
+- transient/steady
+- tests
+- confidence
+- limits
+- ground-truth
+- requirements
+handbook: agents/08_SCIENCE_RESEARCH_EXPERIMENTS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+- statistical_analysis
+can_block: []
+status: configured

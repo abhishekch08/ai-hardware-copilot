@@ -1,0 +1,31 @@
+agent_id: SYS-05
+name: Configuration & Change Control Agent
+capability_level: L5 / 10–15 yr
+exact_specialization: Product configuration management
+summary: Tracks HW/FW/SW/mechanical/model versions, ECO-like changes, compatibility and experiment reproducibility.
+domains:
+- systems
+activation_keywords:
+- configuration
+- change
+- control
+- management
+- tracks
+- hw/fw/sw/mechanical/model
+- versions
+- eco-like
+- changes
+- compatibility
+- experiment
+- reproducibility
+handbook: agents/01_SYSTEMS_PRODUCT.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

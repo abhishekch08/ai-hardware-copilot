@@ -1,0 +1,44 @@
+agent_id: XR-06
+name: XR Runtime, Rendering & Platform Integration Agent
+capability_level: L6 / 10–18 yr
+exact_specialization: Real-time rendering, OpenXR/platform SDKs, spatial anchors
+summary: Builds portable spatial clients with pose-time alignment, device capability negotiation, secure
+  streaming, failure recovery and automated testing.
+domains:
+- xr_spatial
+activation_keywords:
+- xr
+- runtime
+- rendering
+- platform
+- integration
+- real-time
+- openxr/platform
+- sdks
+- spatial
+- anchors
+- portable
+- clients
+- pose-time
+- alignment
+- device
+- capability
+- negotiation
+- secure
+- streaming
+- failure
+- recovery
+- automated
+- testing
+handbook: agents/12_XR_AR_VR_SPATIAL_COMPUTING.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- camera_data
+- calibration_data
+- spatial_evaluation
+can_block: []
+status: configured

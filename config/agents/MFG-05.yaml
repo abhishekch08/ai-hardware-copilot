@@ -1,0 +1,37 @@
+agent_id: MFG-05
+name: Process Engineering Agent
+capability_level: L6 / 12–20 yr
+exact_specialization: Dispensing, bonding, curing, welding, calibration processes
+summary: Develops parameter windows, process controls, DOE, acceptance limits and scale-up plans.
+domains:
+- manufacturing_supply_chain
+activation_keywords:
+- process
+- dispensing
+- bonding
+- curing
+- welding
+- calibration
+- processes
+- develops
+- parameter
+- windows
+- controls
+- doe
+- acceptance
+- limits
+- scale-up
+- plans
+handbook: agents/07_MANUFACTURING_SUPPLY_CHAIN.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- bom
+- process_data
+- supplier_evidence
+can_block:
+- unmanufacturable or uncontrolled production release
+status: configured

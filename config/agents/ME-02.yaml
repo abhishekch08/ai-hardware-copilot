@@ -1,0 +1,34 @@
+agent_id: ME-02
+name: Tolerance / GD&T Agent
+capability_level: L6 / 15–20 yr
+exact_specialization: Tolerance stack-up, GD&T, fits
+summary: Builds tolerance budgets, datum strategy, assembly stack analysis and manufacturing drawing requirements.
+domains:
+- mechanical
+activation_keywords:
+- tolerance
+- gd
+- stack-up
+- fits
+- budgets
+- datum
+- strategy
+- assembly
+- stack
+- analysis
+- manufacturing
+- drawing
+- requirements
+handbook: agents/05_MECHANICAL_INDUSTRIAL_WEARABLE.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- cad_read
+- calculation
+- simulation
+- test_evidence
+can_block: []
+status: configured

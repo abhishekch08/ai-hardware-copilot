@@ -1,0 +1,33 @@
+agent_id: OPS-01
+name: Company Operations Agent
+capability_level: L6 / 10–15 yr
+exact_specialization: Startup operating systems, vendor/process operations
+summary: Designs lightweight operating workflows, procurement/contract/task systems, records and recurring
+  operational controls.
+domains:
+- operations
+activation_keywords:
+- company
+- operations
+- startup
+- operating
+- vendor/process
+- designs
+- lightweight
+- workflows
+- procurement/contract/task
+- records
+- recurring
+- operational
+- controls
+handbook: agents/10_BUSINESS_FINANCE_HR_LEGAL_IP.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

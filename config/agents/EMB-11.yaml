@@ -1,0 +1,43 @@
+agent_id: EMB-11
+name: Sensor Acquisition & Synchronization Firmware Agent
+capability_level: L6 / 12–20 yr
+exact_specialization: Multi-rate acquisition, timestamping, FIFO/DMA, markers and calibration metadata
+summary: Designs time-consistent acquisition and proves latency/jitter/drop behavior across sensors, instruments,
+  firmware events and host transport.
+domains:
+- embedded
+activation_keywords:
+- sensor
+- acquisition
+- synchronization
+- firmware
+- multi-rate
+- timestamping
+- fifo/dma
+- markers
+- calibration
+- metadata
+- designs
+- time-consistent
+- proves
+- latency/jitter/drop
+- behavior
+- across
+- sensors
+- instruments
+- events
+- host
+- transport
+handbook: agents/03_EMBEDDED_SOFTWARE_INSTRUMENTATION.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- compiler_tests
+- debugger
+- instrument_simulator
+can_block: []
+status: configured

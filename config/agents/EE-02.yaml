@@ -1,0 +1,42 @@
+agent_id: EE-02
+name: Power Electronics / PMIC Agent
+capability_level: L6 / 15–25 yr
+exact_specialization: Buck/boost/LDO/load switch/power tree/sequencing
+summary: Owns power architecture, converter selection, compensation/stability, rail sequencing, transient
+  behavior, efficiency, protection and power-debug hypotheses.
+domains:
+- electrical
+activation_keywords:
+- power
+- electronics
+- pmic
+- buck/boost/ldo/load
+- switch/power
+- tree/sequencing
+- architecture
+- converter
+- selection
+- compensation/stability
+- rail
+- sequencing
+- transient
+- behavior
+- efficiency
+- protection
+- power-debug
+- hypotheses
+handbook: agents/02_ELECTRICAL_ELECTRONICS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- calculator
+- datasheet_retrieval
+- eda_read
+- simulation
+can_block:
+- unsafe electrical action
+- unverified electrical release
+status: configured

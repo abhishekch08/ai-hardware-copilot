@@ -1,0 +1,236 @@
+version: 1
+rules:
+  - id: new_product_design_kernel
+    task_types: [new_product_design]
+    include:
+      META-01: primary
+      META-02: reviewer
+      META-03: reviewer
+      META-04: reviewer
+      META-05: reviewer
+      META-07: reviewer
+      SYS-01: primary
+      SYS-02: primary
+      SYS-03: reviewer
+      SYS-04: reviewer
+      SYS-05: reviewer
+      PROD-01: primary
+      PROD-02: primary
+      PROD-03: affected
+      PROD-04: affected
+      TEST-03: reviewer
+      TEST-05: reviewer
+      TEST-09: reviewer
+      AI-13: reviewer
+      SEC-01: reviewer
+      MFG-01: affected
+      MFG-02: affected
+      FIN-02: affected
+      MKT-01: affected
+      APP-01: affected
+      DOC-01: affected
+      GOV-01: reviewer
+
+  - id: physical_action_safety
+    physical_action: true
+    include:
+      TEST-09: primary
+      TEST-04: reviewer
+      EMB-06: reviewer
+      SEC-01: reviewer
+      META-05: reviewer
+
+  - id: high_consequence_review
+    risk_at_least: T3
+    include:
+      META-04: reviewer
+      META-05: reviewer
+      TEST-09: reviewer
+      SEC-01: reviewer
+      GOV-01: reviewer
+
+  - id: electrical_board
+    keywords_any: [pcb, schematic, circuit, electronics, board, ecad, component, signal]
+    include:
+      EE-07: primary
+      EE-08: primary
+      EE-01: reviewer
+      EE-04: reviewer
+      EE-14: reviewer
+      EE-15: affected
+      EE-19: affected
+      TEST-01: reviewer
+      TEST-04: reviewer
+
+  - id: power_battery
+    keywords_any: [power, regulator, pmic, battery, charger, charging, rail, current, runtime, sleep]
+    include:
+      EE-02: primary
+      EE-03: primary
+      EE-06: reviewer
+      EE-08: reviewer
+      EE-16: reviewer
+      EE-24: reviewer
+      EMB-12: reviewer
+      ME-03: affected
+      TEST-02: reviewer
+      TEST-09: reviewer
+
+  - id: sensors_analog
+    keywords_any: [sensor, afe, adc, analog, ppg, eeg, ecg, emg, electrode, temperature, imu]
+    include:
+      EE-01: primary
+      EE-11: primary
+      EE-12: reviewer
+      EE-20: affected
+      EE-21: affected
+      EMB-11: reviewer
+      AI-10: reviewer
+      TEST-04: reviewer
+      TEST-13: reviewer
+      SCI-04: reviewer
+
+  - id: rf_connectivity
+    keywords_any: [rf, antenna, ble, bluetooth, wifi, wireless, nfc, cellular, gnss, uwb]
+    include:
+      EE-09: primary
+      EE-10: primary
+      EE-08: reviewer
+      EMB-05: reviewer
+      EMB-08: reviewer
+      ME-04: affected
+      TEST-07: reviewer
+
+  - id: embedded_firmware
+    keywords_any: [firmware, embedded, mcu, rtos, driver, jtag, swd, boot, ota, uart, spi, i2c, can]
+    include:
+      EMB-01: primary
+      EMB-02: primary
+      EMB-03: reviewer
+      EMB-04: reviewer
+      EMB-08: reviewer
+      EE-04: reviewer
+      TEST-01: reviewer
+
+  - id: instruments_lab
+    keywords_any: [oscilloscope, dmm, psu, smu, scpi, instrument, lab, measurement, probing, probe]
+    include:
+      EMB-06: primary
+      EMB-07: primary
+      AI-10: reviewer
+      TEST-04: reviewer
+      TEST-09: reviewer
+      AI-16: affected
+
+  - id: vision_probe
+    keywords_any: [camera, vision, image, video, registration, probe, overlay, microscope, fiducial]
+    include:
+      AI-05: primary
+      AI-06: primary
+      AI-07: primary
+      AI-04: reviewer
+      AI-22: reviewer
+      ME-09: affected
+      TEST-04: reviewer
+      TEST-09: reviewer
+
+  - id: wearable_reference
+    keywords_any: [wearable, watch, ring, hearable, earbud, temple, skin, physiological, ppg, eeg, health]
+    include:
+      ME-07: primary
+      ME-08: reviewer
+      ME-13: reviewer
+      ME-14: reviewer
+      EE-03: affected
+      EE-09: affected
+      EE-11: affected
+      EE-12: affected
+      EE-20: affected
+      EE-21: affected
+      EE-24: affected
+      EMB-11: reviewer
+      EMB-12: reviewer
+      AI-26: reviewer
+      AI-27: reviewer
+      AI-28: affected
+      TEST-13: reviewer
+      TEST-14: reviewer
+      SCI-05: reviewer
+      SCI-10: reviewer
+      SCI-11: reviewer
+      SCI-12: reviewer
+      SCI-13: reviewer
+      REG-03: reviewer
+
+  - id: xr_spatial_interface
+    keywords_any: [xr, ar, vr, glasses, headset, spatial, slam, waveguide, display, gaze]
+    include:
+      XR-01: primary
+      XR-02: affected
+      XR-03: primary
+      XR-04: primary
+      XR-05: affected
+      XR-06: affected
+      XR-07: reviewer
+      XR-08: reviewer
+      XR-09: reviewer
+      AI-05: reviewer
+      AI-06: reviewer
+      ME-08: reviewer
+      SEC-05: reviewer
+
+  - id: software_platform
+    keywords_any: [software, backend, api, desktop, web, mobile, ios, android, cloud, database, sdk]
+    include:
+      AI-16: primary
+      AI-17: affected
+      AI-18: affected
+      AI-21: reviewer
+      AI-24: reviewer
+      SEC-03: reviewer
+      INFRA-01: affected
+
+  - id: manufacturing_release
+    keywords_any: [manufacturing, assembly, production, factory, yield, supplier, npi, dfm, dfa, tooling]
+    include:
+      MFG-01: primary
+      MFG-02: primary
+      MFG-06: reviewer
+      MFG-07: reviewer
+      MFG-10: reviewer
+      TEST-10: reviewer
+      TEST-11: reviewer
+      SYS-05: reviewer
+
+  - id: medical_claim
+    keywords_any: [medical, clinical, diagnosis, treatment, disease, health, physiological, patient]
+    include:
+      SCI-05: primary
+      SCI-10: reviewer
+      TEST-13: reviewer
+      REG-01: reviewer
+      REG-03: reviewer
+      LEG-05: reviewer
+      SEC-05: reviewer
+
+  - id: business_launch
+    keywords_any: [market, pricing, revenue, customer, launch, sales, subscription, roi, business]
+    include:
+      PROD-01: primary
+      MKT-01: primary
+      MKT-02: reviewer
+      FIN-02: reviewer
+      BIZ-01: reviewer
+      APP-01: reviewer
+      SALES-01: affected
+
+  - id: patent_legal
+    keywords_any: [patent, ip, invention, legal, license, contract, compliance]
+    include:
+      LEG-01: primary
+      LEG-02: primary
+      LEG-03: reviewer
+      LEG-04: reviewer
+      GOV-01: reviewer
+      META-05: reviewer
+

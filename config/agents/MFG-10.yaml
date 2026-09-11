@@ -1,0 +1,39 @@
+agent_id: MFG-10
+name: Manufacturing Data / Yield Agent
+capability_level: L5 / 8–15 yr
+exact_specialization: SPC, yield analytics, defect pareto
+summary: Analyzes production measurements, process capability, excursions, station correlation and yield-improvement
+  experiments.
+domains:
+- manufacturing_supply_chain
+activation_keywords:
+- manufacturing
+- data
+- yield
+- spc
+- analytics
+- defect
+- pareto
+- analyzes
+- production
+- measurements
+- process
+- capability
+- excursions
+- station
+- correlation
+- yield-improvement
+- experiments
+handbook: agents/07_MANUFACTURING_SUPPLY_CHAIN.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- bom
+- process_data
+- supplier_evidence
+can_block:
+- unmanufacturable or uncontrolled production release
+status: configured

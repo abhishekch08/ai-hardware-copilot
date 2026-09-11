@@ -1,0 +1,38 @@
+agent_id: META-08
+name: Automation / Workflow Engineer Agent
+capability_level: L6
+exact_specialization: Agent orchestration, CI jobs, event-driven workflows
+summary: Turns repeated multi-agent workflows into executable automation with checkpoints, tool permissions,
+  state and audit logs.
+domains:
+- orchestration
+activation_keywords:
+- automation
+- workflow
+- engineer
+- orchestration
+- ci
+- jobs
+- event-driven
+- workflows
+- turns
+- repeated
+- multi-agent
+- executable
+- checkpoints
+- tool
+- permissions
+- state
+- audit
+- logs
+handbook: agents/14_META_ORCHESTRATION_AGENTS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

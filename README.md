@@ -74,7 +74,18 @@ The product is successful only when this loop is **measurably faster, safer, mor
 │   ├── 02_AGENT_DEPLOYMENT_SPECIFICATION.md
 │   ├── 03_MODEL_ROUTING_AND_COMPUTE_POLICY.md
 │   ├── 04_MULTI_AGENT_WORKFLOWS.md
-│   └── 05_PRODUCT_TO_AGENT_COVERAGE_MATRIX.md
+│   ├── 05_PRODUCT_TO_AGENT_COVERAGE_MATRIX.md
+│   └── 06_EXECUTABLE_CONFERENCE_RUNTIME.md
+├── conference/                 # deliberation and convergence policy
+├── config/
+│   ├── agents/                 # 184 generated specialist configs
+│   ├── mandatory_review_rules.yaml
+│   ├── capability_graph.yaml
+│   ├── model_profiles.yaml
+│   └── tool_permissions.yaml
+├── src/ai_hardware_copilot/   # executable alpha orchestrator
+├── examples/
+├── tests/
 ├── runtime/
 │   ├── AGENT_PROMPT_TEMPLATE.md
 │   ├── TASK_ROUTER_AND_REVIEW_MESH.md
@@ -85,18 +96,21 @@ The product is successful only when this loop is **measurably faster, safer, mor
 │   ├── ENGINEERING_EXPERIMENT_LOOP.md
 │   ├── DESIGN_REVIEW_SCHEMA.md
 │   ├── FAILURE_ANALYSIS_SCHEMA.md
-│   └── DECISION_RECORD_TEMPLATE.md
-└── roadmap/
-    ├── AGENT_DEPLOYMENT_SEQUENCE.md
-    ├── MVP_BUILD_MAP.md
-    └── BOOTSTRAP_FIRST_30_DAYS.md
+│   ├── DECISION_RECORD_TEMPLATE.md
+│   └── conference/             # machine-readable runtime contracts
+├── roadmap/
+│   ├── AGENT_DEPLOYMENT_SEQUENCE.md
+│   ├── MVP_BUILD_MAP.md
+│   └── BOOTSTRAP_FIRST_30_DAYS.md
+├── scripts/compile_agent_configs.py
+└── pyproject.toml
 ```
 
 ---
 
 ## 3. What is defined here
 
-This repository now contains five layers.
+This repository now contains six layers.
 
 ### Company operating system
 How a completely AI-native, flat specialist organization makes decisions, resolves conflicts, handles safety and preserves evidence.
@@ -113,6 +127,9 @@ Reusable structures for first-principles analysis, design review, experiments, f
 
 ### Runtime specification
 How agents are instantiated, routed, reviewed, given tools, assigned compute/model difficulty and connected to evidence/configuration memory.
+
+### Executable conference alpha
+Python code and typed contracts that compile the 184 roles, screen every agent, run independent specialist analysis, track objections, iterate versioned revisions, re-screen affected interfaces, persist an audit trail and block finalization unless every convergence gate passes.
 
 ### Build roadmap
 Which agents and product layers to activate first so the project validates the core intelligence loop before investing in any custom physical interface.
@@ -259,28 +276,37 @@ Every completed debugging trajectory should improve future diagnosis, experiment
 
 ---
 
-## 11. What is not yet implemented
+## 11. Run the conference alpha
 
-The repository currently defines the **company/agent architecture and operating contracts**. It does not yet contain the production orchestration runtime that instantiates every agent as a process/service.
+```bash
+python -m pip install -e .
+python scripts/compile_agent_configs.py
+hardware-copilot validate
+hardware-copilot run --task examples/lab_copilot_probe_aware_mvp.yaml
+```
 
-The next software layer should translate the canonical Markdown specifications into:
-
-- machine-readable agent configs;
-- prompt composition;
-- dynamic task routing;
-- model selection;
-- tool permissioning;
-- evidence/configuration storage;
-- reviewer/falsification workflows;
-- benchmark harnesses;
-- instrument adapters;
-- desktop engineering workspace.
-
-This is intentional: the agent constitution and domain boundaries should be stable before runtime code hardens around them.
+The default dry-run provider validates routing, state, persistence and fail-closed behavior. It intentionally cannot approve engineering work. See `docs/06_EXECUTABLE_CONFERENCE_RUNTIME.md` for the model-gateway contract, iteration commands and exact convergence semantics.
 
 ---
 
-## 12. Start here
+## 12. What is not yet production implemented
+
+The repository now has an executable orchestration alpha, not a production autonomous engineering authority. The next layers are:
+
+- a benchmarked model gateway with canonical prompt composition and model/prompt provenance;
+- semantic evidence validation, immutable artifact hashes and configuration-aware retrieval;
+- ECAD, firmware, requirements, datasheet and prior-failure ingestion;
+- deterministic calculation, simulation and code tools;
+- safe typed instrument adapters and hardware-in-loop testing;
+- durable distributed execution, authentication, authorization and observability;
+- adversarial conference benchmarks and real bench/customer validation;
+- the desktop engineering workspace.
+
+No model or multi-agent discussion can guarantee zero hallucinations. Release authority comes from source-backed claims, calculations, simulations, measurements, independent verification and deterministic safety gates—not fluency or agreement.
+
+---
+
+## 13. Start here
 
 For a human or AI agent entering this repository:
 
@@ -294,7 +320,9 @@ For a human or AI agent entering this repository:
 8. Use `runtime/TASK_ROUTER_AND_REVIEW_MESH.md` to form the work cell.
 9. Use `docs/03_MODEL_ROUTING_AND_COMPUTE_POLICY.md` to select model/compute difficulty.
 10. Use `runtime/MEMORY_EVIDENCE_AND_CONFIGURATION.md` for persistence and provenance.
-11. Follow `roadmap/BOOTSTRAP_FIRST_30_DAYS.md` for initial implementation.
-12. Use `docs/05_PRODUCT_TO_AGENT_COVERAGE_MATRIX.md` to check ownership and implementation gaps before adding another agent.
+11. Read `conference/CONFERENCE_PROTOCOL.md` and `conference/CONVERGENCE_POLICY.md` before running a product conference.
+12. Use `docs/06_EXECUTABLE_CONFERENCE_RUNTIME.md` for setup, commands and provider contracts.
+13. Follow `roadmap/BOOTSTRAP_FIRST_30_DAYS.md` for the remaining implementation sequence.
+14. Use `docs/05_PRODUCT_TO_AGENT_COVERAGE_MATRIX.md` to check ownership and implementation gaps before adding another agent.
 
 The goal is not to simulate a large company for its own sake. The goal is to create the **smallest collection of high-quality specialist reasoning loops that can repeatedly build, test and improve the product without losing cross-disciplinary rigor**.

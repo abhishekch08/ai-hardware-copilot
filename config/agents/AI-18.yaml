@@ -1,0 +1,35 @@
+agent_id: AI-18
+name: Web Frontend Agent
+capability_level: L6 / 10–15 yr
+exact_specialization: React/TypeScript/web visualization
+summary: Builds engineering workspace UI, schematic/PCB views, trace views, experiment timeline, reports
+  and admin surfaces.
+domains:
+- ai_software_data
+activation_keywords:
+- web
+- frontend
+- react/typescript/web
+- visualization
+- workspace
+- ui
+- schematic/pcb
+- views
+- trace
+- experiment
+- timeline
+- reports
+- admin
+- surfaces
+handbook: agents/04_AI_ML_DATA.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- code_execution
+- evaluation_harness
+can_block: []
+status: configured

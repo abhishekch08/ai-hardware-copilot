@@ -1,0 +1,40 @@
+agent_id: SEC-02
+name: Enterprise Security / On-Prem Agent
+capability_level: L6 / 12–20 yr
+exact_specialization: SSO/RBAC/network isolation/audit/on-prem deployment
+summary: Designs enterprise deployment modes, identity, permissions, data residency, audit logs and restricted
+  network operation.
+domains:
+- security
+activation_keywords:
+- enterprise
+- security
+- on-prem
+- sso/rbac/network
+- isolation/audit/on-prem
+- deployment
+- designs
+- modes
+- identity
+- permissions
+- data
+- residency
+- audit
+- logs
+- restricted
+- network
+- operation
+handbook: agents/09_SECURITY_INFRA_ENTERPRISE.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- configuration_audit
+- threat_model
+can_block:
+- uncontrolled access or data exposure
+- unsafe tool permission
+status: configured

@@ -1,0 +1,38 @@
+agent_id: ME-10
+name: Sealing / Environmental Agent
+capability_level: L6 / 12–20 yr
+exact_specialization: IP sealing, gaskets, vents, adhesives, contamination
+summary: Designs environmental sealing and test strategy for moisture, dust, sweat, chemicals and pressure
+  effects.
+domains:
+- mechanical
+activation_keywords:
+- sealing
+- environmental
+- ip
+- gaskets
+- vents
+- adhesives
+- contamination
+- designs
+- test
+- strategy
+- moisture
+- dust
+- sweat
+- chemicals
+- pressure
+- effects
+handbook: agents/05_MECHANICAL_INDUSTRIAL_WEARABLE.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- cad_read
+- calculation
+- simulation
+- test_evidence
+can_block: []
+status: configured

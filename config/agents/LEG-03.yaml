@@ -1,0 +1,40 @@
+agent_id: LEG-03
+name: Freedom-to-Operate Research Agent
+capability_level: L6 / patent research depth
+exact_specialization: Patent landscape and claim mapping
+summary: Performs structured non-legal FTO research, maps relevant claims/features and highlights areas
+  requiring attorney opinion.
+domains:
+- legal_ip
+activation_keywords:
+- freedom-to-operate
+- research
+- patent
+- landscape
+- claim
+- mapping
+- performs
+- structured
+- non-legal
+- fto
+- maps
+- relevant
+- claims/features
+- highlights
+- areas
+- requiring
+- attorney
+- opinion
+handbook: agents/10_BUSINESS_FINANCE_HR_LEGAL_IP.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_legal_sources
+- patent_search
+- evidence_audit
+can_block:
+- unsupported legal or IP conclusion
+status: configured

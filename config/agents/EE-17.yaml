@@ -1,0 +1,42 @@
+agent_id: EE-17
+name: FPGA / RTL Hardware Agent
+capability_level: L6 / 12–20 yr
+exact_specialization: FPGA architecture, Verilog/SystemVerilog/VHDL, timing closure
+summary: Designs RTL, interfaces, deterministic acquisition/control logic, CDC handling, simulation, assertions,
+  synthesis and timing verification.
+domains:
+- electrical
+activation_keywords:
+- fpga
+- rtl
+- hardware
+- architecture
+- verilog/systemverilog/vhdl
+- timing
+- closure
+- designs
+- interfaces
+- deterministic
+- acquisition/control
+- logic
+- cdc
+- handling
+- simulation
+- assertions
+- synthesis
+- verification
+handbook: agents/02_ELECTRICAL_ELECTRONICS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- calculator
+- datasheet_retrieval
+- eda_read
+- simulation
+can_block:
+- unsafe electrical action
+- unverified electrical release
+status: configured

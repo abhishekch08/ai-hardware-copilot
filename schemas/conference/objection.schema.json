@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Engineering objection",
+  "type": "object",
+  "required": ["objection_id", "agent_id", "proposal_version", "severity", "disputed_claim", "causal_mechanism", "required_resolution", "status"],
+  "properties": {
+    "objection_id": {"type": "string", "pattern": "^OBJ-[0-9]{3}-[0-9]{4}$"},
+    "agent_id": {"type": "string", "pattern": "^[A-Z]+-[0-9]{2}$"},
+    "proposal_version": {"type": "integer", "minimum": 1},
+    "severity": {"enum": ["critical", "major", "minor"]},
+    "disputed_claim": {"type": "string", "minLength": 1},
+    "causal_mechanism": {"type": "string"},
+    "required_resolution": {"type": "string", "minLength": 1},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}},
+    "status": {"enum": ["open", "testing", "resolved", "superseded_pending_review"]},
+    "resolution": {"type": ["string", "null"]},
+    "resolved_by": {"type": ["string", "null"]},
+    "resolved_at": {"type": ["string", "null"], "format": "date-time"}
+  },
+  "additionalProperties": false
+}
+

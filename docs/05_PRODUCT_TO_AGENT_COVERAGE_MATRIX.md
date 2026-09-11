@@ -20,7 +20,7 @@ Status values:
 - `BENCHMARKED` — representative evaluation has run;
 - `PHYSICALLY_VALIDATED` — representative bench/customer evidence passes acceptance criteria.
 
-At the current repository stage, the rows below are `SPECIFIED` unless a later implementation artifact records otherwise.
+At the current repository stage, the 184 agent records are `CONFIGURED`. All-agent screening, mandatory routing, structured independent analysis, objection/revision iteration, version invalidation, local persistence and fail-closed convergence are `IMPLEMENTED` as an alpha runtime. Domain model execution, evidence semantic validation and physical tool integrations are not yet production implemented or bench validated.
 
 ## 1. Core product capability coverage
 
@@ -104,22 +104,23 @@ Wearables and XR are maintained as deep reference/customer domains through [`../
 | Semiconductor evaluation | EE domain expert, EMB-06/07, TEST-02/04/08, AI-10 | datasheet-limit characterization, corner sweeps, automated bench evidence and applications-debug workflows |
 | Industrial commissioning/repair | APP-01/02, XR-08, EMB-06/08, TEST-09, SEC-02 | offline/rugged workflows, legacy buses, remote guidance, safe state changes and service reporting |
 
-## 5. Coverage gaps that remain after the agent-specification audit
+## 5. Coverage gaps after the executable alpha
 
 The repository now specifies owners, but written expertise is not deployed capability. The following are implementation gaps, ordered by product risk:
 
-1. **Machine-readable agents:** convert the 184 registry IDs and handbook contracts into validated versioned configuration.
-2. **Executable router:** implement task classification, contextual retrieval, model/effort selection, review mesh and stop conditions.
-3. **Evidence/configuration store:** enforce immutable raw evidence, derivation lineage and exact board/firmware/instrument/model/calibration identity.
+1. **Production model gateway:** implement prompt composition, benchmark-based model/effort routing, structured retries, model diversity, cost controls and prompt/model provenance behind the provider-neutral HTTP contract.
+2. **Evidence/configuration service:** replace identifier registration alone with hashes, immutable raw evidence, derivation lineage, claim-to-source checks and exact board/firmware/instrument/model/calibration identity.
+3. **Contextual retrieval:** deliver current, scoped evidence to each specialist without contaminating independent analysis or crossing revisions.
 4. **Design ingestion:** prove one ECAD path and one firmware repository path end to end before broad format support.
 5. **Instrument conformance:** implement one or two scope families plus bounded PSU/DMM and JTAG/UART with mocks, hardware-in-loop tests and disconnect recovery.
 6. **Causal diagnosis benchmark:** build seeded power/boot/interface faults and compare against experienced-engineer and generic-assistant baselines.
 7. **Scene benchmark:** collect ground-truth board registration, component/pad localization, probe-tip and contact data under glare/occlusion/viewpoint changes.
-8. **Physical safety case:** separate LLM proposals from deterministic voltage/current/state limits and validate approval/abort/recovery behavior.
-9. **Enterprise threat model:** test malicious design documents, tool-output injection, secrets/IP isolation and on-prem update provenance.
-10. **Customer ROI evidence:** run representative partner cases and measure correct root cause, elapsed/active engineer time, experiments, interventions and report completeness.
-11. **Wearable/XR intelligence refresh:** maintain generation- and date-specific evidence rather than relying on static brand summaries.
-12. **Custom interface decision:** do not begin custom glasses until an existing camera/commercial-device baseline demonstrates a quantified unsolved bottleneck.
+8. **Physical safety case:** keep LLM proposals behind deterministic voltage/current/state limits and validate approval/abort/recovery behavior.
+9. **Enterprise runtime:** add durable queue/workers, authorization, tenant isolation, observability, replay, recovery and on-prem update provenance.
+10. **Adversarial conference evaluation:** measure relevance false negatives, correlated hallucination, stale approval, unsupported consensus, prompt injection and objection-resolution failures.
+11. **Customer ROI evidence:** run representative partner cases and measure correct root cause, elapsed/active engineer time, experiments, interventions and report completeness.
+12. **Wearable/XR intelligence refresh:** maintain generation- and date-specific evidence rather than relying on static brand summaries.
+13. **Custom interface decision:** do not begin custom glasses until an existing camera/commercial-device baseline demonstrates a quantified unsolved bottleneck.
 
 ## 6. Coverage-change rule
 

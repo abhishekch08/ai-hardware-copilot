@@ -1,0 +1,41 @@
+agent_id: ME-09
+name: Opto-Mechanical / Camera Hardware Agent
+capability_level: L6 / 12–20 yr
+exact_specialization: Camera modules, lenses, focus, mounting, lighting
+summary: Defines camera placement, optics, working distance, illumination, calibration stability and mechanical
+  integration for perception.
+domains:
+- mechanical
+activation_keywords:
+- opto-mechanical
+- camera
+- hardware
+- modules
+- lenses
+- focus
+- mounting
+- lighting
+- defines
+- placement
+- optics
+- working
+- distance
+- illumination
+- calibration
+- stability
+- mechanical
+- integration
+- perception
+handbook: agents/05_MECHANICAL_INDUSTRIAL_WEARABLE.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- cad_read
+- calculation
+- simulation
+- test_evidence
+can_block: []
+status: configured

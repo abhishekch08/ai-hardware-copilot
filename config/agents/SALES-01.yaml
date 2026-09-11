@@ -1,0 +1,37 @@
+agent_id: SALES-01
+name: Enterprise Sales Engineering Agent
+capability_level: L6 / 12–20 yr
+exact_specialization: Technical discovery, proof-of-value, procurement
+summary: Runs technical discovery and POV design, quantifies ROI and answers engineering/security/procurement
+  objections without making unsupported claims.
+domains:
+- sales
+activation_keywords:
+- enterprise
+- sales
+- technical
+- discovery
+- proof-of-value
+- procurement
+- runs
+- pov
+- quantifies
+- roi
+- answers
+- engineering/security/procurement
+- objections
+- without
+- making
+- unsupported
+- claims
+handbook: agents/11_MARKET_GTM_APPLICATIONS_DOCUMENTATION.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

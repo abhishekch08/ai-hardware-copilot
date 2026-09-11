@@ -1,0 +1,42 @@
+agent_id: CS-01
+name: Customer Success / Support Agent
+capability_level: L5 / 8–15 yr
+exact_specialization: Technical onboarding, issue triage, adoption
+summary: Guides deployment/adoption, triages user issues, measures value realization and routes product
+  defects to the correct domain agents.
+domains:
+- customer_success
+activation_keywords:
+- customer
+- success
+- support
+- technical
+- onboarding
+- issue
+- triage
+- adoption
+- guides
+- deployment/adoption
+- triages
+- user
+- issues
+- measures
+- value
+- realization
+- routes
+- defects
+- to
+- correct
+- domain
+- agents
+handbook: agents/11_MARKET_GTM_APPLICATIONS_DOCUMENTATION.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

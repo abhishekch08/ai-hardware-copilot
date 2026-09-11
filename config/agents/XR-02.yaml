@@ -1,0 +1,45 @@
+agent_id: XR-02
+name: Display Optics, Waveguide & Visual-Systems Agent
+capability_level: L6 / Research Specialist, 15–25 yr
+exact_specialization: Displays, waveguides/combiners, eye box, FOV, MTF, visual comfort
+summary: Defines optical requirements, architecture, tolerances, calibration, safety interfaces and metrology
+  for readable, accurate overlays.
+domains:
+- xr_spatial
+activation_keywords:
+- display
+- optics
+- waveguide
+- visual-systems
+- displays
+- waveguides/combiners
+- eye
+- box
+- fov
+- mtf
+- visual
+- comfort
+- defines
+- optical
+- requirements
+- architecture
+- tolerances
+- calibration
+- safety
+- interfaces
+- metrology
+- readable
+- accurate
+- overlays
+handbook: agents/12_XR_AR_VR_SPATIAL_COMPUTING.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- camera_data
+- calibration_data
+- spatial_evaluation
+can_block: []
+status: configured

@@ -6,16 +6,18 @@ Stand up the minimum AI-native engineering organization and prove one closed-loo
 
 The first month should produce evidence that the architecture can ingest a design, understand a board, control a limited lab stack, reason over measurements and produce a correct traceable root-cause report.
 
+**Current checkpoint:** the conference/orchestration slice of Week 1 is implemented as an alpha: all 184 roles compile to validated configurations; deterministic plus semantic relevance screening, independent positions, objection/revision loops, convergence gates and local audit persistence run through the CLI. The model gateway, semantic evidence service and product/instrument integrations below remain work.
+
 ---
 
 ## Week 1 — Company runtime and design ingestion
 
 ### Deliverables
-- Convert registry entries for the initial core into machine-readable configs.
-- Implement prompt composition from constitution + schema + domain handbook + agent contract.
-- Load the authoritative product-mission file for every agent and task-relevant industry intelligence only when needed.
-- Implement task router and consequence-tier classification.
-- Define evidence/configuration data model.
+- [x] Convert all 184 synchronized registry entries into machine-readable configs.
+- [x] Package constitution + schema + domain handbook + agent contract for the external model gateway.
+- [x] Load the authoritative product-mission file for each active agent; keep optional industry intelligence task-routed.
+- [x] Implement the first task router, consequence tiers, mandatory review rules and dependency expansion.
+- [ ] Define the complete evidence/configuration service. The conference record and registered evidence IDs exist; immutable hashes and semantic claim support remain.
 - Create normalized project manifest for one reference PCB.
 - Parse one ECAD flow: start with **KiCad or Altium**, not both if implementation speed suffers.
 - Import schematic/netlist/BOM/PCB coordinates.

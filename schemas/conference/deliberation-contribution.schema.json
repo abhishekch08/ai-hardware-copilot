@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Structured specialist contribution to an objection round",
+  "type": "object",
+  "required": ["agent_id", "proposal_version", "round_number", "rationale"],
+  "properties": {
+    "agent_id": {"type": "string", "pattern": "^[A-Z]+-[0-9]{2}$"},
+    "proposal_version": {"type": "integer", "minimum": 1},
+    "round_number": {"type": "integer", "minimum": 1},
+    "rationale": {"type": "string"},
+    "responses": {"type": "array", "items": {"type": "object"}},
+    "counterarguments": {"type": "array", "items": {"type": "string"}},
+    "proposed_changes": {"type": "object"},
+    "changed_interfaces": {"type": "array", "items": {"type": "string"}},
+    "evidence_refs": {"type": "array", "items": {"type": "string"}},
+    "resolve_objection_ids": {"type": "array", "items": {"type": "string"}},
+    "requested_agents": {"type": "array", "items": {"type": "string", "pattern": "^[A-Z]+-[0-9]{2}$"}}
+  },
+  "additionalProperties": false
+}
+

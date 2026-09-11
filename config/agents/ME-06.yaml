@@ -1,0 +1,38 @@
+agent_id: ME-06
+name: CMF Agent
+capability_level: L5 / 10–15 yr
+exact_specialization: Color, material, finish, coatings, tactile quality
+summary: Defines finish system, visual/tactile targets, sample criteria, process compatibility and appearance
+  quality limits.
+domains:
+- mechanical
+activation_keywords:
+- cmf
+- color
+- material
+- finish
+- coatings
+- tactile
+- quality
+- defines
+- visual/tactile
+- targets
+- sample
+- criteria
+- process
+- compatibility
+- appearance
+- limits
+handbook: agents/05_MECHANICAL_INDUSTRIAL_WEARABLE.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- cad_read
+- calculation
+- simulation
+- test_evidence
+can_block: []
+status: configured

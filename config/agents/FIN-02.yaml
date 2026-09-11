@@ -1,0 +1,39 @@
+agent_id: FIN-02
+name: Pricing & Unit Economics Agent
+capability_level: L6 / 10–15 yr
+exact_specialization: Value-based pricing, COGS, CAC/LTV, gross margin
+summary: Quantifies customer value, price fences, deployment economics and sensitivity to inference/support/hardware
+  costs.
+domains:
+- finance
+activation_keywords:
+- pricing
+- unit
+- economics
+- value-based
+- cogs
+- cac/ltv
+- gross
+- margin
+- quantifies
+- customer
+- value
+- price
+- fences
+- deployment
+- sensitivity
+- to
+- inference/support/hardware
+- costs
+handbook: agents/10_BUSINESS_FINANCE_HR_LEGAL_IP.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- calculation
+- spreadsheet_model
+- market_evidence
+can_block: []
+status: configured

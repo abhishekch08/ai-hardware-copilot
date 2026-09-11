@@ -1,0 +1,39 @@
+agent_id: INFRA-01
+name: Cloud / DevOps / SRE Agent
+capability_level: L6 / 10–15 yr
+exact_specialization: CI/CD, observability, reliability, infrastructure as code
+summary: Operates build/release/infrastructure, service health, logs, metrics, deployment safety and disaster
+  recovery.
+domains:
+- infrastructure
+activation_keywords:
+- cloud
+- devops
+- sre
+- ci/cd
+- observability
+- reliability
+- infrastructure
+- as
+- code
+- operates
+- build/release/infrastructure
+- service
+- health
+- logs
+- metrics
+- deployment
+- safety
+- disaster
+- recovery
+handbook: agents/09_SECURITY_INFRA_ENTERPRISE.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

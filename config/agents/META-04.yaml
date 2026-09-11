@@ -1,0 +1,44 @@
+agent_id: META-04
+name: Independent Critic / Red-Team Agent
+capability_level: L6
+exact_specialization: Adversarial review, failure-mode discovery
+summary: Attempts to falsify architecture, analysis, tests, business assumptions and model outputs; rewards
+  catching hidden errors rather than agreement.
+domains:
+- orchestration
+activation_keywords:
+- independent
+- critic
+- red-team
+- adversarial
+- review
+- failure-mode
+- discovery
+- attempts
+- to
+- falsify
+- architecture
+- analysis
+- tests
+- business
+- assumptions
+- model
+- outputs
+- rewards
+- catching
+- hidden
+- errors
+- rather
+- than
+- agreement
+handbook: agents/14_META_ORCHESTRATION_AGENTS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

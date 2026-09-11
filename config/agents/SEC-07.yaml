@@ -1,0 +1,41 @@
+agent_id: SEC-07
+name: Wireless / BLE Security Agent
+capability_level: L6 / 10–15 yr
+exact_specialization: Pairing/bonding, authorization, ownership transfer and replay resistance
+summary: Defines wireless security state machines and adversarial tests for device data/control and service
+  exposure.
+domains:
+- security
+activation_keywords:
+- wireless
+- ble
+- security
+- pairing/bonding
+- authorization
+- ownership
+- transfer
+- replay
+- resistance
+- defines
+- state
+- machines
+- adversarial
+- tests
+- device
+- data/control
+- service
+- exposure
+handbook: agents/09_SECURITY_INFRA_ENTERPRISE.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- configuration_audit
+- threat_model
+can_block:
+- uncontrolled access or data exposure
+- unsafe tool permission
+status: configured

@@ -1,0 +1,39 @@
+agent_id: MFG-03
+name: Mechanical Manufacturing Agent
+capability_level: L6 / 15–20 yr
+exact_specialization: CNC, molding, die casting, stamping, 3D printing
+summary: Chooses feasible processes, draft/tooling/tolerance constraints, prototype method and production
+  transition.
+domains:
+- manufacturing_supply_chain
+activation_keywords:
+- mechanical
+- manufacturing
+- cnc
+- molding
+- die
+- casting
+- stamping
+- printing
+- chooses
+- feasible
+- processes
+- draft/tooling/tolerance
+- constraints
+- prototype
+- method
+- production
+- transition
+handbook: agents/07_MANUFACTURING_SUPPLY_CHAIN.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- bom
+- process_data
+- supplier_evidence
+can_block:
+- unmanufacturable or uncontrolled production release
+status: configured

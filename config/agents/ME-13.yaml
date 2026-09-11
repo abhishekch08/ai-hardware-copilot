@@ -1,0 +1,44 @@
+agent_id: ME-13
+name: Skin Interface / Contact Mechanics Agent
+capability_level: L6 / Research Specialist
+exact_specialization: Compliant contact, pressure/friction, body variation and sensor coupling
+summary: Defines force/pressure/geometry/material windows, maps motion and user variation to signal/comfort,
+  and verifies with pressure/force and wear studies.
+domains:
+- mechanical
+activation_keywords:
+- skin
+- interface
+- contact
+- mechanics
+- compliant
+- pressure/friction
+- body
+- variation
+- sensor
+- coupling
+- defines
+- force/pressure/geometry/material
+- windows
+- maps
+- motion
+- user
+- to
+- signal/comfort
+- verifies
+- pressure/force
+- wear
+- studies
+handbook: agents/05_MECHANICAL_INDUSTRIAL_WEARABLE.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- cad_read
+- calculation
+- simulation
+- test_evidence
+can_block: []
+status: configured

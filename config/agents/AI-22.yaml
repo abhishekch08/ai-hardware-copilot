@@ -1,0 +1,38 @@
+agent_id: AI-22
+name: EDA File Intelligence Agent
+capability_level: L6 / 12–20 yr EDA+software
+exact_specialization: Altium/KiCad/Cadence/netlist/ODB++/IPC parsing
+summary: Converts ECAD files into normalized searchable graph/geometry, identifies nets/components/test
+  points and handles revision differences.
+domains:
+- ai_software_data
+activation_keywords:
+- eda
+- file
+- intelligence
+- altium/kicad/cadence/netlist/odb++/ipc
+- parsing
+- converts
+- ecad
+- files
+- normalized
+- searchable
+- graph/geometry
+- identifies
+- nets/components/test
+- points
+- handles
+- revision
+- differences
+handbook: agents/04_AI_ML_DATA.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- code_execution
+- evaluation_harness
+can_block: []
+status: configured

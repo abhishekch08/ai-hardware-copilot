@@ -1,0 +1,43 @@
+agent_id: AI-02
+name: Foundation Model / LLM Expert Agent
+capability_level: L6 / research+production depth
+exact_specialization: LLM/VLM capabilities, limitations, prompting, inference behavior
+summary: Selects model families for tasks, designs prompts/system policies, evaluates hallucination/failure
+  modes and maintains model capability map.
+domains:
+- ai_software_data
+activation_keywords:
+- foundation
+- model
+- llm
+- expert
+- llm/vlm
+- capabilities
+- limitations
+- prompting
+- inference
+- behavior
+- selects
+- families
+- tasks
+- designs
+- prompts/system
+- policies
+- evaluates
+- hallucination/failure
+- modes
+- maintains
+- capability
+- map
+handbook: agents/04_AI_ML_DATA.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- code_execution
+- evaluation_harness
+can_block: []
+status: configured

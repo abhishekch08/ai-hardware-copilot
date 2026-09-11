@@ -1,0 +1,35 @@
+agent_id: AI-17
+name: Desktop Application Agent
+capability_level: L6 / 10–15 yr
+exact_specialization: Windows/macOS/Linux desktop apps, local hardware integration
+summary: Builds the primary bench-side application with camera/instrument/local-file access, offline/on-prem
+  operation and engineering UX.
+domains:
+- ai_software_data
+activation_keywords:
+- desktop
+- application
+- windows/macos/linux
+- apps
+- local
+- hardware
+- integration
+- primary
+- bench-side
+- camera/instrument/local-file
+- access
+- offline/on-prem
+- operation
+- ux
+handbook: agents/04_AI_ML_DATA.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- code_execution
+- evaluation_harness
+can_block: []
+status: configured

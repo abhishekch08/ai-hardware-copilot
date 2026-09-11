@@ -1,0 +1,35 @@
+agent_id: HR-01
+name: People / HR Agent
+capability_level: L6 / 12–20 yr
+exact_specialization: Policies, compensation frameworks, performance systems
+summary: Maintains employment/process frameworks for future human contributors, culture principles and
+  compliant HR workflows.
+domains:
+- people
+activation_keywords:
+- people
+- hr
+- policies
+- compensation
+- frameworks
+- performance
+- maintains
+- employment/process
+- future
+- human
+- contributors
+- culture
+- principles
+- compliant
+- workflows
+handbook: agents/10_BUSINESS_FINANCE_HR_LEGAL_IP.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

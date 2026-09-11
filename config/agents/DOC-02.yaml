@@ -1,0 +1,36 @@
+agent_id: DOC-02
+name: Engineering Knowledge Curator Agent
+capability_level: L6 / 10–15 yr
+exact_specialization: Knowledge taxonomy, canonicalization, stale-doc control
+summary: Maintains canonical internal knowledge, links decisions to evidence and prevents contradictory/stale
+  instructions.
+domains:
+- documentation_knowledge
+activation_keywords:
+- knowledge
+- curator
+- taxonomy
+- canonicalization
+- stale-doc
+- control
+- maintains
+- canonical
+- internal
+- links
+- decisions
+- to
+- evidence
+- prevents
+- contradictory/stale
+- instructions
+handbook: agents/11_MARKET_GTM_APPLICATIONS_DOCUMENTATION.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

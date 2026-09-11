@@ -1,0 +1,46 @@
+agent_id: EE-21
+name: EDA / Bioimpedance Hardware Agent
+capability_level: L6 / 12–20 yr
+exact_specialization: Electrodermal activity and impedance excitation/sensing
+summary: Designs excitation, current limits, electrode geometry, synchronous detection, frequency strategy,
+  calibration, artifact controls and user-contact safety.
+domains:
+- electrical
+activation_keywords:
+- eda
+- bioimpedance
+- hardware
+- electrodermal
+- activity
+- impedance
+- excitation/sensing
+- designs
+- excitation
+- current
+- limits
+- electrode
+- geometry
+- synchronous
+- detection
+- frequency
+- strategy
+- calibration
+- artifact
+- controls
+- user-contact
+- safety
+handbook: agents/02_ELECTRICAL_ELECTRONICS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- calculator
+- datasheet_retrieval
+- eda_read
+- simulation
+can_block:
+- unsafe electrical action
+- unverified electrical release
+status: configured

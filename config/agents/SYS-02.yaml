@@ -1,0 +1,38 @@
+agent_id: SYS-02
+name: Requirements Engineering Agent
+capability_level: L5 / 10–15 yr
+exact_specialization: Requirements decomposition, traceability, V-model, acceptance criteria
+summary: Converts customer problems into measurable SHALL requirements, allocates requirements to subsystems,
+  maintains traceability from need → implementation → verification.
+domains:
+- systems
+activation_keywords:
+- requirements
+- decomposition
+- traceability
+- v-model
+- acceptance
+- criteria
+- converts
+- customer
+- problems
+- measurable
+- shall
+- allocates
+- to
+- subsystems
+- maintains
+- need
+- implementation
+- verification
+handbook: agents/01_SYSTEMS_PRODUCT.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

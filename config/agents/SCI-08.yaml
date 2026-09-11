@@ -1,0 +1,35 @@
+agent_id: SCI-08
+name: Standards Research Agent
+capability_level: L6 / 12–20 yr
+exact_specialization: Technical standards discovery and interpretation
+summary: Identifies applicable IEC/ISO/IPC/IEEE/USB/Bluetooth/etc. requirements and maps them to design/test
+  obligations.
+domains:
+- science_research
+activation_keywords:
+- standards
+- research
+- technical
+- discovery
+- interpretation
+- identifies
+- applicable
+- iec/iso/ipc/ieee/usb/bluetooth/etc
+- requirements
+- maps
+- them
+- to
+- design/test
+- obligations
+handbook: agents/08_SCIENCE_RESEARCH_EXPERIMENTS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+- statistical_analysis
+can_block: []
+status: configured

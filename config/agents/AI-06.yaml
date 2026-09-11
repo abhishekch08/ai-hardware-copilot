@@ -1,0 +1,42 @@
+agent_id: AI-06
+name: CAD-to-Camera Registration Agent
+capability_level: L6 / research depth
+exact_specialization: Homography, pose estimation, geometric matching, fiducials
+summary: Registers live camera/microscope views to PCB CAD coordinates and estimates uncertainty needed
+  for probe guidance.
+domains:
+- ai_software_data
+activation_keywords:
+- cad-to-camera
+- registration
+- homography
+- pose
+- estimation
+- geometric
+- matching
+- fiducials
+- registers
+- live
+- camera/microscope
+- views
+- to
+- pcb
+- cad
+- coordinates
+- estimates
+- uncertainty
+- needed
+- probe
+- guidance
+handbook: agents/04_AI_ML_DATA.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- code_execution
+- evaluation_harness
+can_block: []
+status: configured

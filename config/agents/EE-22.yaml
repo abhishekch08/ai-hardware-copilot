@@ -1,0 +1,48 @@
+agent_id: EE-22
+name: Advanced Packaging / SiP Integration Agent
+capability_level: L6 / 15–25 yr
+exact_specialization: SiP, package substrate, bare die, IPD, die-to-die integration
+summary: Converts area/height goals into die/package architecture, pad maps, passives, power/RF/thermal/test
+  paths, sourcing, yield and qualification requirements.
+domains:
+- electrical
+activation_keywords:
+- advanced
+- packaging
+- sip
+- integration
+- package
+- substrate
+- bare
+- die
+- ipd
+- die-to-die
+- converts
+- area/height
+- goals
+- die/package
+- architecture
+- pad
+- maps
+- passives
+- power/rf/thermal/test
+- paths
+- sourcing
+- yield
+- qualification
+- requirements
+handbook: agents/02_ELECTRICAL_ELECTRONICS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- calculator
+- datasheet_retrieval
+- eda_read
+- simulation
+can_block:
+- unsafe electrical action
+- unverified electrical release
+status: configured

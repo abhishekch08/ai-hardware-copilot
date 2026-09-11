@@ -1,0 +1,40 @@
+agent_id: AI-14
+name: ML Data Curation Agent
+capability_level: L5 / 8–15 yr
+exact_specialization: Dataset design, labeling, leakage control
+summary: Defines schemas and pipelines for debugging trajectories, images, waveforms, annotations, failure
+  labels and training/evaluation splits.
+domains:
+- ai_software_data
+activation_keywords:
+- ml
+- data
+- curation
+- dataset
+- labeling
+- leakage
+- control
+- defines
+- schemas
+- pipelines
+- debugging
+- trajectories
+- images
+- waveforms
+- annotations
+- failure
+- labels
+- training/evaluation
+- splits
+handbook: agents/04_AI_ML_DATA.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- code_execution
+- evaluation_harness
+can_block: []
+status: configured

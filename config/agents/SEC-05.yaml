@@ -1,0 +1,39 @@
+agent_id: SEC-05
+name: Privacy Engineering Agent
+capability_level: L6 / 10–15 yr
+exact_specialization: Data minimization, retention, telemetry/privacy architecture
+summary: Defines what customer artifacts leave the machine, retention, redaction, access and privacy-by-design
+  controls.
+domains:
+- security
+activation_keywords:
+- privacy
+- data
+- minimization
+- retention
+- telemetry/privacy
+- architecture
+- defines
+- what
+- customer
+- artifacts
+- leave
+- machine
+- redaction
+- access
+- privacy-by-design
+- controls
+handbook: agents/09_SECURITY_INFRA_ENTERPRISE.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- configuration_audit
+- threat_model
+can_block:
+- uncontrolled access or data exposure
+- unsafe tool permission
+status: configured

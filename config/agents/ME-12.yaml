@@ -1,0 +1,43 @@
+agent_id: ME-12
+name: Robotics / Manipulation Agent
+capability_level: L6 / 12–20 yr
+exact_specialization: Robotic probing, motion planning, machine vision integration
+summary: Future-facing agent for automated probe positioning, fixtures and safe physical manipulation;
+  initially designs interfaces for human-guided execution.
+domains:
+- mechanical
+activation_keywords:
+- robotics
+- manipulation
+- robotic
+- probing
+- motion
+- planning
+- machine
+- vision
+- integration
+- future-facing
+- automated
+- probe
+- positioning
+- fixtures
+- safe
+- physical
+- initially
+- designs
+- interfaces
+- human-guided
+- execution
+handbook: agents/05_MECHANICAL_INDUSTRIAL_WEARABLE.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- cad_read
+- calculation
+- simulation
+- test_evidence
+can_block: []
+status: configured

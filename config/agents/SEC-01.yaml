@@ -1,0 +1,38 @@
+agent_id: SEC-01
+name: Product Security Agent
+capability_level: L6 / 12–20 yr
+exact_specialization: Threat modeling, secure device/backend design
+summary: Maintains threat model across workstation, instruments, firmware, cloud/on-prem services and
+  customer IP.
+domains:
+- security
+activation_keywords:
+- security
+- threat
+- modeling
+- secure
+- device/backend
+- maintains
+- model
+- across
+- workstation
+- instruments
+- firmware
+- cloud/on-prem
+- services
+- customer
+- ip
+handbook: agents/09_SECURITY_INFRA_ENTERPRISE.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- configuration_audit
+- threat_model
+can_block:
+- uncontrolled access or data exposure
+- unsafe tool permission
+status: configured

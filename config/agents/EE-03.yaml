@@ -1,0 +1,49 @@
+agent_id: EE-03
+name: Battery / BMS / Charging Agent
+capability_level: L6 / 12–20 yr
+exact_specialization: Li-ion/Li-poly cells, fuel gauging, charging, protection, aging
+summary: Owns cell selection, charge profiles, protection, SoC/SoH estimation, runtime models, pulse-load
+  behavior, storage/ship modes, cycle-life and battery safety interface requirements.
+domains:
+- electrical
+activation_keywords:
+- battery
+- bms
+- charging
+- li-ion/li-poly
+- cells
+- fuel
+- gauging
+- protection
+- aging
+- cell
+- selection
+- charge
+- profiles
+- soc/soh
+- estimation
+- runtime
+- models
+- pulse-load
+- behavior
+- storage/ship
+- modes
+- cycle-life
+- safety
+- interface
+- requirements
+handbook: agents/02_ELECTRICAL_ELECTRONICS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- calculator
+- datasheet_retrieval
+- eda_read
+- simulation
+can_block:
+- unsafe electrical action
+- unverified electrical release
+status: configured

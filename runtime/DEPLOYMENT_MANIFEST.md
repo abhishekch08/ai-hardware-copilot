@@ -221,6 +221,6 @@ status: draft | benchmarked | shadow | active
 
 ## 10. What “deployed” means at this repository stage
 
-At this initial stage, the repository provides the **agent definitions, operating contracts, routing logic, reasoning schemas and deployment plan**. It does not yet contain an orchestration service that spins up autonomous model processes.
+The repository now contains 184 compiled YAML agent configurations and an executable alpha orchestrator under `src/ai_hardware_copilot/`. It can screen every agent, form a bounded work cell, collect independent structured positions, track objections, run deliberation/revision rounds, invalidate stale approvals, persist events and fail closed at convergence gates.
 
-The next implementation step is to translate this manifest into machine-readable YAML/JSON agent configs and build a router/orchestrator that loads these canonical documents.
+“Configured” still does not mean that 184 autonomous services are continuously running. Actual domain reasoning requires an externally operated model gateway; the built-in dry-run provider intentionally cannot approve work. Instrument control, ECAD/firmware retrieval, cryptographically verified evidence, durable distributed execution and physical validation remain implementation work. See [`../docs/06_EXECUTABLE_CONFERENCE_RUNTIME.md`](../docs/06_EXECUTABLE_CONFERENCE_RUNTIME.md).

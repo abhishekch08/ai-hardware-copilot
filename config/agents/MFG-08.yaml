@@ -1,0 +1,32 @@
+agent_id: MFG-08
+name: Cost Engineering Agent
+capability_level: L6 / 10–15 yr
+exact_specialization: Should-cost, BOM/tooling/assembly economics
+summary: Builds should-cost models, identifies dominant cost drivers and quantifies design-to-cost alternatives.
+domains:
+- manufacturing_supply_chain
+activation_keywords:
+- cost
+- should-cost
+- bom/tooling/assembly
+- economics
+- models
+- identifies
+- dominant
+- drivers
+- quantifies
+- design-to-cost
+- alternatives
+handbook: agents/07_MANUFACTURING_SUPPLY_CHAIN.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- bom
+- process_data
+- supplier_evidence
+can_block:
+- unmanufacturable or uncontrolled production release
+status: configured

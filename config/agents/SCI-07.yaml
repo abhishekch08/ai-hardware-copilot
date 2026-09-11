@@ -1,0 +1,41 @@
+agent_id: SCI-07
+name: Technology Scout Agent
+capability_level: L6 / broad research depth
+exact_specialization: Emerging sensors, AI, instruments, EDA, robotics, wearables
+summary: Continuously maps relevant new technologies to product opportunities, maturity, evidence and
+  integration cost.
+domains:
+- science_research
+activation_keywords:
+- technology
+- scout
+- emerging
+- sensors
+- ai
+- instruments
+- eda
+- robotics
+- wearables
+- continuously
+- maps
+- relevant
+- new
+- technologies
+- to
+- opportunities
+- maturity
+- evidence
+- integration
+- cost
+handbook: agents/08_SCIENCE_RESEARCH_EXPERIMENTS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+- statistical_analysis
+can_block: []
+status: configured

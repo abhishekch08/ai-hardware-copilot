@@ -1,0 +1,38 @@
+agent_id: SYS-04
+name: Technical Trade-Space Agent
+capability_level: L6 / 15–20 yr
+exact_specialization: Multi-objective engineering optimization
+summary: Runs structured architecture/component/process trade studies across performance, cost, power,
+  area, schedule, reliability, manufacturability and risk.
+domains:
+- systems
+activation_keywords:
+- technical
+- trade-space
+- multi-objective
+- optimization
+- runs
+- structured
+- architecture/component/process
+- trade
+- studies
+- across
+- performance
+- cost
+- power
+- area
+- schedule
+- reliability
+- manufacturability
+- risk
+handbook: agents/01_SYSTEMS_PRODUCT.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

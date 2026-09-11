@@ -1,0 +1,44 @@
+agent_id: AI-03
+name: Model Router & Compute Strategy Agent
+capability_level: L6 / 10–15 yr equivalent
+exact_specialization: Model selection, reasoning effort, cost/latency/quality routing
+summary: Receives a task and selects the best model class, reasoning depth, toolset, context size, ensemble/reviewer
+  policy and fallback path. Owns routing benchmarks.
+domains:
+- ai_software_data
+activation_keywords:
+- model
+- router
+- compute
+- strategy
+- selection
+- reasoning
+- effort
+- cost/latency/quality
+- routing
+- receives
+- task
+- selects
+- best
+- class
+- depth
+- toolset
+- context
+- size
+- ensemble/reviewer
+- policy
+- fallback
+- path
+- benchmarks
+handbook: agents/04_AI_ML_DATA.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- code_execution
+- evaluation_harness
+can_block: []
+status: configured

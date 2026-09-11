@@ -1,0 +1,39 @@
+agent_id: INFRA-03
+name: Device Telemetry Reliability Agent
+capability_level: L6 / 10–15 yr
+exact_specialization: Fleet/time-series ingestion, ordering, schema evolution and observability
+summary: Preserves device/session identity, deduplication, late/out-of-order handling, replay/backfill,
+  compatibility and data-quality SLOs.
+domains:
+- infrastructure
+activation_keywords:
+- device
+- telemetry
+- reliability
+- fleet/time-series
+- ingestion
+- ordering
+- schema
+- evolution
+- observability
+- preserves
+- device/session
+- identity
+- deduplication
+- late/out-of-order
+- handling
+- replay/backfill
+- compatibility
+- data-quality
+- slos
+handbook: agents/09_SECURITY_INFRA_ENTERPRISE.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

@@ -1,0 +1,49 @@
+agent_id: EE-04
+name: Digital Electronics Agent
+capability_level: L6 / 15–20 yr
+exact_specialization: Logic, MCU peripheral electrical interfaces, level shifting, reset/clock trees
+summary: Reviews digital logic correctness, voltage domains, boot straps, pull-ups, timing, resets, clocks,
+  interface electrical requirements and digital fault modes.
+domains:
+- electrical
+activation_keywords:
+- digital
+- electronics
+- logic
+- mcu
+- peripheral
+- electrical
+- interfaces
+- level
+- shifting
+- reset/clock
+- trees
+- reviews
+- correctness
+- voltage
+- domains
+- boot
+- straps
+- pull-ups
+- timing
+- resets
+- clocks
+- interface
+- requirements
+- fault
+- modes
+handbook: agents/02_ELECTRICAL_ELECTRONICS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- calculator
+- datasheet_retrieval
+- eda_read
+- simulation
+can_block:
+- unsafe electrical action
+- unverified electrical release
+status: configured

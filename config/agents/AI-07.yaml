@@ -1,0 +1,42 @@
+agent_id: AI-07
+name: Probe Tracking & Guidance Agent
+capability_level: L6 / research+robotics/CV
+exact_specialization: Fine tool-tip tracking, trajectory guidance, visual servo concepts
+summary: Tracks probe tip relative to pads/test points, produces safe guidance and verifies correct-node
+  contact before acquisition.
+domains:
+- ai_software_data
+activation_keywords:
+- probe
+- tracking
+- guidance
+- fine
+- tool-tip
+- trajectory
+- visual
+- servo
+- concepts
+- tracks
+- tip
+- relative
+- to
+- pads/test
+- points
+- safe
+- verifies
+- correct-node
+- contact
+- before
+- acquisition
+handbook: agents/04_AI_ML_DATA.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- code_execution
+- evaluation_harness
+can_block: []
+status: configured

@@ -1,0 +1,40 @@
+agent_id: EE-06
+name: Power Integrity Agent
+capability_level: L6 / 15–25 yr
+exact_specialization: PDN impedance, decoupling, planes, rail noise
+summary: Builds PDN targets and impedance models, decoupling strategy, anti-resonance analysis, plane/via
+  strategy and measurement methodology.
+domains:
+- electrical
+activation_keywords:
+- power
+- integrity
+- pdn
+- impedance
+- decoupling
+- planes
+- rail
+- noise
+- targets
+- models
+- strategy
+- anti-resonance
+- analysis
+- plane/via
+- measurement
+- methodology
+handbook: agents/02_ELECTRICAL_ELECTRONICS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- calculator
+- datasheet_retrieval
+- eda_read
+- simulation
+can_block:
+- unsafe electrical action
+- unverified electrical release
+status: configured

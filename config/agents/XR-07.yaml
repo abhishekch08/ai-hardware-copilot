@@ -1,0 +1,44 @@
+agent_id: XR-07
+name: Head-Worn Ergonomics, Visual Comfort & Wearability Agent
+capability_level: L6 / Research Specialist, 12–20 yr
+exact_specialization: Anthropometry, fit, mass/pressure, heat, vision and PPE
+summary: Proves that hands-free benefit survives real users, duration, prescription/PPE constraints, hygiene,
+  comfort and calibration shift.
+domains:
+- xr_spatial
+activation_keywords:
+- head-worn
+- ergonomics
+- visual
+- comfort
+- wearability
+- anthropometry
+- fit
+- mass/pressure
+- heat
+- vision
+- ppe
+- proves
+- hands-free
+- benefit
+- survives
+- real
+- users
+- duration
+- prescription/ppe
+- constraints
+- hygiene
+- calibration
+- shift
+handbook: agents/12_XR_AR_VR_SPATIAL_COMPUTING.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- camera_data
+- calibration_data
+- spatial_evaluation
+can_block: []
+status: configured

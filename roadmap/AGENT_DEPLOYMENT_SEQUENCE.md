@@ -2,6 +2,8 @@
 
 The company contains many specialist agents, but the product should not start by running all of them continuously. Deploy agents in the order that reduces the largest product risk.
 
+**Current checkpoint:** every listed role is configured and callable. The executable alpha completes the Phase 0 conference kernel for routing, independent analysis, objection/revision iteration, audit persistence and fail-closed convergence. Production model execution, evidence semantics and benchmarks are still required to satisfy the Phase 0 exit criteria fully.
+
 ## Phase 0 — Company kernel
 
 Deploy first:

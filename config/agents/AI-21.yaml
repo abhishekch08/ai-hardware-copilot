@@ -1,0 +1,41 @@
+agent_id: AI-21
+name: Developer Tools / SDK Agent
+capability_level: L6 / 10–15 yr
+exact_specialization: APIs, CLI, plugins, extension ecosystems
+summary: Creates SDK/CLI/plugin framework so labs and vendors can add instruments, design formats, tests
+  and custom tools.
+domains:
+- ai_software_data
+activation_keywords:
+- developer
+- tools
+- sdk
+- apis
+- cli
+- plugins
+- extension
+- ecosystems
+- creates
+- sdk/cli/plugin
+- framework
+- so
+- labs
+- vendors
+- can
+- add
+- instruments
+- formats
+- tests
+- custom
+handbook: agents/04_AI_ML_DATA.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- code_execution
+- evaluation_harness
+can_block: []
+status: configured

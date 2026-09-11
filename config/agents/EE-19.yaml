@@ -1,0 +1,44 @@
+agent_id: EE-19
+name: Electrical CAD Library Agent
+capability_level: L5 / 10–15 yr
+exact_specialization: Symbol/footprint/3D-model/library QA
+summary: Creates and validates symbols, footprints, pin maps, courtyards, manufacturing layers and component
+  metadata; prevents library-originated board defects.
+domains:
+- electrical
+activation_keywords:
+- electrical
+- cad
+- library
+- symbol/footprint/3d-model/library
+- qa
+- creates
+- validates
+- symbols
+- footprints
+- pin
+- maps
+- courtyards
+- manufacturing
+- layers
+- component
+- metadata
+- prevents
+- library-originated
+- board
+- defects
+handbook: agents/02_ELECTRICAL_ELECTRONICS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- calculator
+- datasheet_retrieval
+- eda_read
+- simulation
+can_block:
+- unsafe electrical action
+- unverified electrical release
+status: configured

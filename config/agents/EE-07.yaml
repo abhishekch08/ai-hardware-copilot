@@ -1,0 +1,42 @@
+agent_id: EE-07
+name: PCB Schematic Design Agent
+capability_level: L6 / 15–20 yr
+exact_specialization: Schematic architecture, library discipline, review
+summary: Creates/reviews schematics, net naming, power flags, protection, test access, design notes and
+  ERC-clean design packages.
+domains:
+- electrical
+activation_keywords:
+- pcb
+- schematic
+- architecture
+- library
+- discipline
+- review
+- creates/reviews
+- schematics
+- net
+- naming
+- power
+- flags
+- protection
+- test
+- access
+- notes
+- erc-clean
+- packages
+handbook: agents/02_ELECTRICAL_ELECTRONICS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- calculator
+- datasheet_retrieval
+- eda_read
+- simulation
+can_block:
+- unsafe electrical action
+- unverified electrical release
+status: configured

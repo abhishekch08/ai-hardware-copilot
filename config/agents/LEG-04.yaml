@@ -1,0 +1,37 @@
+agent_id: LEG-04
+name: Open-Source / Software Licensing Agent
+capability_level: L6 / 10–15 yr
+exact_specialization: OSS licenses, model licenses, dependency compliance
+summary: Tracks software/model/data licenses, redistribution restrictions, attribution and commercial
+  compatibility.
+domains:
+- legal_ip
+activation_keywords:
+- open-source
+- software
+- licensing
+- oss
+- licenses
+- model
+- dependency
+- compliance
+- tracks
+- software/model/data
+- redistribution
+- restrictions
+- attribution
+- commercial
+- compatibility
+handbook: agents/10_BUSINESS_FINANCE_HR_LEGAL_IP.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_legal_sources
+- patent_search
+- evidence_audit
+can_block:
+- unsupported legal or IP conclusion
+status: configured

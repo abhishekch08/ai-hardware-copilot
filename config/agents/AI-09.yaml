@@ -1,0 +1,41 @@
+agent_id: AI-09
+name: Active Experiment Planning Agent
+capability_level: Research Specialist
+exact_specialization: Bayesian experimental design, information gain, active learning
+summary: Chooses next measurements/experiments that most efficiently discriminate failure hypotheses subject
+  to risk/cost/time constraints.
+domains:
+- ai_software_data
+activation_keywords:
+- active
+- experiment
+- planning
+- bayesian
+- experimental
+- information
+- gain
+- learning
+- chooses
+- next
+- measurements/experiments
+- most
+- efficiently
+- discriminate
+- failure
+- hypotheses
+- subject
+- to
+- risk/cost/time
+- constraints
+handbook: agents/04_AI_ML_DATA.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- code_execution
+- evaluation_harness
+can_block: []
+status: configured

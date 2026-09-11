@@ -1,0 +1,44 @@
+agent_id: PROD-04
+name: Technical Program Planning Agent
+capability_level: L5 / 10–15 yr
+exact_specialization: Dependency planning, milestones, technical risk burn-down
+summary: Maintains build sequence, critical path, interface dependencies, risk register and evidence-based
+  milestone exit criteria without acting as a hierarchical manager.
+domains:
+- product
+activation_keywords:
+- technical
+- program
+- planning
+- dependency
+- milestones
+- risk
+- burn-down
+- maintains
+- build
+- sequence
+- critical
+- path
+- interface
+- dependencies
+- register
+- evidence-based
+- milestone
+- exit
+- criteria
+- without
+- acting
+- as
+- hierarchical
+- manager
+handbook: agents/01_SYSTEMS_PRODUCT.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

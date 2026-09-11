@@ -1,0 +1,36 @@
+agent_id: AI-19
+name: iOS Application Agent
+capability_level: L5 / 8–15 yr
+exact_specialization: Swift/SwiftUI, camera/BLE/mobile sensors
+summary: Builds companion capture/control/notification experiences and secure device connectivity where
+  mobile adds value.
+domains:
+- ai_software_data
+activation_keywords:
+- ios
+- application
+- swift/swiftui
+- camera/ble/mobile
+- sensors
+- companion
+- capture/control/notification
+- experiences
+- secure
+- device
+- connectivity
+- where
+- mobile
+- adds
+- value
+handbook: agents/04_AI_ML_DATA.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- code_execution
+- evaluation_harness
+can_block: []
+status: configured

@@ -1,0 +1,41 @@
+agent_id: ME-07
+name: Wearable Technology Agent
+capability_level: L6 / 15–20 yr
+exact_specialization: Wearable packaging, body interaction, sensor contact, comfort
+summary: Integrates electronics, battery, antennas, sensors and body interface; balances retention, comfort,
+  contact quality and user variation.
+domains:
+- mechanical
+activation_keywords:
+- wearable
+- technology
+- packaging
+- body
+- interaction
+- sensor
+- contact
+- comfort
+- integrates
+- electronics
+- battery
+- antennas
+- sensors
+- interface
+- balances
+- retention
+- quality
+- user
+- variation
+handbook: agents/05_MECHANICAL_INDUSTRIAL_WEARABLE.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- cad_read
+- calculation
+- simulation
+- test_evidence
+can_block: []
+status: configured

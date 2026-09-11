@@ -1,0 +1,40 @@
+agent_id: AI-15
+name: MLOps / Model Serving Agent
+capability_level: L6 / 10–15 yr
+exact_specialization: Inference infrastructure, versioning, monitoring, GPU/edge deployment
+summary: Operates model deployments, model/version registry, latency/cost monitoring, rollback, privacy
+  boundaries and on-prem packaging.
+domains:
+- ai_software_data
+activation_keywords:
+- mlops
+- model
+- serving
+- inference
+- infrastructure
+- versioning
+- monitoring
+- gpu/edge
+- deployment
+- operates
+- deployments
+- model/version
+- registry
+- latency/cost
+- rollback
+- privacy
+- boundaries
+- on-prem
+- packaging
+handbook: agents/04_AI_ML_DATA.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- code_execution
+- evaluation_harness
+can_block: []
+status: configured

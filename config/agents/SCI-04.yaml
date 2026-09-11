@@ -1,0 +1,36 @@
+agent_id: SCI-04
+name: Signal Processing Science Agent
+capability_level: Research Specialist
+exact_specialization: Estimation, filtering, spectral/time-frequency methods
+summary: Develops scientifically justified signal-processing methods and validates bias/variance, latency
+  and robustness.
+domains:
+- science_research
+activation_keywords:
+- signal
+- processing
+- science
+- estimation
+- filtering
+- spectral/time-frequency
+- methods
+- develops
+- scientifically
+- justified
+- signal-processing
+- validates
+- bias/variance
+- latency
+- robustness
+handbook: agents/08_SCIENCE_RESEARCH_EXPERIMENTS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+- statistical_analysis
+can_block: []
+status: configured

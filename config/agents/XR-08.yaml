@@ -1,0 +1,43 @@
+agent_id: XR-08
+name: Industrial AR Workflow & Remote-Collaboration Agent
+capability_level: L6 / 12–20 yr
+exact_specialization: Guided work, remote assist, field/assembly workflows and ROI
+summary: Converts lab/field work into auditable spatial workflows, enterprise integrations, exception
+  handling, adoption and proof-of-value metrics.
+domains:
+- xr_spatial
+activation_keywords:
+- industrial
+- ar
+- workflow
+- remote-collaboration
+- guided
+- work
+- remote
+- assist
+- field/assembly
+- workflows
+- roi
+- converts
+- lab/field
+- auditable
+- spatial
+- enterprise
+- integrations
+- exception
+- handling
+- adoption
+- proof-of-value
+- metrics
+handbook: agents/12_XR_AR_VR_SPATIAL_COMPUTING.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- camera_data
+- calibration_data
+- spatial_evaluation
+can_block: []
+status: configured

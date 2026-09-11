@@ -1,0 +1,44 @@
+agent_id: AI-04
+name: Multimodal Intelligence Agent
+capability_level: L6 / research+production
+exact_specialization: Joint reasoning over text, images, schematics, waveforms and video
+summary: Designs multimodal input representations and evaluations so models can correlate PCB images,
+  diagrams, instrument traces and documentation.
+domains:
+- ai_software_data
+activation_keywords:
+- multimodal
+- intelligence
+- joint
+- reasoning
+- over
+- text
+- images
+- schematics
+- waveforms
+- video
+- designs
+- input
+- representations
+- evaluations
+- so
+- models
+- can
+- correlate
+- pcb
+- diagrams
+- instrument
+- traces
+- documentation
+handbook: agents/04_AI_ML_DATA.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- code_execution
+- evaluation_harness
+can_block: []
+status: configured

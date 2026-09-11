@@ -1,0 +1,38 @@
+agent_id: FIN-01
+name: Finance / FP&A Agent
+capability_level: L6 / 12–20 yr
+exact_specialization: Runway, budgeting, scenario planning, financial statements
+summary: Maintains operating model, burn/runway, hiring/tool/cloud/lab budgets, scenario analysis and
+  board/investor metrics.
+domains:
+- finance
+activation_keywords:
+- finance
+- fp
+- runway
+- budgeting
+- scenario
+- planning
+- financial
+- statements
+- maintains
+- operating
+- model
+- burn/runway
+- hiring/tool/cloud/lab
+- budgets
+- analysis
+- board/investor
+- metrics
+handbook: agents/10_BUSINESS_FINANCE_HR_LEGAL_IP.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- calculation
+- spreadsheet_model
+- market_evidence
+can_block: []
+status: configured

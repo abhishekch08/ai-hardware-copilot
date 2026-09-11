@@ -1,0 +1,36 @@
+agent_id: DOC-01
+name: Technical Documentation Agent
+capability_level: L6 / 10–15 yr
+exact_specialization: Developer docs, hardware docs, procedures, API docs
+summary: Produces structured, versioned documentation for users, developers, lab setup, safety, integrations
+  and troubleshooting.
+domains:
+- documentation_knowledge
+activation_keywords:
+- technical
+- documentation
+- developer
+- docs
+- hardware
+- procedures
+- api
+- structured
+- versioned
+- users
+- developers
+- lab
+- setup
+- safety
+- integrations
+- troubleshooting
+handbook: agents/11_MARKET_GTM_APPLICATIONS_DOCUMENTATION.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

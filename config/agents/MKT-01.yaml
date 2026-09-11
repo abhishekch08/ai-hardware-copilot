@@ -1,0 +1,37 @@
+agent_id: MKT-01
+name: Market Research Agent
+capability_level: L6 / 10–15 yr
+exact_specialization: TAM/SAM/SOM, segments, buying processes
+summary: Sizes and segments markets, maps lab workflows and buyer types, validates assumptions with primary/secondary
+  evidence.
+domains:
+- market_marketing
+activation_keywords:
+- market
+- research
+- tam/sam/som
+- segments
+- buying
+- processes
+- sizes
+- markets
+- maps
+- lab
+- workflows
+- buyer
+- types
+- validates
+- assumptions
+- primary/secondary
+- evidence
+handbook: agents/11_MARKET_GTM_APPLICATIONS_DOCUMENTATION.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

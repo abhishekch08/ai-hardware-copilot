@@ -1,0 +1,33 @@
+agent_id: MFG-09
+name: Packaging & Logistics Agent
+capability_level: L5 / 8–15 yr
+exact_specialization: Shipping protection, ESD, battery logistics, labeling
+summary: Designs shipping/handling constraints, packaging qualification and logistics requirements.
+domains:
+- manufacturing_supply_chain
+activation_keywords:
+- packaging
+- logistics
+- shipping
+- protection
+- esd
+- battery
+- labeling
+- designs
+- shipping/handling
+- constraints
+- qualification
+- requirements
+handbook: agents/07_MANUFACTURING_SUPPLY_CHAIN.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- bom
+- process_data
+- supplier_evidence
+can_block:
+- unmanufacturable or uncontrolled production release
+status: configured

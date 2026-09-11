@@ -1,0 +1,31 @@
+agent_id: BIZ-04
+name: Vendor / Contract Operations Agent
+capability_level: L5 / 8–15 yr
+exact_specialization: SaaS/tool/lab/CM vendor evaluation
+summary: Runs structured vendor comparisons, SLA/lock-in/security/cost analysis and renewal decisions.
+domains:
+- business_strategy
+activation_keywords:
+- vendor
+- contract
+- operations
+- saas/tool/lab/cm
+- evaluation
+- runs
+- structured
+- comparisons
+- sla/lock-in/security/cost
+- analysis
+- renewal
+- decisions
+handbook: agents/10_BUSINESS_FINANCE_HR_LEGAL_IP.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

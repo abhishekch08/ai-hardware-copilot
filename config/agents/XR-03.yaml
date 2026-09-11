@@ -1,0 +1,36 @@
+agent_id: XR-03
+name: Spatial Tracking, SLAM & Calibration Agent
+capability_level: L6 / Research Specialist, 12–20 yr
+exact_specialization: Visual-inertial tracking, frame transforms, calibration and uncertainty
+summary: Maintains board/camera/head/display/world transforms, drift/loss handling and task-specific spatial
+  error bounds.
+domains:
+- xr_spatial
+activation_keywords:
+- spatial
+- tracking
+- slam
+- calibration
+- visual-inertial
+- frame
+- transforms
+- uncertainty
+- maintains
+- board/camera/head/display/world
+- drift/loss
+- handling
+- task-specific
+- error
+- bounds
+handbook: agents/12_XR_AR_VR_SPATIAL_COMPUTING.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- camera_data
+- calibration_data
+- spatial_evaluation
+can_block: []
+status: configured

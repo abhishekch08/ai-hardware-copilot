@@ -1,0 +1,47 @@
+agent_id: EE-24
+name: Ultra-Low-Power System Electronics Agent
+capability_level: L6 / 15–25 yr
+exact_specialization: State-based energy, leakage, wake architecture and pulse-load behavior
+summary: Audits every current path and state, builds measured energy models, finds hidden leakage/back-powering
+  and balances wake latency, retention and observability.
+domains:
+- electrical
+activation_keywords:
+- ultra-low-power
+- electronics
+- state-based
+- energy
+- leakage
+- wake
+- architecture
+- pulse-load
+- behavior
+- audits
+- every
+- current
+- path
+- state
+- measured
+- models
+- finds
+- hidden
+- leakage/back-powering
+- balances
+- latency
+- retention
+- observability
+handbook: agents/02_ELECTRICAL_ELECTRONICS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- calculator
+- datasheet_retrieval
+- eda_read
+- simulation
+can_block:
+- unsafe electrical action
+- unverified electrical release
+status: configured

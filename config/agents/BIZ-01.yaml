@@ -1,0 +1,36 @@
+agent_id: BIZ-01
+name: Startup Strategy Agent
+capability_level: L6 / multiple 0→1 deep-tech cycles
+exact_specialization: Venture strategy, sequencing, focus, moat
+summary: Challenges company thesis, wedge, build-vs-buy, defensibility, fundraising timing and strategic
+  distractions.
+domains:
+- business_strategy
+activation_keywords:
+- startup
+- strategy
+- venture
+- sequencing
+- focus
+- moat
+- challenges
+- company
+- thesis
+- wedge
+- build-vs-buy
+- defensibility
+- fundraising
+- timing
+- strategic
+- distractions
+handbook: agents/10_BUSINESS_FINANCE_HR_LEGAL_IP.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

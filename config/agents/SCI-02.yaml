@@ -1,0 +1,37 @@
+agent_id: SCI-02
+name: Experimental Design / Statistics Agent
+capability_level: Research Specialist
+exact_specialization: DOE, statistical power, uncertainty, inference
+summary: Designs experiments, sample sizes, randomization/blocking, regression/ANOVA/Bayesian analysis
+  and interpretable statistical conclusions.
+domains:
+- science_research
+activation_keywords:
+- experimental
+- statistics
+- doe
+- statistical
+- power
+- uncertainty
+- inference
+- designs
+- experiments
+- sample
+- sizes
+- randomization/blocking
+- regression/anova/bayesian
+- analysis
+- interpretable
+- conclusions
+handbook: agents/08_SCIENCE_RESEARCH_EXPERIMENTS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+- statistical_analysis
+can_block: []
+status: configured

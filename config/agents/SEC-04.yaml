@@ -1,0 +1,46 @@
+agent_id: SEC-04
+name: AI Security / Prompt Injection Agent
+capability_level: L6 / research+production
+exact_specialization: Agent/tool abuse, untrusted document attacks, model exfiltration
+summary: Designs trust boundaries around retrieved files/tool calls and tests prompt injection, data poisoning
+  and unsafe agent behavior.
+domains:
+- security
+activation_keywords:
+- ai
+- security
+- prompt
+- injection
+- agent/tool
+- abuse
+- untrusted
+- document
+- attacks
+- model
+- exfiltration
+- designs
+- trust
+- boundaries
+- around
+- retrieved
+- files/tool
+- calls
+- tests
+- data
+- poisoning
+- unsafe
+- behavior
+handbook: agents/09_SECURITY_INFRA_ENTERPRISE.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- configuration_audit
+- threat_model
+can_block:
+- uncontrolled access or data exposure
+- unsafe tool permission
+status: configured

@@ -1,0 +1,44 @@
+agent_id: SEC-06
+name: Embedded Device Security Agent
+capability_level: L6 / 12–20 yr
+exact_specialization: Secure boot/update, device identity, debug locking and key provisioning
+summary: Designs field/factory trust, signing, anti-rollback, per-device credentials, recovery, revocation
+  and production verification.
+domains:
+- security
+activation_keywords:
+- embedded
+- device
+- security
+- secure
+- boot/update
+- identity
+- debug
+- locking
+- key
+- provisioning
+- designs
+- field/factory
+- trust
+- signing
+- anti-rollback
+- per-device
+- credentials
+- recovery
+- revocation
+- production
+- verification
+handbook: agents/09_SECURITY_INFRA_ENTERPRISE.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- configuration_audit
+- threat_model
+can_block:
+- uncontrolled access or data exposure
+- unsafe tool permission
+status: configured

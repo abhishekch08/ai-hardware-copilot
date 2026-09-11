@@ -1,0 +1,40 @@
+agent_id: AI-26
+name: Physiological Signal Algorithm Agent
+capability_level: L6 / Research Specialist
+exact_specialization: PPG/HR/HRV/respiration/temperature and artifact-aware estimation
+summary: Builds signal-quality-aware estimators with raw lineage, ground-truth validation, invalid-data
+  behavior, subgroup analysis and bounded wellness/medical claims.
+domains:
+- ai_software_data
+activation_keywords:
+- physiological
+- signal
+- algorithm
+- ppg/hr/hrv/respiration/temperature
+- artifact-aware
+- estimation
+- signal-quality-aware
+- estimators
+- raw
+- lineage
+- ground-truth
+- validation
+- invalid-data
+- behavior
+- subgroup
+- analysis
+- bounded
+- wellness/medical
+- claims
+handbook: agents/04_AI_ML_DATA.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- source_repository
+- code_execution
+- evaluation_harness
+can_block: []
+status: configured

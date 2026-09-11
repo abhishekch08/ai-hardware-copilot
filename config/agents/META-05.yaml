@@ -1,0 +1,42 @@
+agent_id: META-05
+name: Evidence & Provenance Auditor
+capability_level: L6
+exact_specialization: Source traceability, claim verification
+summary: Checks whether claims are actually supported by sources, measurements, code outputs and versioned
+  artifacts; rejects invented evidence.
+domains:
+- orchestration
+activation_keywords:
+- evidence
+- provenance
+- auditor
+- source
+- traceability
+- claim
+- verification
+- checks
+- whether
+- claims
+- are
+- actually
+- supported
+- by
+- sources
+- measurements
+- code
+- outputs
+- versioned
+- artifacts
+- rejects
+- invented
+handbook: agents/14_META_ORCHESTRATION_AGENTS.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured

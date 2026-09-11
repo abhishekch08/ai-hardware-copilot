@@ -1,0 +1,36 @@
+agent_id: SYS-03
+name: Integration Engineering Agent
+capability_level: L6 / 15–20 yr
+exact_specialization: HW/FW/SW/mechanical integration and interface failure analysis
+summary: Plans subsystem integration order, identifies interface assumptions, owns integration checklists,
+  compatibility matrices and system-level defect triage.
+domains:
+- systems
+activation_keywords:
+- integration
+- hw/fw/sw/mechanical
+- interface
+- failure
+- analysis
+- plans
+- subsystem
+- order
+- identifies
+- assumptions
+- checklists
+- compatibility
+- matrices
+- system-level
+- defect
+- triage
+handbook: agents/01_SYSTEMS_PRODUCT.md
+mandatory_context:
+- agents/00_PRODUCT_MISSION_AND_REFERENCE_DOMAINS.md
+- governance/OPERATING_CONSTITUTION.md
+- agents/AGENT_RUNTIME_STANDARD.md
+- schemas/UNIVERSAL_REASONING_SCHEMA.md
+default_tools:
+- primary_source_retrieval
+- calculation
+can_block: []
+status: configured
