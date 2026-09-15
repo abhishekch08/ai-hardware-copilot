@@ -5,21 +5,24 @@ from __future__ import annotations
 import hmac
 import json
 import os
+import re
 import signal
 import threading
+from collections import Counter
 from dataclasses import asdict
 from http import HTTPStatus
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
-from typing import Any
-from urllib.parse import urlparse
+from typing import Any, Callable
+from urllib.parse import parse_qs, urlparse
 
 from .conference import ConferenceEngine
 from .config import load_yaml
 from .diagnosis import DiagnosticEngine, seeded_excess_current_session, simulated_excess_current_observer
 from .directory import AgentDirectory
 from .evidence import EvidenceStore
-from .jobs import JobQueue, JobWorker, job_as_dict
+from .idea import task_from_idea
+from .jobs import JobQueue, JobWorker, job_as_dict, job_summary
 from .model_router import ModelRoutingPolicy
 from .models import TaskManifest
 from .project import ProjectIngestor
@@ -30,7 +33,9 @@ from .storage import ConferenceStore
 
 
 class ControlPlane:
-    ALLOWED_OPERATIONS = {"conference", "project_ingest", "debug_demo", "evidence_text"}
+    ALLOWED_OPERATIONS = {
+        "conference", "idea_conference", "project_ingest", "debug_demo", "evidence_text"
+    }
 
     def __init__(
         self,
@@ -94,10 +99,22 @@ class ControlPlane:
                 max_steps=int(payload.get("max_steps", 3)),
             )
             return asdict(result)
+        if operation == "idea_conference":
+            task = task_from_idea(payload)
+            return self._run_conference(task, _integer_rounds(payload.get("iterate_rounds", 3)))
         task_value = payload.get("task", payload)
         if not isinstance(task_value, dict):
             raise ValueError("conference payload requires a task object")
         task = TaskManifest.from_dict(task_value)
+        rounds = _integer_rounds(payload.get("iterate_rounds", 0)) if "task" in payload else 0
+        return self._run_conference(task, rounds)
+
+    def _run_conference(self, task: TaskManifest, rounds: int) -> dict[str, Any]:
+        if isinstance(rounds, bool) or not 0 <= rounds <= 10:
+            raise ValueError("iterate_rounds must be from 0 through 10")
+        unknown_agents = set(task.required_agents) - self.directory.ids
+        if unknown_agents:
+            raise ValueError(f"task requires unknown agents: {sorted(unknown_agents)}")
         if int(task.risk_tier[1:]) >= 3:
             invalid = [reference for reference in task.evidence_refs if not self.evidence.verify(reference)]
             if not task.evidence_refs or invalid:
@@ -109,7 +126,6 @@ class ControlPlane:
         store = ConferenceStore(self.data_root / "runs")
         engine = ConferenceEngine(self.directory, self.routing, provider, store, max_workers=8)
         record = engine.run_initial(task)
-        rounds = int(payload.get("iterate_rounds", 0)) if "task" in payload else 0
         if rounds:
             engine.iterate(record, max_rounds=rounds)
         report = self.data_root / "runs" / record.conference_id / "report.md"
@@ -121,8 +137,74 @@ class ControlPlane:
             "agents_screened": len(record.attendance),
             "active_agents": len(record.active_agents),
             "coverage_passed": bool(record.coverage_report and record.coverage_report.passed),
+            "provider": self.provider_name,
             "state_path": str(self.data_root / "runs" / record.conference_id / "state.json"),
             "report_path": str(report),
+        }
+
+    def configuration(self) -> dict[str, Any]:
+        reasoning_enabled = self.provider_name == "http" and bool(self.model_gateway_url)
+        return {
+            "product": "AI Hardware Engineer / Lab Copilot",
+            "agents": len(self.directory),
+            "provider": self.provider_name,
+            "reasoning_enabled": reasoning_enabled,
+            "mode_notice": (
+                "Live specialist reasoning is configured. Engineering conclusions still require evidence."
+                if reasoning_enabled else
+                "Dry-run mode validates routing and safety gates; it does not perform specialist reasoning."
+            ),
+            "max_deliberation_rounds": 10,
+            "supported_risk_tiers": ["T1", "T2", "T3", "T4"],
+        }
+
+    def conference_view(self, conference_id: str) -> dict[str, Any]:
+        if re.fullmatch(r"CONF-[A-Za-z0-9][A-Za-z0-9._-]{0,95}", conference_id) is None:
+            raise ValueError("invalid conference ID")
+        record = ConferenceStore(self.data_root / "runs").load(conference_id)
+        value = record.as_dict()
+        version = record.task.proposal_version
+        current_positions = [
+            item for item in value["positions"] if item["proposal_version"] == version
+        ]
+        current_objections = [
+            item for item in value["objections"] if item["proposal_version"] == version
+        ]
+        for item in current_positions:
+            item["agent_name"] = self.directory.get(item["agent_id"]).name
+        for item in current_objections:
+            item["agent_name"] = self.directory.get(item["agent_id"]).name
+        active_agents = [
+            {
+                "agent_id": agent_id,
+                "agent_name": self.directory.get(agent_id).name,
+                "relevance": value["attendance"][agent_id]["relevance"],
+                "mandatory": value["attendance"][agent_id]["mandatory"],
+            }
+            for agent_id in record.active_agents
+        ]
+        report_path = self.data_root / "runs" / conference_id / "report.md"
+        return {
+            "conference_id": conference_id,
+            "state": record.state.value,
+            "provider": self.provider_name,
+            "task": value["task"],
+            "proposal_version": version,
+            "current_round": record.current_round,
+            "agents_screened": len(record.attendance),
+            "active_agents": active_agents,
+            "attendance_counts": dict(sorted(Counter(
+                item.relevance.value for item in record.attendance.values()
+            ).items())),
+            "verdict_counts": dict(sorted(Counter(
+                item["verdict"] for item in current_positions
+            ).items())),
+            "positions": current_positions,
+            "objections": current_objections,
+            "coverage_report": value["coverage_report"],
+            "final_decision": value["final_decision"],
+            "events": value["events"],
+            "report_markdown": report_path.read_text(encoding="utf-8") if report_path.exists() else "",
         }
 
     def _provider(self):
@@ -143,11 +225,15 @@ class ControlPlane:
 class CopilotHttpServer(ThreadingHTTPServer):
     daemon_threads = True
 
-    def __init__(self, address, control: ControlPlane, queue: JobQueue, api_token: str):
+    def __init__(
+        self, address, control: ControlPlane, queue: JobQueue, api_token: str,
+        web_root: str | Path | None = None,
+    ):
         super().__init__(address, CopilotRequestHandler)
         self.control = control
         self.queue = queue
         self.api_token = api_token
+        self.web_root = Path(web_root or control.repo_root / "web").resolve()
 
 
 class CopilotRequestHandler(BaseHTTPRequestHandler):
@@ -156,7 +242,11 @@ class CopilotRequestHandler(BaseHTTPRequestHandler):
     max_body_bytes = 2_000_000
 
     def do_GET(self) -> None:  # noqa: N802
-        path = urlparse(self.path).path
+        parsed = urlparse(self.path)
+        path = parsed.path
+        if path in {"/", "/index.html", "/styles.css", "/app.js", "/favicon.svg", "/favicon.ico"}:
+            self._static(path)
+            return
         if path == "/health":
             self._json(HTTPStatus.OK, {
                 "status": "ok",
@@ -166,12 +256,34 @@ class CopilotRequestHandler(BaseHTTPRequestHandler):
             return
         if not self._authorized():
             return
+        if path == "/v1/config":
+            self._json(HTTPStatus.OK, self.server.control.configuration())
+            return
+        if path == "/v1/jobs":
+            try:
+                query = parse_qs(parsed.query)
+                limit = int(query.get("limit", ["50"])[0])
+                self._json(HTTPStatus.OK, {
+                    "jobs": [job_summary(job) for job in self.server.queue.list_recent(limit)]
+                })
+            except ValueError as exc:
+                self._json(HTTPStatus.BAD_REQUEST, {"error": str(exc)})
+            return
         if path.startswith("/v1/jobs/"):
             job_id = path.removeprefix("/v1/jobs/")
             try:
                 self._json(HTTPStatus.OK, job_as_dict(self.server.queue.get(job_id)))
             except KeyError as exc:
                 self._json(HTTPStatus.NOT_FOUND, {"error": str(exc)})
+            return
+        if path.startswith("/v1/conferences/"):
+            conference_id = path.removeprefix("/v1/conferences/")
+            try:
+                self._json(HTTPStatus.OK, self.server.control.conference_view(conference_id))
+            except FileNotFoundError:
+                self._json(HTTPStatus.NOT_FOUND, {"error": "conference not found"})
+            except ValueError as exc:
+                self._json(HTTPStatus.BAD_REQUEST, {"error": str(exc)})
             return
         self._json(HTTPStatus.NOT_FOUND, {"error": "not found"})
 
@@ -223,6 +335,40 @@ class CopilotRequestHandler(BaseHTTPRequestHandler):
         self.send_header("Content-Length", str(len(data)))
         self.send_header("Cache-Control", "no-store")
         self.send_header("X-Content-Type-Options", "nosniff")
+        self.send_header("Referrer-Policy", "no-referrer")
+        self.end_headers()
+        self.wfile.write(data)
+
+    def _static(self, request_path: str) -> None:
+        names = {
+            "/": ("index.html", "text/html; charset=utf-8"),
+            "/index.html": ("index.html", "text/html; charset=utf-8"),
+            "/styles.css": ("styles.css", "text/css; charset=utf-8"),
+            "/app.js": ("app.js", "text/javascript; charset=utf-8"),
+            "/favicon.svg": ("favicon.svg", "image/svg+xml"),
+            "/favicon.ico": ("favicon.svg", "image/svg+xml"),
+        }
+        filename, media_type = names[request_path]
+        source = (self.server.web_root / filename).resolve()
+        try:
+            source.relative_to(self.server.web_root)
+            data = source.read_bytes()
+        except (ValueError, FileNotFoundError):
+            self._json(HTTPStatus.NOT_FOUND, {"error": "web interface is unavailable"})
+            return
+        self.send_response(HTTPStatus.OK.value)
+        self.send_header("Content-Type", media_type)
+        self.send_header("Content-Length", str(len(data)))
+        self.send_header("Cache-Control", "no-store")
+        self.send_header("X-Content-Type-Options", "nosniff")
+        self.send_header("Referrer-Policy", "no-referrer")
+        self.send_header("Permissions-Policy", "camera=(), microphone=(), geolocation=()")
+        self.send_header(
+            "Content-Security-Policy",
+            "default-src 'self'; script-src 'self'; style-src 'self'; "
+            "img-src 'self' data:; connect-src 'self'; object-src 'none'; "
+            "base-uri 'none'; form-action 'self'; frame-ancestors 'none'",
+        )
         self.end_headers()
         self.wfile.write(data)
 
@@ -241,6 +387,7 @@ def serve(
     provider_name: str = "dry-run",
     model_gateway_url: str | None = None,
     model_gateway_key: str | None = None,
+    on_ready: Callable[[], None] | None = None,
 ) -> None:
     if not api_token:
         raise ValueError("COPILOT_API_TOKEN is required")
@@ -250,7 +397,9 @@ def serve(
     )
     queue = JobQueue(Path(data_root) / "jobs.sqlite3")
     worker = JobWorker(queue, control.execute)
-    server = CopilotHttpServer((host, port), control, queue, api_token)
+    server = CopilotHttpServer(
+        (host, port), control, queue, api_token, Path(repo_root) / "web"
+    )
     stop_once = threading.Event()
 
     def stop_server(*_args) -> None:
@@ -262,11 +411,29 @@ def serve(
     signal.signal(signal.SIGTERM, stop_server)
     signal.signal(signal.SIGINT, stop_server)
     worker.start()
+    if on_ready:
+        on_ready()
     try:
         server.serve_forever(poll_interval=0.25)
     finally:
         worker.stop()
         server.server_close()
+
+
+def _integer_rounds(value: Any) -> int:
+    if isinstance(value, bool):
+        raise ValueError("iterate_rounds must be an integer from 0 through 10")
+    if isinstance(value, str) and not re.fullmatch(r"\d+", value.strip()):
+        raise ValueError("iterate_rounds must be an integer from 0 through 10")
+    if isinstance(value, float) and not value.is_integer():
+        raise ValueError("iterate_rounds must be an integer from 0 through 10")
+    try:
+        rounds = int(value)
+    except (TypeError, ValueError) as exc:
+        raise ValueError("iterate_rounds must be an integer from 0 through 10") from exc
+    if not 0 <= rounds <= 10:
+        raise ValueError("iterate_rounds must be an integer from 0 through 10")
+    return rounds
 
 
 def _require_within(root: Path, path: Path) -> None:

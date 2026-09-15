@@ -5,6 +5,8 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import secrets
+import webbrowser
 from pathlib import Path
 from typing import Any
 
@@ -313,6 +315,33 @@ def command_serve(args) -> int:
     return 0
 
 
+def command_web(args) -> int:
+    """Start the loopback-only web workspace with an ephemeral session token."""
+    from .service import serve
+
+    token = os.environ.get(args.api_token_env, "") or secrets.token_urlsafe(32)
+    gateway_url = args.endpoint or os.environ.get("COPILOT_MODEL_GATEWAY_URL")
+    if args.provider == "http" and not gateway_url:
+        raise ValueError("HTTP provider requires --endpoint or COPILOT_MODEL_GATEWAY_URL")
+    gateway_key = os.environ.get(args.gateway_key_env, "") if args.gateway_key_env else None
+    url = f"http://127.0.0.1:{args.port}/#token={token}"
+    print("Lab Copilot local workspace")
+    print(url, flush=True)
+    serve(
+        repo_root=Path(args.repo_root).resolve(),
+        data_root=Path(args.data_root).resolve(),
+        projects_root=Path(args.projects_root).resolve(),
+        host="127.0.0.1",
+        port=args.port,
+        api_token=token,
+        provider_name=args.provider,
+        model_gateway_url=gateway_url,
+        model_gateway_key=gateway_key,
+        on_ready=None if args.no_open else lambda: webbrowser.open(url),
+    )
+    return 0
+
+
 def command_gateway(args) -> int:
     from .gateway import models_from_environment, serve_gateway
 
@@ -411,6 +440,17 @@ def parser() -> argparse.ArgumentParser:
     service.add_argument("--api-token-env", default="COPILOT_API_TOKEN")
     service.add_argument("--gateway-key-env", default="COPILOT_MODEL_GATEWAY_API_KEY")
     service.set_defaults(handler=command_serve)
+    web = commands.add_parser("web", help="start the local browser workspace")
+    web.add_argument("--repo-root", default=str(repo_root()))
+    web.add_argument("--data-root", default="data")
+    web.add_argument("--projects-root", default="projects")
+    web.add_argument("--port", type=int, default=8080)
+    web.add_argument("--provider", choices=("dry-run", "http"), default="dry-run")
+    web.add_argument("--endpoint")
+    web.add_argument("--api-token-env", default="COPILOT_API_TOKEN")
+    web.add_argument("--gateway-key-env", default="COPILOT_MODEL_GATEWAY_API_KEY")
+    web.add_argument("--no-open", action="store_true")
+    web.set_defaults(handler=command_web)
     gateway = commands.add_parser("gateway")
     gateway.add_argument("--host", default="127.0.0.1")
     gateway.add_argument("--port", type=int, default=8090)

@@ -11,6 +11,7 @@ COPY agents ./agents
 COPY governance ./governance
 COPY schemas ./schemas
 COPY conference ./conference
+COPY web ./web
 RUN python -m pip install --no-cache-dir .
 
 RUN useradd --create-home --uid 10001 copilot \

@@ -5,7 +5,7 @@
   "required": ["job_id", "operation", "status", "payload", "created_at", "updated_at"],
   "properties": {
     "job_id": {"type": "string", "pattern": "^JOB-[0-9a-f]{32}$"},
-    "operation": {"enum": ["conference", "project_ingest", "debug_demo", "evidence_text"]},
+    "operation": {"enum": ["conference", "idea_conference", "project_ingest", "debug_demo", "evidence_text"]},
     "status": {"enum": ["queued", "running", "succeeded", "failed"]},
     "payload": {"type": "object"},
     "result": {"type": ["object", "null"]},

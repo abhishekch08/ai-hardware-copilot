@@ -8,6 +8,7 @@ from __future__ import annotations
 
 from dataclasses import asdict, dataclass, field
 from enum import Enum
+import re
 from typing import Any
 
 
@@ -79,6 +80,9 @@ class TaskManifest:
         missing = [key for key in required if not str(value.get(key, "")).strip()]
         if missing:
             raise ValueError(f"task manifest missing required fields: {', '.join(missing)}")
+        task_id = str(value["task_id"])
+        if re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9._-]{0,95}", task_id) is None:
+            raise ValueError("task_id must be 1-96 path-safe letters, numbers, dots, underscores or hyphens")
         risk = str(value.get("risk_tier", "T2")).upper()
         if risk not in {"T0", "T1", "T2", "T3", "T4"}:
             raise ValueError(f"invalid risk_tier: {risk}")

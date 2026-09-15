@@ -3,7 +3,7 @@ import time
 import unittest
 from pathlib import Path
 
-from ai_hardware_copilot.jobs import JobQueue, JobWorker
+from ai_hardware_copilot.jobs import JobQueue, JobWorker, job_summary
 
 
 class JobQueueTests(unittest.TestCase):
@@ -44,6 +44,15 @@ class JobQueueTests(unittest.TestCase):
             self.assertEqual(claimed.status, "running")
             restarted = JobQueue(database)
             self.assertEqual(restarted.get(queued.job_id).status, "queued")
+
+    def test_recent_job_summaries_are_newest_first(self):
+        with tempfile.TemporaryDirectory() as temporary:
+            queue = JobQueue(Path(temporary) / "jobs.sqlite3")
+            first = queue.enqueue("idea_conference", {"title": "First", "idea": "a" * 20})
+            second = queue.enqueue("idea_conference", {"title": "Second", "idea": "b" * 20})
+            recent = queue.list_recent(2)
+            self.assertEqual([job.job_id for job in recent], [second.job_id, first.job_id])
+            self.assertEqual(job_summary(recent[0])["title"], "Second")
 
 
 if __name__ == "__main__":

@@ -35,6 +35,7 @@ The model gateway and bench hardware are separate trust boundaries. Models propo
 | Instruments | Typed PSU/DMM/scope actions, safety envelope, exact enable approval and result evidence | Generic SCPI must be qualified per vendor/model |
 | Execution | SQLite WAL queue, atomic job claim, restart recovery, idempotency protection and one local worker | Single-node and single worker; no distributed lease/heartbeat |
 | HTTP API | Health, submit job, poll job, token auth, body limit and path containment | No TLS termination, users, RBAC, rate limiting or streaming |
+| Local web workspace | Plain-language idea intake, advanced constraints, run history, progress, specialist/objection inspection and report download | No project-file upload or live instrument view yet |
 
 ## Local CLI verification
 
@@ -106,6 +107,29 @@ Implemented generic adapters cover common PSU voltage/current/output/measurement
 
 ## Start the authenticated job API
 
+### Simplest local workflow
+
+```bash
+python -m pip install -e .
+hardware-copilot web
+```
+
+This command binds only to `127.0.0.1`, generates an ephemeral token when `COPILOT_API_TOKEN` is absent, prints the local URL and opens the default browser. The token is carried in the URL fragment, moved into browser session storage and removed from the address bar. It is not persisted across browser sessions.
+
+The web workspace accepts a plain-language idea plus optional title, requirements, constraints, risk tier and deliberation limit. A deterministic intake layer converts it into a strict `TaskManifest`; that extraction only improves routing and does not assert that the idea is valid. All 184 agents are screened, the relevant work cell is shown, and the audit output remains downloadable as Markdown.
+
+Use `hardware-copilot web --no-open` when browser launch is undesirable. To use a live gateway:
+
+```bash
+export COPILOT_MODEL_GATEWAY_URL='http://127.0.0.1:8090/v1/conference'
+export COPILOT_MODEL_GATEWAY_API_KEY='replace-with-gateway-token'
+hardware-copilot web --provider http
+```
+
+The gateway must already be running as described below. The interface visibly distinguishes live reasoning from dry-run orchestration.
+
+### API-only workflow
+
 ```bash
 export COPILOT_API_TOKEN='replace-with-a-long-random-token'
 hardware-copilot serve \
@@ -137,6 +161,7 @@ Supported job operations are:
 | `project_ingest` | inline `manifest` and `project_root` relative to the configured projects directory |
 | `debug_demo` | optional `session_id`, `true_hypothesis`, threshold and step limit |
 | `conference` | task manifest, optionally wrapped as `task` with `iterate_rounds` |
+| `idea_conference` | plain `idea`, optional title/requirements/constraints, `T1` or `T2`, and iteration limit |
 
 T3/T4 service conferences require non-empty evidence references that verify in this deployment's evidence store.
 

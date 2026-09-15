@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#111214">
+  <meta name="description" content="Local engineering conference workspace for the AI Hardware Lab Copilot.">
+  <title>Lab Copilot</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Conference history">
+      <div class="brand-row">
+        <a class="brand" href="/" aria-label="Lab Copilot home">
+          <span class="brand-mark" aria-hidden="true">LC</span>
+          <span>Lab Copilot</span>
+        </a>
+        <button class="icon-button sidebar-close" id="closeSidebar" type="button" aria-label="Close navigation">×</button>
+      </div>
+
+      <button class="new-conference" id="newConference" type="button">
+        <span aria-hidden="true">＋</span>
+        New conference
+      </button>
+
+      <div class="history-heading">
+        <span>Recent</span>
+        <button class="text-button" id="refreshHistory" type="button">Refresh</button>
+      </div>
+      <nav class="history-list" id="historyList" aria-label="Recent conferences">
+        <p class="history-empty">No conferences yet</p>
+      </nav>
+
+      <div class="system-card">
+        <div class="system-line">
+          <span class="status-dot" id="statusDot" aria-hidden="true"></span>
+          <strong id="providerLabel">Connecting</strong>
+        </div>
+        <p id="modeNotice">Checking the local runtime…</p>
+        <button class="text-button" id="changeToken" type="button">Connection settings</button>
+      </div>
+    </aside>
+
+    <button class="sidebar-scrim" id="sidebarScrim" type="button" aria-label="Close navigation"></button>
+
+    <main class="workspace">
+      <header class="topbar">
+        <button class="icon-button menu-button" id="openSidebar" type="button" aria-label="Open navigation">☰</button>
+        <div class="run-title" id="runTitle">New engineering conference</div>
+        <div class="mode-badge" id="modeBadge">Offline</div>
+      </header>
+
+      <section class="thread" id="thread" aria-live="polite">
+        <div class="empty-state" id="emptyState">
+          <div class="empty-mark" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <h1>Start an engineering conference</h1>
+          <p>Describe the product, the user problem, the constraints, and what must be proven. Every specialist will be screened; only relevant agents will enter the working discussion.</p>
+          <div class="example-grid" aria-label="Example prompts">
+            <button class="example-prompt" type="button" data-prompt="Design a screenless wearable for continuous cardiovascular and recovery monitoring. Challenge the sensing architecture, battery-life target, skin-contact mechanics, mobile experience, manufacturability, claims, privacy, unit economics and validation plan.">
+              <strong>Wearable concept</strong>
+              <span>Architecture, sensing, power, mechanics and claims</span>
+            </button>
+            <button class="example-prompt" type="button" data-prompt="Design the first deployable version of an AI hardware lab copilot that can ingest KiCad files, understand firmware context, control a bounded oscilloscope, power supply and DMM stack, and reduce time-to-root-cause for first-board power faults.">
+              <strong>Lab Copilot wedge</strong>
+              <span>Product, platform, tools, safety and evaluation</span>
+            </button>
+            <button class="example-prompt" type="button" data-prompt="Review a battery-powered sensor node concept for industrial predictive maintenance. Determine the viable sensing stack, energy budget, enclosure and mounting, wireless architecture, edge processing, test strategy, production path and commercial risks.">
+              <strong>Industrial sensor</strong>
+              <span>Physics, embedded, reliability and business</span>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <section class="composer-shell" aria-label="Conference input">
+        <form class="composer" id="ideaForm">
+          <details class="advanced-settings" id="advancedSettings">
+            <summary>Conference settings</summary>
+            <div class="settings-grid">
+              <label class="field field-wide">
+                <span>Title <small>optional</small></span>
+                <input id="ideaTitle" name="title" maxlength="160" placeholder="e.g. Continuous health wearable">
+              </label>
+              <label class="field">
+                <span>Review depth</span>
+                <select id="riskTier" name="risk_tier">
+                  <option value="T1">Exploration</option>
+                  <option value="T2" selected>Engineering review</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>Iteration limit</span>
+                <select id="rounds" name="rounds">
+                  <option value="1">1 round</option>
+                  <option value="3" selected>3 rounds</option>
+                  <option value="5">5 rounds</option>
+                  <option value="8">8 rounds</option>
+                </select>
+              </label>
+              <label class="field">
+                <span>Requirements <small>one per line</small></span>
+                <textarea id="requirements" rows="3" placeholder="Seven-day battery life&#10;Comfortable for continuous wear"></textarea>
+              </label>
+              <label class="field">
+                <span>Constraints <small>one per line</small></span>
+                <textarea id="constraints" rows="3" placeholder="No custom display initially&#10;Consumer hardware cost target"></textarea>
+              </label>
+            </div>
+          </details>
+
+          <div class="composer-input-row">
+            <label class="sr-only" for="ideaInput">Product idea or engineering problem</label>
+            <textarea id="ideaInput" name="idea" rows="1" minlength="20" maxlength="100000" placeholder="Describe a product idea or engineering problem…" required></textarea>
+            <button class="submit-button" id="submitIdea" type="submit" aria-label="Start conference">↑</button>
+          </div>
+          <div class="composer-footer">
+            <span id="composerHint">Enter to start · Shift+Enter for a new line</span>
+            <span>184 specialists screened</span>
+          </div>
+        </form>
+      </section>
+    </main>
+  </div>
+
+  <dialog class="connection-dialog" id="connectionDialog">
+    <form method="dialog" id="connectionForm">
+      <div class="dialog-heading">
+        <div>
+          <h2>Connect to the local runtime</h2>
+          <p>Use the token shown by the <code>hardware-copilot web</code> command.</p>
+        </div>
+        <button class="icon-button" value="cancel" aria-label="Close">×</button>
+      </div>
+      <label class="field">
+        <span>Local access token</span>
+        <input id="tokenInput" type="password" autocomplete="off" spellcheck="false" required>
+      </label>
+      <p class="dialog-error" id="connectionError" role="alert"></p>
+      <button class="primary-button" id="connectButton" value="default">Connect</button>
+    </form>
+  </dialog>
+
+  <script src="/app.js" defer></script>
+</body>
+</html>

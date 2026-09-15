@@ -85,6 +85,7 @@ The product is successful only when this loop is **measurably faster, safer, mor
 │   ├── model_profiles.yaml
 │   └── tool_permissions.yaml
 ├── src/ai_hardware_copilot/   # conference, evidence, ingestion, diagnosis, tools, APIs
+├── web/                       # local dark engineering-conference workspace
 ├── examples/                  # conference tasks and a minimal KiCad/firmware project
 ├── tests/
 ├── .github/workflows/ci.yml
@@ -283,6 +284,19 @@ Every completed debugging trajectory should improve future diagnosis, experiment
 
 ## 11. Run the engineering-runtime alpha
 
+For the local browser workspace:
+
+```bash
+python -m pip install -e .
+hardware-copilot web
+```
+
+The command opens a loopback-only workspace and passes an ephemeral access token in the URL fragment. Paste a product idea, optionally add requirements/constraints and start the conference. The interface shows current mode, recent runs, all specialist positions, objections, convergence status and a downloadable Markdown audit report.
+
+Without a configured model gateway, the interface runs in clearly marked **dry-run** mode. It screens and routes all 184 agents and exercises the safety/convergence system, but intentionally does not claim to perform real specialist reasoning.
+
+For CLI and lower-level runtime operations:
+
 ```bash
 python -m pip install -e .
 python scripts/compile_agent_configs.py
@@ -320,7 +334,7 @@ Still requiring integration, data or physical validation:
 - complete ECAD connectivity/geometry plus Altium/Cadence importers;
 - vendor/model instrument conformance, serial/JTAG/SWD/logic-analyzer tools and real hardware-in-loop safety testing;
 - camera calibration, PCB-to-CAD registration, probe tracking and uncertainty-gated guidance;
-- desktop engineering workspace, multi-user RBAC/SSO, centralized observability and distributed workers;
+- project-file upload/cross-probing, richer bench views, multi-user RBAC/SSO, centralized observability and distributed workers;
 - adversarial model/system evaluation and representative bench/customer ROI trials.
 
 No model or multi-agent discussion can guarantee zero hallucinations. Release authority comes from source-backed claims, calculations, simulations, measurements, independent verification and deterministic safety gates—not fluency or agreement.

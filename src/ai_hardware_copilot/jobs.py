@@ -144,6 +144,16 @@ class JobQueue:
             raise KeyError(f"unknown job: {job_id}")
         return _row_to_job(row)
 
+    def list_recent(self, limit: int = 50) -> list[Job]:
+        if isinstance(limit, bool) or not 1 <= int(limit) <= 100:
+            raise ValueError("job list limit must be from 1 through 100")
+        with closing(self._connect()) as connection:
+            rows = connection.execute(
+                "SELECT * FROM jobs ORDER BY created_at DESC, job_id DESC LIMIT ?",
+                (int(limit),),
+            ).fetchall()
+        return [_row_to_job(row) for row in rows]
+
 
 class JobWorker:
     def __init__(self, queue: JobQueue, handler: Callable[[str, dict[str, Any]], dict[str, Any]]):
@@ -186,6 +196,27 @@ def job_as_dict(job: Job) -> dict[str, Any]:
         "created_at": job.created_at,
         "updated_at": job.updated_at,
         "idempotency_key": job.idempotency_key,
+    }
+
+
+def job_summary(job: Job) -> dict[str, Any]:
+    task = job.payload.get("task") if isinstance(job.payload.get("task"), dict) else {}
+    result = job.result or {}
+    title = (
+        job.payload.get("title")
+        or task.get("title")
+        or job.payload.get("session_id")
+        or job.operation.replace("_", " ").title()
+    )
+    return {
+        "job_id": job.job_id,
+        "operation": job.operation,
+        "title": str(title),
+        "status": job.status,
+        "conference_id": result.get("conference_id"),
+        "created_at": job.created_at,
+        "updated_at": job.updated_at,
+        "error": job.error,
     }
 
 
